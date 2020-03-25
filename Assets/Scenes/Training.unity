@@ -122,12 +122,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &486521823 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 100006, guid: fe90a525eff9dbc439505c489f68d933,
-    type: 3}
-  m_PrefabInstance: {fileID: 1666236131}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &511774706
 GameObject:
   m_ObjectHideFlags: 0
@@ -649,14 +643,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7c0110f81ccc31a4290427302bef7209, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  neonFading: 1
-  fadeSpeed: 0.05
-  alphaValue: 226
-  neoncolor:
-    rgba: 3796500309
-  neonObjAmount: 1
-  neonObjs:
-  - {fileID: 486521823}
 --- !u!1001 &1666236131
 PrefabInstance:
   m_ObjectHideFlags: 0
