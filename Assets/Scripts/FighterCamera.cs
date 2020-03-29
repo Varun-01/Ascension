@@ -34,8 +34,9 @@ public class FighterCamera : MonoBehaviour
     void Start()
     {
         // find references to the fighters
-        f1 = GameObject.Find(fighter1).transform;
-        f2 = GameObject.Find(fighter2).transform;
+        f1 = GameObject.FindWithTag(fighter1).transform;
+        f2 = GameObject.FindWithTag(fighter2).transform;
+        
         // initializes scene size and camera distance
         calcScreen(f1, f2);
         wScene = xR - xL;
@@ -58,7 +59,7 @@ public class FighterCamera : MonoBehaviour
         Vector3 newpos2 = transform.position;
         newpos2.x = (xR + xL) / 2;
         transform.position = newpos2;
-        //transform.position.x = (xR + xL) / 2;
+       
     }
 }
 
