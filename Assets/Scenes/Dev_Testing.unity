@@ -143,9 +143,13 @@ MonoBehaviour:
   lookSmoother: 3
   useCurves: 1
   useCurvesHeight: 0.5
-  forwardSpeed: 7
+  Run: 0
+  walkingSpeed: 3
+  runningSpeed: 5
   backwardSpeed: 2
   jumpPower: 1
+  tapDelay: 0.2
+  dPressed: 0
 --- !u!1001 &765009727
 PrefabInstance:
   m_ObjectHideFlags: 0
