@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 namespace UnityChan
 {
@@ -13,21 +14,26 @@ namespace UnityChan
 		public float animSpeed = 1.5f;				 
 		public float lookSmoother = 3.0f;			      
 		public bool useCurves = true;				 
-		public float useCurvesHeight = 0.5f;		 
+		public float useCurvesHeight = 0.5f;
+        public float Run = 0f;
 
-		public float forwardSpeed = 7.0f;
-		public float backwardSpeed = 2.0f;
-		//public float rotateSpeed = 2.0f;
-		public float jumpPower = 3.0f; 
+        public float walkingSpeed = 3.0f;
+        public float runningSpeed = 5.0f;
+        public float backwardSpeed = 2.0f;
+        public bool movement = false;
+        //public float rotateSpeed = 2.0f;
+        public float jumpPower = 3.0f; 
 		private CapsuleCollider col;
 		private Rigidbody rb;
 		private Vector3 velocity;
 		private float orgColHight;
 		private Vector3 orgVectColCenter;
 		private Animator anim;							 
-		private AnimatorStateInfo currentBaseState;			  
+		private AnimatorStateInfo currentBaseState;
+        public float tapDelay = 0.2f; //in seconds
+        public int dPressed = 0;
 
-		private GameObject cameraObject;	 
+        private GameObject cameraObject;	 
 		
 		static int idleState = Animator.StringToHash ("Base Layer.Idle");
 		static int locoState = Animator.StringToHash ("Base Layer.Locomotion");
@@ -42,28 +48,72 @@ namespace UnityChan
 			cameraObject = GameObject.FindWithTag ("MainCamera");
 			orgColHight = col.height;
 			orgVectColCenter = col.center;
+            Run = 0f;
 		}
+
+        void Update() {
+            if (Input.GetKeyDown(KeyCode.D))
+            {
+                dPressed += 1;
+
+                if (dPressed > 1)
+                {
+                    Run = 1.0f;
+                    Debug.Log("Double tap");
+                }
+
+            }
+        }
 	
 	
 		void FixedUpdate ()
 		{
-			float h = Input.GetAxis ("Horizontal");				 
-			float v = Input.GetAxis ("Vertical");				 
+			float h = Input.GetAxisRaw ("Horizontal");				 
+			float v = Input.GetAxisRaw ("Vertical");				 
 			anim.SetFloat ("Speed", v);							 
-			anim.SetFloat ("Direction", h); 						 
-			anim.speed = animSpeed;								  
+			anim.SetFloat ("Direction", h);
+            anim.SetBool("Movement", movement);
+            anim.speed = animSpeed;								  
 			currentBaseState = anim.GetCurrentAnimatorStateInfo (0);	   
 			rb.useGravity = true;
 		
 			velocity = new Vector3 (0, 0, v);		 
 			velocity = transform.TransformDirection (velocity);
-			if (v > 0.1) {
-				velocity *= forwardSpeed;		 
-			} else if (v < -0.1) {
-				velocity *= backwardSpeed;	 
-			}
-		
-			if (Input.GetButtonDown ("Jump")) {	 
+            
+                        
+            if (Input.GetKeyUp(KeyCode.D))
+            {
+                Invoke("SetDPressedToZero", tapDelay);
+                Run = 0f;
+            }
+
+            anim.SetFloat("Run", Run);
+
+            if (v > 0.1)
+            {
+
+                if (Run > 0)
+                {
+                    velocity *= runningSpeed;
+                }
+                else
+                {
+                    velocity *= walkingSpeed;
+                }
+
+                movement = true;
+            }
+            else if (v < -0.1)
+            {
+                velocity *= backwardSpeed;
+                movement = true;
+            }
+            else if (v == 0) {
+                movement = false;
+            }
+
+
+            if (Input.GetButtonDown ("Jump")) {	 
 				if (currentBaseState.nameHash != jumpState) {
 					if (!anim.IsInTransition (0)) {
 						anim.SetBool ("Jump", true);
@@ -124,5 +174,11 @@ namespace UnityChan
 			col.height = orgColHight;
 			col.center = orgVectColCenter;
 		}
+
+        void SetDPressedToZero ()
+ {
+     dPressed = 0;
+ }
+
 	}
 }
