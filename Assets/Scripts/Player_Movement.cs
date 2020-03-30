@@ -15,23 +15,23 @@ namespace UnityChan
 		public float lookSmoother = 3.0f;			      
 		public bool useCurves = true;				 
 		public float useCurvesHeight = 0.5f;
-        public float Run = 0f;
 
         public float walkingSpeed = 3.0f;
         public float runningSpeed = 5.0f;
-        public float backwardSpeed = 2.0f;
+        public float direction = 0f;
         public bool movement = false;
-        //public float rotateSpeed = 2.0f;
         public float jumpPower = 3.0f; 
 		private CapsuleCollider col;
 		private Rigidbody rb;
-		private Vector3 velocity;
 		private float orgColHight;
 		private Vector3 orgVectColCenter;
 		private Animator anim;							 
 		private AnimatorStateInfo currentBaseState;
-        public float tapDelay = 0.2f; //in seconds
+
+        //double tap to run
+        public float tapDelay = 0.2f; 
         public int dPressed = 0;
+        public float Run = 0f; //acts as boolean - 0 is walk and 1 is run. Used for blending tree in animator.
 
         private GameObject cameraObject;	 
 		
@@ -51,68 +51,69 @@ namespace UnityChan
             Run = 0f;
 		}
 
+        /*
+         TODO: Change Update to apply for different facing directions.
+               SO FAR ONLY P1 CAN DO DOUBLE TAP.
+             */
+
         void Update() {
+
+            //double tap to run
             if (Input.GetKeyDown(KeyCode.D))
             {
                 dPressed += 1;
-
                 if (dPressed > 1)
                 {
                     Run = 1.0f;
                     Debug.Log("Double tap");
                 }
-
             }
         }
 	
 	
 		void FixedUpdate ()
 		{
-			float h = Input.GetAxisRaw ("Horizontal");				 
-			float v = Input.GetAxisRaw ("Vertical");				 
-			anim.SetFloat ("Speed", v);							 
-			anim.SetFloat ("Direction", h);
+          
+			float v = Input.GetAxisRaw ("Vertical");
+            float direction = rb.transform.localEulerAngles.y;
+            //Debug.Log(direction);
+
+            anim.SetFloat ("Speed", v);							 
             anim.SetBool("Movement", movement);
+            anim.SetFloat("Run", Run);
+            anim.SetFloat("Direction", direction);
+
             anim.speed = animSpeed;								  
 			currentBaseState = anim.GetCurrentAnimatorStateInfo (0);	   
 			rb.useGravity = true;
-		
-			velocity = new Vector3 (0, 0, v);		 
-			velocity = transform.TransformDirection (velocity);
-            
-                        
+
             if (Input.GetKeyUp(KeyCode.D))
             {
                 Invoke("SetDPressedToZero", tapDelay);
                 Run = 0f;
             }
-
-            anim.SetFloat("Run", Run);
-
-            if (v > 0.1)
-            {
-
-                if (Run > 0)
-                {
-                    velocity *= runningSpeed;
+      
+            
+            if (v > 0.1) {
+                if (direction == 265){
+                        moveRight();
+                } else {
+                        moveLeft();
                 }
-                else
+            } else if (v < -0.1){
+                if (direction == 265)
                 {
-                    velocity *= walkingSpeed;
+                    moveLeft();
                 }
-
-                movement = true;
+                else {
+                    moveRight();
+                }
             }
-            else if (v < -0.1)
+            else if (v == 0)
             {
-                velocity *= backwardSpeed;
-                movement = true;
-            }
-            else if (v == 0) {
                 movement = false;
             }
-
-
+         
             if (Input.GetButtonDown ("Jump")) {	 
 				if (currentBaseState.nameHash != jumpState) {
 					if (!anim.IsInTransition (0)) {
@@ -121,9 +122,6 @@ namespace UnityChan
                     }
                 }
 			}
-		
-			transform.localPosition += velocity * Time.fixedDeltaTime;
-			//transform.Rotate (0, h * rotateSpeed, 0);	
 
 			if (currentBaseState.nameHash == locoState) {
 				if (useCurves) {
@@ -176,9 +174,26 @@ namespace UnityChan
 		}
 
         void SetDPressedToZero ()
- {
-     dPressed = 0;
- }
+        {
+            dPressed = 0;
+        }
+        void moveRight()
+        {
+            if (Run > 0)
+            {
+                rb.velocity = transform.forward * runningSpeed;
+            }
+            else
+            {
+                rb.velocity = transform.forward * walkingSpeed;
+            }
+            movement = true;
+        }
 
-	}
+        void moveLeft() {
+            rb.velocity = -(transform.forward * walkingSpeed);
+            movement = true;
+        }
+
+    }
 }
