@@ -1,4 +1,14 @@
-﻿using UnityEngine;
+﻿/*
+ Player_Movement: Script enabling character control.
+ Notes:
+    - fi
+ 
+ 
+ 
+ 
+ */
+
+using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 
@@ -16,11 +26,12 @@ namespace UnityChan
 		public bool useCurves = true;				 
 		public float useCurvesHeight = 0.5f;
 
+
         public float walkingSpeed = 3.0f;
         public float runningSpeed = 5.0f;
-        public float direction = 0f;
+        public float playerDirection = 0f;
         public bool movement = false;
-        public float jumpPower = 3.0f; 
+        public float jumpPower = 5.0f; 
 		private CapsuleCollider col;
 		private Rigidbody rb;
 		private float orgColHight;
@@ -28,10 +39,14 @@ namespace UnityChan
 		private Animator anim;							 
 		private AnimatorStateInfo currentBaseState;
 
-        //double tap to run
-        public float tapDelay = 0.2f; 
-        public int dPressed = 0;
+        public float facingLeft = 95f;
+        public float facingRight = 265f;
+
+        //double tap to run variables.
+        public float tapDelay = 0.2f; //how much delay you can have to activate double tap to run
+        public int buttonPresses = 0; //how many times the player pressed the button within the allowed timeframe
         public float Run = 0f; //acts as boolean - 0 is walk and 1 is run. Used for blending tree in animator.
+        public float movementDelay = 0f; //used for smoothing forward and backward animation so that idle animation doesn't activate during "uninterrupted" movement.
 
         private GameObject cameraObject;	 
 		
@@ -58,11 +73,17 @@ namespace UnityChan
 
         void Update() {
 
-            //double tap to run
+            /*
+             double tap to run:
+                if button is pressed take note of it, and if it is pressed twice then activate run.
+
+            KEEP IN UPDATE - IT DOESN'T WORK IN FIXED UPDATE BECAUSE UPDATE AND FIXEDUPDATE RUN AT DIFFERENT INTERVALS
+             */
+            
             if (Input.GetKeyDown(KeyCode.D))
             {
-                dPressed += 1;
-                if (dPressed > 1)
+                buttonPresses += 1;
+                if (buttonPresses > 1)
                 {
                     Run = 1.0f;
                     Debug.Log("Double tap");
@@ -73,35 +94,41 @@ namespace UnityChan
 	
 		void FixedUpdate ()
 		{
-          
-			float v = Input.GetAxisRaw ("Vertical");
-            float direction = rb.transform.localEulerAngles.y;
-            //Debug.Log(direction);
+            /*     direction == 0 : no buttons pressed. 
+                   direction > 0.1 : pressed button to go right. 
+                   direction < -0.1 : pressed button to go left
+            */
 
-            anim.SetFloat ("Speed", v);							 
+            float movementDirection = Input.GetAxisRaw("Vertical");
+            float playerDirection = rb.transform.localEulerAngles.y;
+ 
+            //Debug.Log(playerDirection);
+
+            anim.SetFloat ("Speed", movementDirection);							 
             anim.SetBool("Movement", movement);
             anim.SetFloat("Run", Run);
-            anim.SetFloat("Direction", direction);
+            anim.SetFloat("Direction", playerDirection);
 
             anim.speed = animSpeed;								  
 			currentBaseState = anim.GetCurrentAnimatorStateInfo (0);	   
 			rb.useGravity = true;
 
+            //double tap to run: if key up for D it'll set the button presses to 0 after the preset delay.
             if (Input.GetKeyUp(KeyCode.D))
             {
-                Invoke("SetDPressedToZero", tapDelay);
+                Invoke("SetButtonPressesToZero", tapDelay);
                 Run = 0f;
             }
       
-            
-            if (v > 0.1) {
-                if (direction == 265){
+            //depending on movement direction and player direction, different force applied.
+            if (movementDirection > 0.1) {
+                if (playerDirection == facingRight){
                         moveRight();
                 } else {
                         moveLeft();
                 }
-            } else if (v < -0.1){
-                if (direction == 265)
+            } else if (movementDirection < -0.1){
+                if (playerDirection == facingRight)
                 {
                     moveLeft();
                 }
@@ -109,11 +136,23 @@ namespace UnityChan
                     moveRight();
                 }
             }
-            else if (v == 0)
+            
+            //for animations: if a movement key isnt pressed in .02 seconds then the player is idle and movement animations are stopped
+            //character would return to idle state animation if a key wasn't pressed which made the animation from forward to backward clunky.
+
+            if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.A))
             {
-                movement = false;
+                movementDelay = 0f;
             }
-         
+            else
+            {
+                movementDelay += .01f;
+                if (movementDelay > .02f)
+                {
+                    movement = false;
+                }
+            }
+
             if (Input.GetButtonDown ("Jump")) {	 
 				if (currentBaseState.nameHash != jumpState) {
 					if (!anim.IsInTransition (0)) {
@@ -129,13 +168,14 @@ namespace UnityChan
 				}
 			}
 		else if (currentBaseState.nameHash == jumpState) {
-				cameraObject.SendMessage ("setCameraPositionJumpView");	 
+                anim.SetBool("Movement", false);
+                
 				if (!anim.IsInTransition (0)) {		
 					if (useCurves) {
 						float jumpHeight = anim.GetFloat ("JumpHeight");
 						float gravityControl = anim.GetFloat ("GravityControl"); 
-						if (gravityControl > 0)
-							rb.useGravity = false;	
+						//if (gravityControl > 0)
+							//rb.useGravity = false;	
 										
 						Ray ray = new Ray (transform.position + Vector3.up, -Vector3.up);
 						RaycastHit hitInfo = new RaycastHit ();
@@ -173,10 +213,11 @@ namespace UnityChan
 			col.center = orgVectColCenter;
 		}
 
-        void SetDPressedToZero ()
+        void SetButtonPressesToZero ()
         {
-            dPressed = 0;
+            buttonPresses = 0;
         }
+
         void moveRight()
         {
             if (Run > 0)
@@ -187,6 +228,7 @@ namespace UnityChan
             {
                 rb.velocity = transform.forward * walkingSpeed;
             }
+
             movement = true;
         }
 
@@ -194,6 +236,8 @@ namespace UnityChan
             rb.velocity = -(transform.forward * walkingSpeed);
             movement = true;
         }
+
+     
 
     }
 }
