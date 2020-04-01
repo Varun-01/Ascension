@@ -6,8 +6,8 @@ public class Flip : MonoBehaviour
 {
     private Transform f1;
     private Transform f2;
-    public string fighter1;
-    public string fighter2;
+    public string fighter1 = "Player1";
+    public string fighter2 = "Player2";
     float fp1;
     float fp2;
     float timeToGo;
@@ -24,22 +24,22 @@ public class Flip : MonoBehaviour
         {
             //player 1
             Vector3 temp = transform.rotation.eulerAngles;
-            temp.y = -90.0f;
+            temp.y = -95.0f;
             f1.transform.rotation = Quaternion.Euler(temp);
             //player 2
             Vector3 temp2 = transform.rotation.eulerAngles;
-            temp2.y = 90.0f;
+            temp2.y = 95.0f;
             f2.transform.rotation = Quaternion.Euler(temp2);
         }
         else 
         {
             //player 1
             Vector3 temp = transform.rotation.eulerAngles;
-            temp.y = 90.0f;
+            temp.y = 95.0f;
             f1.transform.rotation = Quaternion.Euler(temp);
             //player 2
             Vector3 temp2 = transform.rotation.eulerAngles;
-            temp2.y = -90.0f;
+            temp2.y = -95.0f;
             f2.transform.rotation = Quaternion.Euler(temp2);
         }
         timeToGo = Time.fixedTime + 60.0f;

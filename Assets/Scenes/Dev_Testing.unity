@@ -132,9 +132,13 @@ PrefabInstance:
       propertyPath: m_Name
       value: unitychan_dynamic (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 100338, guid: 49f2055d53eeb4e5a92af590a44bddee, type: 3}
+      propertyPath: m_TagString
+      value: Player1
+      objectReference: {fileID: 0}
     - target: {fileID: 400328, guid: 49f2055d53eeb4e5a92af590a44bddee, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 3.16
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 400328, guid: 49f2055d53eeb4e5a92af590a44bddee, type: 3}
       propertyPath: m_LocalPosition.y
@@ -474,9 +478,13 @@ PrefabInstance:
       propertyPath: m_Name
       value: unitychan_dynamic (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 100338, guid: 49f2055d53eeb4e5a92af590a44bddee, type: 3}
+      propertyPath: m_TagString
+      value: Player2
+      objectReference: {fileID: 0}
     - target: {fileID: 400328, guid: 49f2055d53eeb4e5a92af590a44bddee, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.61
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 400328, guid: 49f2055d53eeb4e5a92af590a44bddee, type: 3}
       propertyPath: m_LocalPosition.y
@@ -630,6 +638,8 @@ GameObject:
   - component: {fileID: 1458253040}
   - component: {fileID: 1458253039}
   - component: {fileID: 1458253038}
+  - component: {fileID: 1458253042}
+  - component: {fileID: 1458253041}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -702,3 +712,33 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: -183.04099, z: 0}
+--- !u!114 &1458253041
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1458253037}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 03cab9b0e64e2f34faf16b781da890a2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fighter1: Player1
+  fighter2: Player2
+--- !u!114 &1458253042
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1458253037}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fb485c178fab15844a59c542481f5f77, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  margin: 2
+  z0: 2
+  fighter1: Player1
+  fighter2: Player2
