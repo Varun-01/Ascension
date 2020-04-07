@@ -13,8 +13,8 @@ public class FighterCamera : MonoBehaviour
     private Transform f2; // fighter2 transform
     private float xL; // left screen X coordinate
     private float xR; // right screen X coordinate
-    public string fighter1;
-    public string fighter2;
+    public string fighter1 = "Player1";
+    public string fighter2 = "Player2";
 
     void calcScreen(Transform p1, Transform p2)
     {
