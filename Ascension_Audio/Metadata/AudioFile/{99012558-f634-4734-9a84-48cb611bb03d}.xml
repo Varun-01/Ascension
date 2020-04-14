@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.01.00">
+	<object class="AudioFile" id="{99012558-f634-4734-9a84-48cb611bb03d}">
+		<property name="assetPath">
+			<value>Smash Bus02 - Smash bus.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>8.7314739229024951</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{393f0282-03e2-4e40-aa58-0f00c7a9bc28}</destination>
+		</relationship>
+	</object>
+</objects>

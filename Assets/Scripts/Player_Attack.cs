@@ -11,6 +11,7 @@ public class Player_Attack : MonoBehaviour
     private Vector3 orgVectColCenter;
     private Animator anim;
     private AnimatorStateInfo currentBaseState;
+    public Collider[] attackboxes;
 
     void Start()
     {
@@ -26,18 +27,30 @@ public class Player_Attack : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.U)) {
             anim.SetTrigger("LightPunch");
-        } else if (Input.GetKeyDown(KeyCode.I))
-            {
-                anim.SetTrigger("HeavyPunch");
-            }
+            LaunchAttack(attackboxes[0]);
+        } 
+        else if (Input.GetKeyDown(KeyCode.I))
+        {
+            anim.SetTrigger("HeavyPunch");
+            LaunchAttack(attackboxes[0]);
+        }
         else if (Input.GetKeyDown(KeyCode.O))
         {
             anim.SetTrigger("LightKick");
+            LaunchAttack(attackboxes[1]);
         }
         else if (Input.GetKeyDown(KeyCode.P))
         {
             anim.SetTrigger("HeavyKick");
+            LaunchAttack(attackboxes[2]);
         }
-
+    }
+    private void LaunchAttack(Collider col)
+    {
+        Collider[] cols = Physics.OverlapBox(col.bounds.center, col.bounds.extents, col.transform.rotation, LayerMask.GetMask("HitBox"));
+        foreach (Collider c in cols)
+        {
+            Debug.Log(c.name);           
+        }
     }
 }
