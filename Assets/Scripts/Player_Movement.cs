@@ -1,11 +1,5 @@
 ﻿/*
  Player_Movement: Script enabling character control.
- Notes:
-    - fi
- 
- 
- 
- 
  */
 
 using UnityEngine;
@@ -236,8 +230,6 @@ namespace UnityChan
             rb.velocity = -(transform.forward * walkingSpeed);
             movement = true;
         }
-
-     
 
     }
 }
