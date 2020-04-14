@@ -35,7 +35,7 @@ MonoBehaviour:
   lastModified: 637223951460000000
   LoadResult: 0
   FileSizes: []
-  Exists: 1
+  Exists: 0
 --- !u!114 &-5067977578442903702
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -54,6 +54,24 @@ MonoBehaviour:
   LoadResult: 0
   FileSizes: []
   Exists: 1
+--- !u!114 &-4938672039389071255
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: 
+  Path: Ascension_Audio/Build/Desktop/Master.bank
+  SubDir: 
+  lastModified: 637225333610000000
+  LoadResult: 0
+  FileSizes: []
+  Exists: 1
 --- !u!114 &-4178967235280233771
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -69,14 +87,15 @@ MonoBehaviour:
   Path: event:/Test Music Loop
   guid: 4c6c49e79b362940be095b6e395b52f0
   Banks:
-  - {fileID: -5222286716560856873}
-  IsStream: 0
+  - {fileID: -4938672039389071255}
+  IsStream: 1
   Is3D: 0
   IsOneShot: 0
-  Parameters: []
+  Parameters:
+  - {fileID: -58739786142179799}
   MinDistance: 0
   MaxDistance: 0
-  Length: 9600
+  Length: 22841
 --- !u!114 &-2930950269035960503
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -109,11 +128,28 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: Ascension_Audio/Build/Desktop/Master.strings.bank
   SubDir: 
-  lastModified: 637223951460000000
+  lastModified: 637225333610000000
   LoadResult: 0
   FileSizes:
   - Name: Desktop
-    Value: 752
+    Value: 848
+  Exists: 1
+--- !u!114 &-58739786142179799
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Test Music Loop/Testing
+  m_EditorClassIdentifier: 
+  Name: Testing
+  Min: 0
+  Max: 1
+  Default: 0
   Exists: 1
 --- !u!114 &11400000
 MonoBehaviour:
@@ -129,15 +165,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EditorBanks:
   - {fileID: -936262274268359903}
-  - {fileID: -5222286716560856873}
+  - {fileID: -4938672039389071255}
   EditorEvents:
   - {fileID: -4178967235280233771}
+  - {fileID: 2926756221715509530}
   EditorParameters: []
   MasterBanks:
-  - {fileID: -5222286716560856873}
+  - {fileID: -4938672039389071255}
   StringsBanks:
   - {fileID: -936262274268359903}
-  stringsBankWriteTime: 637223951460000000
+  stringsBankWriteTime: 637225333610000000
   cacheVersion: 3
 --- !u!114 &1843315105263497019
 MonoBehaviour:
@@ -157,6 +194,29 @@ MonoBehaviour:
   LoadResult: 0
   FileSizes: []
   Exists: 1
+--- !u!114 &2926756221715509530
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Test SFX
+  m_EditorClassIdentifier: 
+  Path: event:/Test SFX
+  guid: 6fc431d96def084cbeb290af2a053639
+  Banks:
+  - {fileID: -4938672039389071255}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 1000
 --- !u!114 &6162366814062447933
 MonoBehaviour:
   m_ObjectHideFlags: 0

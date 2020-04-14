@@ -176,7 +176,9 @@ MonoBehaviour:
   AllowFadeout: 1
   TriggerOnce: 0
   Preload: 0
-  Params: []
+  Params:
+  - Name: Testing
+    Value: 0
   OverrideAttenuation: 0
   OverrideMinDistance: 0
   OverrideMaxDistance: 0
@@ -612,6 +614,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e2319bf3f9ca9cd4094a7be0cbc85486, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  attackboxes: []
 --- !u!114 &620940781
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1270,6 +1273,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e2319bf3f9ca9cd4094a7be0cbc85486, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  attackboxes: []
 --- !u!136 &1201076031
 CapsuleCollider:
   m_ObjectHideFlags: 0
