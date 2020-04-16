@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.01.00">
 	<object class="AudioFile" id="{99012558-f634-4734-9a84-48cb611bb03d}">
 		<property name="assetPath">
-			<value>Smash Bus02 - Smash bus.wav</value>
+			<value>Test Audio/Smash Bus02 - Smash bus.wav</value>
 		</property>
 		<property name="frequencyInKHz">
 			<value>44.0999985</value>

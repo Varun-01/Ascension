@@ -1,17 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <objects serializationModel="Studio.02.01.00">
-	<object class="ParameterPreset" id="{cff5d824-519e-4924-aa66-8bdeb68d219b}">
+	<object class="ParameterPreset" id="{5071bc76-d806-4681-9100-912147688b4a}">
 		<property name="name">
-			<value>Round_Test</value>
+			<value>Combo</value>
 		</property>
 		<relationship name="folder">
 			<destination>{72a2898d-5af9-4c9f-90dc-0f20b9997e72}</destination>
 		</relationship>
 		<relationship name="parameter">
-			<destination>{e2978403-269f-4dc3-8a91-16d5a0962c63}</destination>
+			<destination>{b941a3e3-3723-4fde-8041-58aa0dbb7b94}</destination>
 		</relationship>
 	</object>
-	<object class="GameParameter" id="{e2978403-269f-4dc3-8a91-16d5a0962c63}">
+	<object class="GameParameter" id="{b941a3e3-3723-4fde-8041-58aa0dbb7b94}">
+		<property name="maximum">
+			<value>3</value>
+		</property>
 		<property name="initialValue">
 			<value>0</value>
 		</property>

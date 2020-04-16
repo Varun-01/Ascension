@@ -2,13 +2,13 @@
 <objects serializationModel="Studio.02.01.00">
 	<object class="Event" id="{e7496c4c-369b-4029-be09-5b6e395b52f0}">
 		<property name="name">
-			<value>Test Music Loop</value>
+			<value>Test_Music_Loop</value>
 		</property>
 		<property name="outputFormat">
 			<value>1</value>
 		</property>
 		<relationship name="folder">
-			<destination>{4fcd423e-5076-4a1c-ba04-4b799ee39c7f}</destination>
+			<destination>{2a4cbed2-5218-46c1-b4d6-5bcb32cafe32}</destination>
 		</relationship>
 		<relationship name="mixer">
 			<destination>{b5a9ec75-f423-4396-906c-141f0595b678}</destination>
@@ -193,7 +193,7 @@
 			<value>9.6000226757369607</value>
 		</property>
 		<property name="name">
-			<value>A</value>
+			<value>Round 1</value>
 		</property>
 		<property name="looping">
 			<value>0</value>
@@ -213,7 +213,7 @@
 			<value>13.241383219954646</value>
 		</property>
 		<property name="name">
-			<value>B</value>
+			<value>Round 2</value>
 		</property>
 		<property name="looping">
 			<value>0</value>

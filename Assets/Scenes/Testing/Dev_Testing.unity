@@ -451,7 +451,7 @@ MonoBehaviour:
   LoadEvent: 0
   UnloadEvent: 0
   Banks:
-  - Master
+  - Test Master
   CollisionTag: 
   PreloadSamples: 0
 --- !u!114 &1436234401

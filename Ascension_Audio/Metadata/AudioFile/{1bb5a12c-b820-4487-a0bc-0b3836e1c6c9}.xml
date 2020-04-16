@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <objects serializationModel="Studio.02.01.00">
-	<object class="AudioFile" id="{2c25403f-7a8c-4151-8451-ab97ecbb8516}">
+	<object class="AudioFile" id="{1bb5a12c-b820-4487-a0bc-0b3836e1c6c9}">
 		<property name="assetPath">
-			<value>Test Audio/Test loop - Stereo Out.wav</value>
+			<value>Test Audio/2_two_hi.wav</value>
 		</property>
 		<property name="frequencyInKHz">
-			<value>44.0999985</value>
+			<value>48</value>
 		</property>
 		<property name="channelCount">
-			<value>2</value>
+			<value>1</value>
 		</property>
 		<property name="length">
-			<value>9.6000226757369607</value>
+			<value>0.61527083333333332</value>
 		</property>
 		<relationship name="masterAssetFolder">
 			<destination>{393f0282-03e2-4e40-aa58-0f00c7a9bc28}</destination>
