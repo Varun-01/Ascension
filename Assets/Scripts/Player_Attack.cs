@@ -28,22 +28,28 @@ public class Player_Attack : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.U))
         {
-            LaunchAttack(attackboxes[0], "LightPunch");
+            //LaunchAttack(attackboxes[0], "LightPunch");
+            anim.SetTrigger("LightPunch");
         }
         else if (Input.GetKeyDown(KeyCode.I))
         {
-            LaunchAttack(attackboxes[0], "HeavyPunch");
+            //LaunchAttack(attackboxes[0], "HeavyPunch");
+            anim.SetTrigger("HeavyPunch");
         }
         else if (Input.GetKeyDown(KeyCode.O))
         {
-            LaunchAttack(attackboxes[1], "LightKick");
+            //LaunchAttack(attackboxes[1], "LightKick");
+            anim.SetTrigger("LightKick");
         }
         else if (Input.GetKeyDown(KeyCode.P))
         {
-            LaunchAttack(attackboxes[2], "HeavyKick");
+            //LaunchAttack(attackboxes[2], "HeavyKick");
+            anim.SetTrigger("HeavyKick");
         }
 
     }
+
+    /*
     private void LaunchAttack(Collider col, string attackname)
     {
         // Launch the animation for the attack
@@ -60,5 +66,5 @@ public class Player_Attack : MonoBehaviour
                 }
             }
             // Determine the damage
-        }
+        }*/
     }
