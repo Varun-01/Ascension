@@ -2,13 +2,13 @@
 <objects serializationModel="Studio.02.01.00">
 	<object class="Event" id="{d931c46f-ef6d-4c08-beb2-90af2a053639}">
 		<property name="name">
-			<value>Test SFX</value>
+			<value>Test_SFX</value>
 		</property>
 		<property name="outputFormat">
 			<value>1</value>
 		</property>
 		<relationship name="folder">
-			<destination>{4fcd423e-5076-4a1c-ba04-4b799ee39c7f}</destination>
+			<destination>{2a4cbed2-5218-46c1-b4d6-5bcb32cafe32}</destination>
 		</relationship>
 		<relationship name="mixer">
 			<destination>{d2955f0a-7925-4280-a1b6-f2e1e4eae9fa}</destination>
