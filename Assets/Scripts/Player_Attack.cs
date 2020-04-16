@@ -11,6 +11,7 @@ public class Player_Attack : MonoBehaviour
     private Vector3 orgVectColCenter;
     private Animator anim;
     private AnimatorStateInfo currentBaseState;
+    
     public Collider[] attackboxes;
 
     void Start()
@@ -26,31 +27,36 @@ public class Player_Attack : MonoBehaviour
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.U)) {
-            anim.SetTrigger("LightPunch");
-            LaunchAttack(attackboxes[0]);
+            LaunchAttack(attackboxes[0], "LightPunch");
         } 
         else if (Input.GetKeyDown(KeyCode.I))
         {
-            anim.SetTrigger("HeavyPunch");
-            LaunchAttack(attackboxes[0]);
+            LaunchAttack(attackboxes[0], "HeavyPunch");
         }
         else if (Input.GetKeyDown(KeyCode.O))
         {
-            anim.SetTrigger("LightKick");
-            LaunchAttack(attackboxes[1]);
+            LaunchAttack(attackboxes[1], "LightKick");
         }
         else if (Input.GetKeyDown(KeyCode.P))
         {
-            anim.SetTrigger("HeavyKick");
-            LaunchAttack(attackboxes[2]);
+            LaunchAttack(attackboxes[2], "HeavyKick");
         }
+
     }
-    private void LaunchAttack(Collider col)
+    private void LaunchAttack(Collider col, string attackname)
     {
-        Collider[] cols = Physics.OverlapBox(col.bounds.center, col.bounds.extents, col.transform.rotation, LayerMask.GetMask("HitBox"));
+        // Launch the animation for the attack
+        anim.SetTrigger(attackname);
+        // Determine what came in contact with the attack
+        Collider[] cols = Physics.OverlapBox(col.bounds.center, col.bounds.extents, col.transform.rotation, LayerMask.GetMask("Hurtbox"), QueryTriggerInteraction.Collide);
         foreach (Collider c in cols)
         {
-            Debug.Log(c.name);           
+            if (c.transform.root.name == transform.root.name)
+            {
+                continue;
+            }
+            Debug.Log(c.name);
         }
+        // Determine the damage
     }
 }
