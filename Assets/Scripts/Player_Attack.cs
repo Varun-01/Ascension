@@ -4,14 +4,14 @@ using UnityEngine;
 
 public class Player_Attack : MonoBehaviour
 {
-   
+
     private CapsuleCollider col;
     private Rigidbody rb;
     private float orgColHight;
     private Vector3 orgVectColCenter;
     private Animator anim;
     private AnimatorStateInfo currentBaseState;
-    
+
     public Collider[] attackboxes;
 
     void Start()
@@ -26,9 +26,10 @@ public class Player_Attack : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.U)) {
+        if (Input.GetKeyDown(KeyCode.U))
+        {
             LaunchAttack(attackboxes[0], "LightPunch");
-        } 
+        }
         else if (Input.GetKeyDown(KeyCode.I))
         {
             LaunchAttack(attackboxes[0], "HeavyPunch");
@@ -49,14 +50,15 @@ public class Player_Attack : MonoBehaviour
         anim.SetTrigger(attackname);
         // Determine what came in contact with the attack
         Collider[] cols = Physics.OverlapBox(col.bounds.center, col.bounds.extents, col.transform.rotation, LayerMask.GetMask("Hurtbox"), QueryTriggerInteraction.Collide);
+
         foreach (Collider c in cols)
-        {
-            if (c.transform.root.name == transform.root.name)
             {
-                continue;
+                if (c.transform.root.name != transform.root.name)
+                {
+                    Debug.Log(c.name);
+                    Debug.Log(c.transform.root.name);
+                }
             }
-            Debug.Log(c.name);
+            // Determine the damage
         }
-        // Determine the damage
     }
-}
