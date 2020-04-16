@@ -282,7 +282,7 @@ GameObject:
   - component: {fileID: 370951527}
   - component: {fileID: 370951526}
   m_Layer: 0
-  m_Name: Right arm
+  m_Name: Right arm Hurtbox
   m_TagString: Player1
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -438,7 +438,7 @@ GameObject:
   - component: {fileID: 424320343}
   - component: {fileID: 424320342}
   m_Layer: 8
-  m_Name: Right leg
+  m_Name: Right leg Hurtbox
   m_TagString: Player1
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -933,7 +933,7 @@ GameObject:
   - component: {fileID: 758411708}
   - component: {fileID: 758411707}
   m_Layer: 0
-  m_Name: Left arm
+  m_Name: Left arm Hurtbox
   m_TagString: Player1
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1204,6 +1204,8 @@ MonoBehaviour:
   - {fileID: 829577991}
   - {fileID: 1557117353}
   - {fileID: 790024769}
+  hit: 0
+  hit_damage: 0
 --- !u!136 &807968197
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -1826,7 +1828,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 100338, guid: 49f2055d53eeb4e5a92af590a44bddee, type: 3}
       propertyPath: m_Name
-      value: unitychan_dynamic (2)
+      value: Hannah
       objectReference: {fileID: 0}
     - target: {fileID: 100338, guid: 49f2055d53eeb4e5a92af590a44bddee, type: 3}
       propertyPath: m_TagString
@@ -2159,7 +2161,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 100338, guid: 49f2055d53eeb4e5a92af590a44bddee, type: 3}
       propertyPath: m_Name
-      value: unitychan_dynamic (1)
+      value: Tessa
       objectReference: {fileID: 0}
     - target: {fileID: 100338, guid: 49f2055d53eeb4e5a92af590a44bddee, type: 3}
       propertyPath: m_TagString
@@ -2450,7 +2452,7 @@ GameObject:
   - component: {fileID: 1355249985}
   - component: {fileID: 1355249984}
   m_Layer: 8
-  m_Name: Right leg
+  m_Name: Right leg Hurtbox
   m_TagString: Player1
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3138,7 +3140,7 @@ GameObject:
   - component: {fileID: 1623329413}
   - component: {fileID: 1623329412}
   m_Layer: 8
-  m_Name: Left leg
+  m_Name: Left leg Hurtbox
   m_TagString: Player1
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3390,6 +3392,8 @@ MonoBehaviour:
   - {fileID: 715994103}
   - {fileID: 517467146}
   - {fileID: 1483279061}
+  hit: 0
+  hit_damage: 0
 --- !u!114 &1875190899
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3641,7 +3645,7 @@ GameObject:
   - component: {fileID: 2079450350}
   - component: {fileID: 2079450349}
   m_Layer: 8
-  m_Name: Left leg
+  m_Name: Left leg Hurtbox
   m_TagString: Player1
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
