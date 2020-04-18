@@ -2,8 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class Collider_Behavior : MonoBehaviour
 {
+    public float damage;
     void Start()
     {
 
@@ -15,17 +17,20 @@ public class Collider_Behavior : MonoBehaviour
 
     void OnTriggerEnter(Collider collision)
     {
-        if (collision.gameObject.tag !="ground")
+        if (collision.gameObject.tag =="Hurtbox")
         {
-            Collider[] cols = Physics.OverlapBox(collision.bounds.center, collision.bounds.extents, collision.transform.rotation, LayerMask.GetMask("Hurtbox"), QueryTriggerInteraction.Collide);
-
-            foreach (Collider c in cols)
-                {
-                    if (c.transform.root.name != transform.root.name)
-                    {
-                        Debug.Log(c.name);
-                    }
-                }
+            if (collision.gameObject.name == "Head")
+            {
+                Debug.Log("Head-Shot!");
+                damage = 20;
+                Debug.Log(damage);
+            }
+            else if (collision.gameObject.name == "Torso")
+            {
+                Debug.Log("Body-Shot!");
+                damage = 15;
+                Debug.Log(damage);
+            }
         }
     }
 }
