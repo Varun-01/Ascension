@@ -48,6 +48,7 @@ class Testing_SFX : MonoBehaviour
     FMOD.Studio.EventInstance playerState;
 
 
+
     //--------------------------------------------------------------------
     // 3: These two events represent one shot sounds. They are sounds that 
     //    have a finite length. We do not store an EventInstance to
@@ -176,7 +177,7 @@ class Testing_SFX : MonoBehaviour
                 SendMessage("PlayerIntroFinished");
             }
         }
-        TakeDamage();
+        //TakeDamage();
     }
 
     void TakeDamage()

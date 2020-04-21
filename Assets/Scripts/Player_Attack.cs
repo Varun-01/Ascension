@@ -16,8 +16,19 @@ public class Player_Attack : MonoBehaviour
     public bool hit = false;
     public float hit_damage;
 
+    [FMODUnity.EventRef]
+    public string PlayerStateEvent = "";
+    FMOD.Studio.EventInstance playerState;
+
+    [FMODUnity.EventRef]
+    public string PreAttackEvent = "";
+    [FMODUnity.EventRef]
+    public string AttackEvent = "";
+
     void Start()
     {
+        playerState = FMODUnity.RuntimeManager.CreateInstance(PlayerStateEvent);
+        playerState.start();
         anim = GetComponent<Animator>();
         col = GetComponent<CapsuleCollider>();
         rb = GetComponent<Rigidbody>();
@@ -32,23 +43,32 @@ public class Player_Attack : MonoBehaviour
         {
             //LaunchAttack(attackboxes[0], "LightPunch");
             anim.SetTrigger("LightPunch");
+            attackSound();
+
         }
         else if (Input.GetKeyDown(KeyCode.I))
         {
             //LaunchAttack(attackboxes[0], "HeavyPunch");
             anim.SetTrigger("HeavyPunch");
+            attackSound();
         }
         else if (Input.GetKeyDown(KeyCode.O))
         {
             //LaunchAttack(attackboxes[1], "LightKick");
             anim.SetTrigger("LightKick");
+            attackSound();
         }
         else if (Input.GetKeyDown(KeyCode.P))
         {
             //LaunchAttack(attackboxes[2], "HeavyKick");
             anim.SetTrigger("HeavyKick");
+            attackSound();
         }
 
+    }
+
+    void attackSound() {
+        FMODUnity.RuntimeManager.PlayOneShot(PreAttackEvent, transform.position);
     }
 
     /*
