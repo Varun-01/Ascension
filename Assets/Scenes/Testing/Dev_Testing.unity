@@ -343,6 +343,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attackboxes: []
+  hit: 0
+  hit_damage: 0
+  PlayerStateEvent: 
+  PreAttackEvent: 
+  AttackEvent: 
 --- !u!114 &1099920868
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -432,7 +437,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PlayerStateEvent: 
-  DamageEvent: event:/Test SFX
+  DamageEvent: 
   HealEvent: 
   PlayerIntroEvent: 
   StartingHealth: 100
@@ -816,6 +821,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attackboxes: []
+  hit: 0
+  hit_damage: 0
+  PlayerStateEvent: event:/Test_Events/Test_Music_Loop
+  PreAttackEvent: event:/Test_Events/Light_Punch_Test
+  AttackEvent: 
 --- !u!114 &1868419443
 MonoBehaviour:
   m_ObjectHideFlags: 0
