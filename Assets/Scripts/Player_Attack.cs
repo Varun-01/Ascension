@@ -4,17 +4,17 @@ using UnityEngine;
 
 public class Player_Attack : MonoBehaviour
 {
-
     private CapsuleCollider col;
     private Rigidbody rb;
     private float orgColHight;
     private Vector3 orgVectColCenter;
     private Animator anim;
     private AnimatorStateInfo currentBaseState;
+    public string characterName;
+    public string playerTag;
+    public Player_Manager playerManager;
 
-    public Collider[] attackboxes;
-    public bool hit = false;
-    public float hit_damage;
+    Dictionary<string, int> attackValueTable = new Dictionary<string, int>();
 
     [FMODUnity.EventRef]
     public string PlayerStateEvent = "";
@@ -27,6 +27,8 @@ public class Player_Attack : MonoBehaviour
 
     void Start()
     {
+        playerManager = gameObject.GetComponent<Player_Manager>();
+
         playerState = FMODUnity.RuntimeManager.CreateInstance(PlayerStateEvent);
         playerState.start();
         anim = GetComponent<Animator>();
@@ -34,6 +36,7 @@ public class Player_Attack : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         orgColHight = col.height;
         orgVectColCenter = col.center;
+
     }
 
     // Update is called once per frame
@@ -41,52 +44,51 @@ public class Player_Attack : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.U))
         {
-            //LaunchAttack(attackboxes[0], "LightPunch");
-            anim.SetTrigger("LightPunch");
-            attackSound();
-
+            launchAttack("LightPunch");
         }
         else if (Input.GetKeyDown(KeyCode.I))
         {
-            //LaunchAttack(attackboxes[0], "HeavyPunch");
-            anim.SetTrigger("HeavyPunch");
-            attackSound();
+            launchAttack("HeavyPunch");
         }
         else if (Input.GetKeyDown(KeyCode.O))
         {
-            //LaunchAttack(attackboxes[1], "LightKick");
-            anim.SetTrigger("LightKick");
-            attackSound();
+            launchAttack("LightKick");
         }
         else if (Input.GetKeyDown(KeyCode.P))
         {
-            //LaunchAttack(attackboxes[2], "HeavyKick");
-            anim.SetTrigger("HeavyKick");
-            attackSound();
+            launchAttack("HeavyKick");
         }
-
     }
 
-    void attackSound() {
+
+    void initAttackValueTable()
+    {
+        //attackValueTable.Add("animation", 0);
+        attackValueTable.Add("LightPunch", 2);
+        attackValueTable.Add("LightKick", 2);
+        attackValueTable.Add("HeavyPunch", 5);
+        attackValueTable.Add("HeavyKick", 5);
+    }
+
+    public int getAttackValue(string attackName)
+    {
+        if (!attackValueTable.ContainsKey(attackName))
+        {
+            return 0;
+        }
+        return attackValueTable[attackName];
+    }
+
+    public void launchAttack(string attackName)
+    {
+        anim.SetTrigger(attackName);
+        attackSound(attackName);
+        int damage = getAttackValue(attackName);
+        playerManager.GiveDamage(damage);
+    }
+
+    void attackSound(string attackName)
+    {
         FMODUnity.RuntimeManager.PlayOneShot(PreAttackEvent, transform.position);
     }
-
-    /*
-    private void LaunchAttack(Collider col, string attackname)
-    {
-        // Launch the animation for the attack
-        anim.SetTrigger(attackname);
-        // Determine what came in contact with the attack
-        Collider[] cols = Physics.OverlapBox(col.bounds.center, col.bounds.extents, col.transform.rotation, LayerMask.GetMask("Hurtbox"), QueryTriggerInteraction.Collide);
-
-        foreach (Collider c in cols)
-            {
-                if (c.transform.root.name != transform.root.name)
-                {
-                    Debug.Log(c.name);
-                    Debug.Log(c.transform.root.name);
-                }
-            }
-            // Determine the damage
-        }*/
-    }
+}
