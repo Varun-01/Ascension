@@ -1,177 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &-8667882729389781643
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/Heavy_Kick_Test/Combo
-  m_EditorClassIdentifier: 
-  Name: Combo
-  Min: 0
-  Max: 3
-  Default: 0
-  Exists: 1
---- !u!114 &-8295315490204543321
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: bank:/Test Master.bank
-  m_EditorClassIdentifier: 
-  Path: Ascension_Audio/Build/Desktop/Test Master.bank
-  SubDir: 
-  lastModified: 637227641010000000
-  LoadResult: 0
-  FileSizes: []
-  Exists: 1
---- !u!114 &-8007597097159490671
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: bank:/Beta Master.bank
-  m_EditorClassIdentifier: 
-  Path: Ascension_Audio/Build/Desktop/Beta Master.bank
-  SubDir: 
-  lastModified: 637227640990000000
-  LoadResult: 0
-  FileSizes: []
-  Exists: 1
---- !u!114 &-6326345058076237626
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Test_Events/Heavy_Kick_Test
-  m_EditorClassIdentifier: 
-  Path: event:/Test_Events/Heavy_Kick_Test
-  guid: 6121a8ee52ef7d4ab0b769f2ac0aff89
-  Banks:
-  - {fileID: -8295315490204543321}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 0
-  Parameters:
-  - {fileID: -8667882729389781643}
-  MinDistance: 0
-  MaxDistance: 0
-  Length: 15000
---- !u!114 &-5432506669141561288
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/Heavy_Punch_Test/Combo
-  m_EditorClassIdentifier: 
-  Name: Combo
-  Min: 0
-  Max: 3
-  Default: 0
-  Exists: 1
---- !u!114 &-3127051863219923139
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Test_Events/Heavy_Punch_Test
-  m_EditorClassIdentifier: 
-  Path: event:/Test_Events/Heavy_Punch_Test
-  guid: ef2f728e5eff0249b62be40c26f62b72
-  Banks:
-  - {fileID: -8295315490204543321}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 0
-  Parameters:
-  - {fileID: -5432506669141561288}
-  MinDistance: 0
-  MaxDistance: 0
-  Length: 15000
---- !u!114 &-2211559583895265140
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Test_Events/Test_SFX
-  m_EditorClassIdentifier: 
-  Path: event:/Test_Events/Test_SFX
-  guid: 6fc431d96def084cbeb290af2a053639
-  Banks:
-  - {fileID: -8295315490204543321}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 0
-  MaxDistance: 0
-  Length: 1000
---- !u!114 &11400000
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d32cf7c32a3ed8347bac48ef5ed56d82, type: 3}
-  m_Name: FMODStudioCache
-  m_EditorClassIdentifier: 
-  EditorBanks:
-  - {fileID: 5491178792837200206}
-  - {fileID: -8007597097159490671}
-  - {fileID: -8295315490204543321}
-  EditorEvents:
-  - {fileID: 4279167188872553592}
-  - {fileID: -6326345058076237626}
-  - {fileID: -2211559583895265140}
-  - {fileID: 282753809677464260}
-  - {fileID: 2816689483124369955}
-  - {fileID: -3127051863219923139}
-  EditorParameters: []
-  MasterBanks:
-  - {fileID: -8295315490204543321}
-  StringsBanks:
-  - {fileID: 5491178792837200206}
-  stringsBankWriteTime: 637227640990000000
-  cacheVersion: 3
---- !u!114 &282753809677464260
+--- !u!114 &-9187254050099581811
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -186,33 +15,16 @@ MonoBehaviour:
   Path: event:/Test_Events/Light_Kick_Test
   guid: 7243109d2c705245b0f5a386f6f5acd2
   Banks:
-  - {fileID: -8295315490204543321}
+  - {fileID: 901579743062797055}
   IsStream: 0
   Is3D: 0
   IsOneShot: 0
   Parameters:
-  - {fileID: 1822350405539229203}
+  - {fileID: -2889820701117240451}
   MinDistance: 0
   MaxDistance: 0
   Length: 15000
---- !u!114 &1822350405539229203
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/Light_Kick_Test/Combo
-  m_EditorClassIdentifier: 
-  Name: Combo
-  Min: 0
-  Max: 3
-  Default: 0
-  Exists: 1
---- !u!114 &2816689483124369955
+--- !u!114 &-9049331040616896838
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -227,16 +39,16 @@ MonoBehaviour:
   Path: event:/Test_Events/Light_Punch_Test
   guid: cd337eb7296c49489fc3d143e89b5171
   Banks:
-  - {fileID: -8295315490204543321}
+  - {fileID: 901579743062797055}
   IsStream: 0
   Is3D: 0
   IsOneShot: 0
   Parameters:
-  - {fileID: 9202959234486151895}
+  - {fileID: 1083576970217302668}
   MinDistance: 0
   MaxDistance: 0
   Length: 15000
---- !u!114 &4279167188872553592
+--- !u!114 &-4202013801905771607
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -246,21 +58,21 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Test_Events/Test_Music_Loop
+  m_Name: event:/Test_Events/Heavy_Punch_Test
   m_EditorClassIdentifier: 
-  Path: event:/Test_Events/Test_Music_Loop
-  guid: 4c6c49e79b362940be095b6e395b52f0
+  Path: event:/Test_Events/Heavy_Punch_Test
+  guid: ef2f728e5eff0249b62be40c26f62b72
   Banks:
-  - {fileID: -8295315490204543321}
-  IsStream: 1
+  - {fileID: 901579743062797055}
+  IsStream: 0
   Is3D: 0
   IsOneShot: 0
   Parameters:
-  - {fileID: 4560458798693078734}
+  - {fileID: 6736081874122758275}
   MinDistance: 0
   MaxDistance: 0
-  Length: 22841
---- !u!114 &4560458798693078734
+  Length: 15000
+--- !u!114 &-4181815015446273854
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -277,7 +89,7 @@ MonoBehaviour:
   Max: 1
   Default: 0
   Exists: 1
---- !u!114 &5491178792837200206
+--- !u!114 &-3123067430040816389
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -291,13 +103,160 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: Ascension_Audio/Build/Desktop/Test Master.strings.bank
   SubDir: 
-  lastModified: 637227640990000000
+  lastModified: 637229961561475884
   LoadResult: 0
   FileSizes:
   - Name: Desktop
     Value: 1180
   Exists: 1
---- !u!114 &9202959234486151895
+--- !u!114 &-2967606453000718420
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Beta Master.bank
+  m_EditorClassIdentifier: 
+  Path: Ascension_Audio/Build/Desktop/Beta Master.bank
+  SubDir: 
+  lastModified: 637229961561426023
+  LoadResult: 0
+  FileSizes: []
+  Exists: 1
+--- !u!114 &-2889820701117240451
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Light_Kick_Test/Combo
+  m_EditorClassIdentifier: 
+  Name: Combo
+  Min: 0
+  Max: 3
+  Default: 0
+  Exists: 1
+--- !u!114 &-2538158802923449828
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Test_Events/Test_SFX
+  m_EditorClassIdentifier: 
+  Path: event:/Test_Events/Test_SFX
+  guid: 6fc431d96def084cbeb290af2a053639
+  Banks:
+  - {fileID: 901579743062797055}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 1000
+--- !u!114 &-1123090020821205724
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Test_Events/Heavy_Kick_Test
+  m_EditorClassIdentifier: 
+  Path: event:/Test_Events/Heavy_Kick_Test
+  guid: 6121a8ee52ef7d4ab0b769f2ac0aff89
+  Banks:
+  - {fileID: 901579743062797055}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 0
+  Parameters:
+  - {fileID: 575491418808513344}
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 15000
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d32cf7c32a3ed8347bac48ef5ed56d82, type: 3}
+  m_Name: FMODStudioCache
+  m_EditorClassIdentifier: 
+  EditorBanks:
+  - {fileID: -3123067430040816389}
+  - {fileID: -2967606453000718420}
+  - {fileID: 901579743062797055}
+  EditorEvents:
+  - {fileID: 1811917291461429010}
+  - {fileID: -1123090020821205724}
+  - {fileID: -2538158802923449828}
+  - {fileID: -9187254050099581811}
+  - {fileID: -9049331040616896838}
+  - {fileID: -4202013801905771607}
+  EditorParameters: []
+  MasterBanks:
+  - {fileID: 901579743062797055}
+  StringsBanks:
+  - {fileID: -3123067430040816389}
+  stringsBankWriteTime: 637229961561475884
+  cacheVersion: 3
+--- !u!114 &575491418808513344
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Heavy_Kick_Test/Combo
+  m_EditorClassIdentifier: 
+  Name: Combo
+  Min: 0
+  Max: 3
+  Default: 0
+  Exists: 1
+--- !u!114 &901579743062797055
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Test Master.bank
+  m_EditorClassIdentifier: 
+  Path: Ascension_Audio/Build/Desktop/Test Master.bank
+  SubDir: 
+  lastModified: 637229961561465911
+  LoadResult: 0
+  FileSizes: []
+  Exists: 1
+--- !u!114 &1083576970217302668
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -308,6 +267,47 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
   m_Name: parameter:/Light_Punch_Test/Combo
+  m_EditorClassIdentifier: 
+  Name: Combo
+  Min: 0
+  Max: 3
+  Default: 0
+  Exists: 1
+--- !u!114 &1811917291461429010
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Test_Events/Test_Music_Loop
+  m_EditorClassIdentifier: 
+  Path: event:/Test_Events/Test_Music_Loop
+  guid: 4c6c49e79b362940be095b6e395b52f0
+  Banks:
+  - {fileID: 901579743062797055}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters:
+  - {fileID: -4181815015446273854}
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 22841
+--- !u!114 &6736081874122758275
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Heavy_Punch_Test/Combo
   m_EditorClassIdentifier: 
   Name: Combo
   Min: 0
