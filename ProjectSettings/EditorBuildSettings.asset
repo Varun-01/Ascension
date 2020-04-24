@@ -6,6 +6,21 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/UI Scenes/Title Screen.unity
+    guid: 2f6b85c2ed9074e56864caf983dd78f7
+  - enabled: 1
+    path: Assets/Scenes/UI Scenes/Main Menu.unity
+    guid: cb45ed2f27432488188eef928dadd2b4
+  - enabled: 1
+    path: Assets/Scenes/UI Scenes/Character Select.unity
+    guid: d67cb8b35c17d4795aa61b5fa243d12e
+  - enabled: 1
+    path: Assets/Scenes/UI Scenes/StageSelect.unity
+    guid: 625ff28450186b3439b749666204a0e9
+  - enabled: 1
+    path: Assets/Scenes/UI Scenes/Music Select.unity
+    guid: 0fd45e5b758de3c47b72dcbc71c3d6c4
+  - enabled: 1
     path: Assets/Scenes/Training 2.0.unity
     guid: afe124a1136d6bb4fb53732b0a2cd1bf
   m_configObjects: {}
