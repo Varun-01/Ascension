@@ -1213,6 +1213,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0dff77011aeff5243af260d617f1e653, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameStartDelay: 0
   animSpeed: 1.5
   lookSmoother: 3
   useCurves: 1
@@ -1274,7 +1275,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 112
+  m_Constraints: 124
   m_CollisionDetection: 1
 --- !u!4 &826724151 stripped
 Transform:
@@ -3516,6 +3517,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0dff77011aeff5243af260d617f1e653, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameStartDelay: 0
   animSpeed: 1.5
   lookSmoother: 3
   useCurves: 1
@@ -3559,7 +3561,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 112
+  m_Constraints: 124
   m_CollisionDetection: 1
 --- !u!4 &1887106858 stripped
 Transform:

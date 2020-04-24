@@ -1,0 +1,30 @@
+newmtl material_1
+d 1
+Ns 1
+Ni 0
+Ka 0.0392157 0.0313726 0.027451
+Kd 1 1 1
+Ks 0 0 0
+Km 0
+map_Kd /Maps/ed1b.jpg
+
+newmtl Default
+d 1
+Ns 1
+Ni 0
+Ka 0 0 0
+Kd 1 1 1
+Ks 1 1 1
+Km 0
+map_Kd /Maps/s1.jpg
+
+newmtl default
+d 1
+Ns 1
+Ni 0
+Ka 0 0 0
+Kd 1 1 1
+Ks 1 1 1
+Km 0
+map_Kd /Maps/b1.jpg
+

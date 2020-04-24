@@ -245,16 +245,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerHealth: 1000
-  winCount: 0
   stunTime: 0.5
   knockDownTime: 0.5
   currentState: idle
   currentPosition: 0
+  attackStat: 0
+  defenseStat: 0
   characterName: 
   playerTag: 
-  defenseStat: 0
-  attackStat: 0
-  PlayerStateEvent: 
+  opponentManager: {fileID: 0}
+  PlayerStateEvent: event:/Test_Events/Test_Music_Loop
 --- !u!114 &283085620
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -262,12 +262,17 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 283085617}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e2319bf3f9ca9cd4094a7be0cbc85486, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackboxes: []
+  characterName: 
+  playerTag: 
+  playerManager: {fileID: 0}
+  PlayerStateEvent: event:/Test_Events/Test_Music_Loop
+  PreAttackEvent: event:/Test_Events/Light_Kick_Test
+  AttackEvent: event:/Test_Events/Heavy_Punch_Test
 --- !u!114 &283085621
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -275,7 +280,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 283085617}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0dff77011aeff5243af260d617f1e653, type: 3}
   m_Name: 
@@ -546,7 +551,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e2319bf3f9ca9cd4094a7be0cbc85486, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackboxes: []
+  characterName: 
+  playerTag: 
+  playerManager: {fileID: 0}
+  PlayerStateEvent: event:/Test_Events/Test_Music_Loop
+  PreAttackEvent: event:/Test_Events/Light_Kick_Test
+  AttackEvent: event:/Test_Events/Heavy_Punch_Test
 --- !u!136 &620940782
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -590,16 +600,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerHealth: 1000
-  winCount: 0
   stunTime: 0.5
   knockDownTime: 0.5
   currentState: idle
   currentPosition: 0
+  attackStat: 0
+  defenseStat: 0
   characterName: 
   playerTag: 
-  defenseStat: 0
-  attackStat: 0
-  PlayerStateEvent: 
+  opponentManager: {fileID: 0}
+  PlayerStateEvent: event:/Test_Events/Test_Music_Loop
 --- !u!114 &620940785
 MonoBehaviour:
   m_ObjectHideFlags: 0
