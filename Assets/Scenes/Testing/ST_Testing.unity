@@ -246,7 +246,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerHealth: 1000
   stunTime: 0.5
-  knockDownTime: 0.5
+  pushBack: 3
   currentState: idle
   currentPosition: 0
   attackStat: 0
@@ -601,7 +601,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerHealth: 1000
   stunTime: 0.5
-  knockDownTime: 0.5
+  pushBack: 3
   currentState: idle
   currentPosition: 0
   attackStat: 0

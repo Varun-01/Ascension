@@ -7,7 +7,7 @@ public class Player_Manager : MonoBehaviour
     public int playerHealth;
     //public int winCount;
     public float stunTime = .5f;
-    public float knockDownTime = .5f;
+    public float pushBack = 200f;
     public string currentState = "idle";
     public float currentPosition;
     public int attackStat;
@@ -15,6 +15,7 @@ public class Player_Manager : MonoBehaviour
     public string characterName;
     public string playerTag;
 
+    private Rigidbody rb;
     private Animator anim;
     private AnimatorStateInfo currentBaseState;
 
@@ -37,6 +38,8 @@ public class Player_Manager : MonoBehaviour
         Debug.Log(attackStat);
         defenseStat = playerStats.getPlayerDefense(characterName);
         Debug.Log(defenseStat);
+
+        rb = GetComponent<Rigidbody>();
         anim = GetComponent<Animator>();
 
         if (playerTag == "Player1")
@@ -70,6 +73,7 @@ public class Player_Manager : MonoBehaviour
             return;
         }
 
+        rb.AddForce(new Vector3(pushBack, 0f, 0f) * -50);
         anim.SetBool("Stun", true);
         playerHealth = (playerHealth - damage /*+ defenseStat*/);
         Debug.Log("took damage from opponent");
