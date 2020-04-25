@@ -23,11 +23,11 @@ public class Player_Attack : MonoBehaviour
     [FMODUnity.EventRef]
     FMOD.Studio.EventInstance attack;
 
-    /*[FMODUnity.EventRef]
+    [FMODUnity.EventRef]
     public string PreAttackEvent = "";
     [FMODUnity.EventRef]
     public string AttackEvent = "";
-    */
+    
     void Start()
     {
         playerManager = gameObject.GetComponent<Player_Manager>();

@@ -73,15 +73,32 @@ namespace UnityChan
 
             KEEP IN UPDATE - IT DOESN'T WORK IN FIXED UPDATE BECAUSE UPDATE AND FIXEDUPDATE RUN AT DIFFERENT INTERVALS
              */
-            
-            if (Input.GetKeyDown(KeyCode.D))
+
+            float playerDirection = rb.transform.localEulerAngles.y;
+
+            if (playerDirection == facingRight)
             {
-                buttonPresses += 1;
-                if (buttonPresses > 1)
+                if (Input.GetKeyDown(KeyCode.D))
                 {
-                    Run = 1.0f;
-                    Debug.Log("Double tap");
+                    buttonPresses += 1;
+                    if (buttonPresses > 1)
+                    {
+                        Run = 1.0f;
+                        Debug.Log("Double tap");
+                    }
                 }
+            }
+            else {
+                if (Input.GetKeyDown(KeyCode.A))
+                {
+                    buttonPresses += 1;
+                    if (buttonPresses > 1)
+                    {
+                        Run = 1.0f;
+                        Debug.Log("Double tap");
+                    }
+                }
+
             }
         }
 	
@@ -108,10 +125,20 @@ namespace UnityChan
 			rb.useGravity = true;
 
             //double tap to run: if key up for D it'll set the button presses to 0 after the preset delay.
-            if (Input.GetKeyUp(KeyCode.D))
+            if (playerDirection == facingRight)
             {
-                Invoke("SetButtonPressesToZero", tapDelay);
-                Run = 0f;
+                if (Input.GetKeyUp(KeyCode.D))
+                {
+                    Invoke("SetButtonPressesToZero", tapDelay);
+                    Run = 0f;
+                }
+            }
+            else {
+                if (Input.GetKeyUp(KeyCode.A))
+                {
+                    Invoke("SetButtonPressesToZero", tapDelay);
+                    Run = 0f;
+                }
             }
       
             //depending on movement direction and player direction, different force applied.
