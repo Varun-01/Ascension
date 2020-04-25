@@ -15,6 +15,9 @@ public class Player_Manager : MonoBehaviour
     public string characterName;
     public string playerTag;
 
+    private Animator anim;
+    private AnimatorStateInfo currentBaseState;
+
     GameObject opponent;
     public Player_Manager opponentManager;
 
@@ -34,6 +37,7 @@ public class Player_Manager : MonoBehaviour
         Debug.Log(attackStat);
         defenseStat = playerStats.getPlayerDefense(characterName);
         Debug.Log(defenseStat);
+        anim = GetComponent<Animator>();
 
         if (playerTag == "Player1")
         {
@@ -57,14 +61,20 @@ public class Player_Manager : MonoBehaviour
 
     void FixedUpdate()
     {
-
+        
     }
 
     public void TakeDamage(int damage)
     {
+        if (anim.GetCurrentAnimatorStateInfo(0).IsName("GetUp")) {
+            return;
+        }
+
+        anim.SetBool("Stun", true);
         playerHealth = (playerHealth - damage /*+ defenseStat*/);
         Debug.Log("took damage from opponent");
         Debug.Log(playerHealth + playerTag);
+        Invoke("stopStun", stunTime);
     }
 
     public void GiveDamage(int damage)
@@ -79,5 +89,9 @@ public class Player_Manager : MonoBehaviour
         if (playerHealth <= 0) { 
         //endgame
         }
+    }
+
+    void stopStun() {
+        anim.SetBool("Stun", false);
     }
 }

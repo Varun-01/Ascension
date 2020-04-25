@@ -183,6 +183,12 @@ namespace UnityChan
                 }
 			}
 
+            if (anim.GetCurrentAnimatorStateInfo(0).IsName("Stun"))
+            {
+                anim.SetBool("Movement", false);
+                rb.velocity = new Vector3(0, 0, 0);
+            }
+
             if (anim.GetCurrentAnimatorStateInfo(0).IsTag("Attack"))
             {
                 anim.SetBool("Movement", false);
