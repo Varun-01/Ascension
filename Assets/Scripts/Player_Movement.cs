@@ -156,7 +156,13 @@ namespace UnityChan
                 }
 			}
 
-			if (currentBaseState.nameHash == locoState) {
+            if (anim.GetCurrentAnimatorStateInfo(0).IsTag("Attack"))
+            {
+                anim.SetBool("Movement", false);
+                rb.velocity = new Vector3(0, 0, 0);
+            }
+
+            if (currentBaseState.nameHash == locoState) {
 				if (useCurves) {
 					resetCollider ();
 				}
