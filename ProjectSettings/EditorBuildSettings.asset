@@ -23,4 +23,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Training 2.0.unity
     guid: afe124a1136d6bb4fb53732b0a2cd1bf
+  - enabled: 1
+    path: Assets/Scenes/MpScenes/Game.unity
+    guid: fcac131f68d1f4ef0af322bc34bf2c6c
+  - enabled: 1
+    path: Assets/Scenes/MpScenes/Login.unity
+    guid: 91cea01776e924b31af225d779f1b724
+  - enabled: 1
+    path: Assets/Scenes/MpScenes/Multiplayer.unity
+    guid: f09325f98e8854456bc74db65f020974
   m_configObjects: {}
