@@ -13,7 +13,7 @@ public class NetworkResponseTable {
 		add(Constants.SMSG_PLAYERS, "ResponsePlayers");//203
 		add(Constants.SMSG_TEST, "ResponseTest");//204
 		add(Constants.SMSG_REG, "ResponseRegister");//205
-		add(Constants.SMSG_ADDM, "ResponseAddMoney");//206
+		add(Constants.SMSG_ATT, "ResponseAttack");//206
 		add(Constants.SMSG_LVUP, "ResponseLvUp");//207
 		add(Constants.SMSG_MATCH_PLAYER, "ResponseMatchPlayer");//208
 	}

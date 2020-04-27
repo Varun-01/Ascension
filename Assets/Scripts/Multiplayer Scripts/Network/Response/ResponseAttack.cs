@@ -2,7 +2,7 @@ using UnityEngine;
 
 using System;
 
-public class ResponseAddMoneyEventArgs : ExtendedEventArgs {
+public class ResponseAttackEventArgs : ExtendedEventArgs {
 		
 	public short status { get; set; }
 	public int user_id { get; set; }
@@ -11,12 +11,12 @@ public class ResponseAddMoneyEventArgs : ExtendedEventArgs {
 	public short level { get; set; }
 	public string last_logout { get; set; }
 	
-	public ResponseAddMoneyEventArgs() {
-		event_id = Constants.SMSG_ADDM;
+	public ResponseAttackEventArgs() {
+		event_id = Constants.SMSG_ATT;
 	}
 }
 
-public class ResponseAddMoney : NetworkResponse {
+public class ResponseAttack : NetworkResponse {
 	
 	private short status;
 	private int user_id;
@@ -25,7 +25,7 @@ public class ResponseAddMoney : NetworkResponse {
 	private short level;
 	private string last_logout;
 
-	public ResponseAddMoney() {
+	public ResponseAttack() {
 		//Debug.Log("called ResponseAddMoney constructor");
 	}
 	
@@ -41,9 +41,9 @@ public class ResponseAddMoney : NetworkResponse {
 	}
 	
 	public override ExtendedEventArgs process() {
-		ResponseAddMoneyEventArgs args = null;
+		ResponseAttackEventArgs args = null;
 		if (status == 0) {
-			args = new ResponseAddMoneyEventArgs();
+			args = new ResponseAttackEventArgs();
 			args.status = status;
 			args.user_id = user_id;
 			args.username = username;

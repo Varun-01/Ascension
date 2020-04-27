@@ -6,9 +6,7 @@ using UnityEditor;
 public class Multiplayer : MonoBehaviour {
 	
 	private GameObject mainObject;
-	// Window Properties
-	private float width = 280;
-	private float height = 100;
+
 	// Other
 	public Texture background;
 	private string user_id = "";

@@ -9,13 +9,14 @@ public class NetworkRequestTable {
 	
 	public static void init() {
 		requestTable = new Dictionary<short, Type>();
-		add(Constants.CMSG_AUTH, "RequestLogin");
-		add(Constants.CMSG_HEARTBEAT, "RequestHeartbeat");
+		add(Constants.CMSG_AUTH, "RequestLogin");//101
+		add(Constants.CMSG_HEARTBEAT, "RequestHeartbeat");//102
 		add(Constants.CMSG_PLAYERS, "RequestPlayers");
 		add(Constants.CMSG_TEST, "RequestTest");
-		add(Constants.CMSG_REG, "RequestRegister");
-		add(Constants.CMSG_LVUP, "RequestLvUp");
-		add(Constants.CMSG_MATCH_PLAYER, "RequestMatchPlayer");//208
+		add(Constants.CMSG_REG, "RequestRegister");//105
+		add(Constants.CMSG_ATT, "RequestAttack");//106
+		add(Constants.CMSG_LVUP, "RequestLvUp");//107
+		add(Constants.CMSG_MATCH_PLAYER, "RequestMatchPlayer");//108
 	}
 	
 	public static void add(short request_id, string name) {
