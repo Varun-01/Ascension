@@ -23,8 +23,8 @@ public class Player_Manager : MonoBehaviour
     public Player_Manager opponentManager;
 
 
-    [FMODUnity.EventRef]
-    public string PlayerStateEvent = "";
+    //[FMODUnity.EventRef]
+    //public string PlayerStateEvent = "";
 
     // Start is called before the first frame update
     void Start()
