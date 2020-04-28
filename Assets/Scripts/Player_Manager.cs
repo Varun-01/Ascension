@@ -60,7 +60,7 @@ public class Player_Manager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        EndGame();
     }
 
     void FixedUpdate()
