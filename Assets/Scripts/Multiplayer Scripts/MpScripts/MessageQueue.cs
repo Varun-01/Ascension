@@ -34,7 +34,7 @@ public class MessageQueue : MonoBehaviour {
 	}
 	
 	public void AddCallback(int event_id, Callback callback) {
-		callbackList.Add(event_id, callback);
+				callbackList.Add(event_id, callback);
 	}
 
 	public void RemoveCallback(int event_id) {

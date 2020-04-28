@@ -22,6 +22,9 @@ public class Player_Manager : MonoBehaviour
     GameObject opponent;
     public Player_Manager opponentManager;
 
+    public Attack attackRequest;
+    
+
 
     [FMODUnity.EventRef]
     public string PlayerStateEvent = "";
@@ -41,6 +44,8 @@ public class Player_Manager : MonoBehaviour
 
         rb = GetComponent<Rigidbody>();
         anim = GetComponent<Animator>();
+        attackRequest = gameObject.GetComponent<Attack>();
+        
 
         if (playerTag == "Player1")
         {
@@ -53,7 +58,6 @@ public class Player_Manager : MonoBehaviour
 
         opponentManager = opponent.GetComponent<Player_Manager>();
         Debug.Log(opponentManager.playerTag);
-
     }
 
     // Update is called once per frame
@@ -86,6 +90,8 @@ public class Player_Manager : MonoBehaviour
         opponentManager.TakeDamage(damage + attackStat);
         Debug.Log("gave damage to opponent");
         Debug.Log(playerTag);
+        //Network
+        attackRequest.sendAttackRequest(attackStat, damage);
     }
 
     void EndGame()
