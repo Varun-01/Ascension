@@ -432,9 +432,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   characterName: 
   playerTag: 
+  attackNumber: 0
   playerManager: {fileID: 0}
-  PlayerStateEvent: 
-  PreAttackEvent: 
   AttackEvent: 
 --- !u!114 &505719632
 MonoBehaviour:
@@ -493,6 +492,29 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 124
   m_CollisionDetection: 0
+--- !u!114 &505719643
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 505719630}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 99a30ecb0d8281e41b11b6fb7cdc82d4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerHealth: 0
+  stunTime: 0.5
+  pushBack: 200
+  currentState: idle
+  currentPosition: 0
+  attackStat: 0
+  defenseStat: 0
+  characterName: 
+  playerTag: 
+  alive: 0
+  opponentManager: {fileID: 0}
 --- !u!1 &534550289
 GameObject:
   m_ObjectHideFlags: 0
@@ -1145,10 +1167,32 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   characterName: 
   playerTag: 
+  attackNumber: 0
   playerManager: {fileID: 0}
-  PlayerStateEvent: 
-  PreAttackEvent: 
   AttackEvent: 
+--- !u!114 &1508576639
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1508576632}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 99a30ecb0d8281e41b11b6fb7cdc82d4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerHealth: 0
+  stunTime: 0.5
+  pushBack: 200
+  currentState: idle
+  currentPosition: 0
+  attackStat: 0
+  defenseStat: 0
+  characterName: 
+  playerTag: 
+  alive: 0
+  opponentManager: {fileID: 0}
 --- !u!1 &1584539630
 GameObject:
   m_ObjectHideFlags: 0
