@@ -23,7 +23,7 @@ public class Main : MonoBehaviour {
 	
 	// Use this for initialization
 	void Start () {
-		SceneManager.LoadScene ("Register");
+		//SceneManager.LoadScene ("Register");
 		ConnectionManager cManager = gameObject.GetComponent<ConnectionManager>();
 
 		if (cManager) {

@@ -5,29 +5,20 @@ using UnityEditor;
 
 public class Attack : MonoBehaviour {
 	
-	private GameObject mainObject, attackObject;
-	// Window Properties
-	// private float width = 280;
-	// private float height = 100;
-	// // Other
-	// public Texture background;
-	//private string user_id = "";
-	//private string password = "";
-	// private Rect windowRect;
-	// private bool isHidden;
+	private GameObject mainObject;
 	 private MessageQueue msgQueue;
 	 private ConnectionManager cManager;
 	
 	void Awake() {
 		
 		mainObject = GameObject.Find("MainObject");
-		//DontDestroyOnLoad(mainObject);
+		DontDestroyOnLoad(mainObject);
 		//Debug.Log(mainObject != null? "AddMONEYmainObject is not null" : "mainObject is null");
 		cManager = mainObject.GetComponent<ConnectionManager>();
 		msgQueue = mainObject.GetComponent<MessageQueue> ();
 
-		//Debug.Log(responseAttack != null? "responseAttack is not null" : "responseAttack is null");
-		msgQueue.AddCallback(Constants.SMSG_ATT, ResponseAttack);
+		//Debug.Log(msgQueue != null? "msgQueue is not null" : "msgQueue is null");
+		msgQueue.AddCallback(Constants.SMSG_ATT, responseAttack);
 
 		//msgQueue.AddCallback(Constants.SMSG_PLAYERS, responsePlayers);
 		//msgQueue.AddCallback (Constants.SMSG_TEST, responseTest);
@@ -39,24 +30,24 @@ public class Attack : MonoBehaviour {
 	}
 	
 	//Network, entry point function
-	public void sendAttackRequest(int attackStat, int damage) {
+	public void sendAttackRequest(string attackName, int damage) {
 		Debug.Log("Sending attack request...");
 		//int moneyToAdd = 5;
 	
-		cManager.send(requestAttack(attackStat,damage));  
+		cManager.send(requestAttack(attackName,damage));  
 		//requestLogin is the function in line 78. The function returns a request (type if RequestLogin). 
 		 //inside request, there is a packet(type GamePacket), which contains request_id, CLIENT_VERION,username, passowrd.
 	} //cManager.send() coverts the request into byte[] and send it to server. 
 	
-	public RequestAttack requestAttack(int attackStat, int damage) {
+	public RequestAttack requestAttack(string attackName, int damage) {
 		RequestAttack request = new RequestAttack();
 		if(request != null) {Debug.Log ("request 52 Attack is NOT null*******");}
-		request.send(attackStat,damage);
+		request.send(attackName,damage);
 		Debug.Log ("called requestAttack function and send");
 		return request;
 	}
 	
-	public void ResponseAttack(ExtendedEventArgs eventArgs) {
+	public void responseAttack(ExtendedEventArgs eventArgs) {
 		
 		ResponseAttackEventArgs args = eventArgs as ResponseAttackEventArgs;
 		if (args.status == 0) {
@@ -67,6 +58,11 @@ public class Attack : MonoBehaviour {
 		} else {
 			Debug.Log("Attack Failed");
 		}
+	}
+
+	public void responseTest(ExtendedEventArgs eventArgs) {
+		ResponseTestEventArgs args = eventArgs as ResponseTestEventArgs;
+		Debug.Log ("newTestVar updated on server!!!");
 	}
 	
 

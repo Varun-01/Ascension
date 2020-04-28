@@ -95,7 +95,9 @@ public class Player_Attack : MonoBehaviour
             anim.SetTrigger(attackName);
             attackSound(attackName);
             int damage = getAttackValue(attackName);
-            playerManager.GiveDamage(damage);
+            playerManager.GiveDamage(damage); 
+            //playerManager.GiveDamage(attackName,damage); //Network
+            
         }
 
     }
