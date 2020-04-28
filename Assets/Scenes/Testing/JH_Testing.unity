@@ -348,7 +348,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400328, guid: 49f2055d53eeb4e5a92af590a44bddee, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -4
+      value: -5
       objectReference: {fileID: 0}
     - target: {fileID: 400328, guid: 49f2055d53eeb4e5a92af590a44bddee, type: 3}
       propertyPath: m_LocalRotation.x
@@ -406,6 +406,10 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 13700006, guid: 49f2055d53eeb4e5a92af590a44bddee, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: a7ac39c706d8eae4db78e4eda89d5ab3, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 49f2055d53eeb4e5a92af590a44bddee, type: 3}
 --- !u!1 &505719630 stripped
@@ -426,9 +430,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e2319bf3f9ca9cd4094a7be0cbc85486, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackboxes: []
-  hit: 0
-  hit_damage: 0
+  characterName: 
+  playerTag: 
+  playerManager: {fileID: 0}
+  PlayerStateEvent: 
+  PreAttackEvent: 
+  AttackEvent: 
 --- !u!114 &505719632
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -441,7 +448,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0dff77011aeff5243af260d617f1e653, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameStartDelay: 0
   animSpeed: 1.5
   lookSmoother: 3
   useCurves: 1
@@ -467,7 +473,7 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.5
+  m_Radius: 0.2
   m_Height: 1.5
   m_Direction: 1
   m_Center: {x: 0, y: 0.75, z: 0}
@@ -1080,7 +1086,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0dff77011aeff5243af260d617f1e653, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameStartDelay: 0
   animSpeed: 1.5
   lookSmoother: 3
   useCurves: 1
@@ -1122,7 +1127,7 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.5
+  m_Radius: 0.2
   m_Height: 1.5
   m_Direction: 1
   m_Center: {x: 0, y: 0.75, z: 0}
@@ -1138,9 +1143,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e2319bf3f9ca9cd4094a7be0cbc85486, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackboxes: []
-  hit: 0
-  hit_damage: 0
+  characterName: 
+  playerTag: 
+  playerManager: {fileID: 0}
+  PlayerStateEvent: 
+  PreAttackEvent: 
+  AttackEvent: 
 --- !u!1 &1584539630
 GameObject:
   m_ObjectHideFlags: 0
@@ -1218,7 +1226,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 84759120e25c99b4aac5abf111187fae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  round: 0
 --- !u!1001 &1708465248
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1462,4 +1469,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 84759120e25c99b4aac5abf111187fae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  round: 0

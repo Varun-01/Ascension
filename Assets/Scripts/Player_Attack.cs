@@ -21,10 +21,13 @@ public class Player_Attack : MonoBehaviour
     FMOD.Studio.EventInstance playerState;
 
     [FMODUnity.EventRef]
+    FMOD.Studio.EventInstance attack;
+
+    [FMODUnity.EventRef]
     public string PreAttackEvent = "";
     [FMODUnity.EventRef]
     public string AttackEvent = "";
-
+    
     void Start()
     {
         playerManager = gameObject.GetComponent<Player_Manager>();
@@ -36,7 +39,7 @@ public class Player_Attack : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         orgColHight = col.height;
         orgVectColCenter = col.center;
-
+        attack = FMODUnity.RuntimeManager.CreateInstance(AttackEvent);
     }
 
     // Update is called once per frame
@@ -81,14 +84,37 @@ public class Player_Attack : MonoBehaviour
 
     public void launchAttack(string attackName)
     {
-        anim.SetTrigger(attackName);
-        attackSound(attackName);
-        int damage = getAttackValue(attackName);
-        playerManager.GiveDamage(damage);
+
+        if (anim.GetCurrentAnimatorStateInfo(0).IsTag("Attack"))
+        {
+            Debug.Log("In attack mode, attack not counted");
+            return;
+
+        }
+        else {
+            anim.SetTrigger(attackName);
+            attackSound(attackName);
+            int damage = getAttackValue(attackName);
+            playerManager.GiveDamage(damage);
+        }
+
     }
 
     void attackSound(string attackName)
     {
-        FMODUnity.RuntimeManager.PlayOneShot(PreAttackEvent, transform.position);
+        //if (!IsPlaying(attack)){
+            //FMODUnity.RuntimeManager.PlayOneShot(AttackEvent, transform.position);
+            attack.start();
+            attack.release();
+       // }
+        // heal.setParameterByID(fullHealthParameterId, restoreAll ? 1.0f : 0.0f);
+        //heal.set3DAttributes(FMODUnity.RuntimeUtils.To3DAttributes(gameObject));
+    }
+
+    bool IsPlaying(FMOD.Studio.EventInstance instance)
+    {
+        FMOD.Studio.PLAYBACK_STATE state;
+        instance.getPlaybackState(out state);
+        return state != FMOD.Studio.PLAYBACK_STATE.STOPPED;
     }
 }
