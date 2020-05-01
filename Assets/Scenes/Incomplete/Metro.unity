@@ -1786,6 +1786,8 @@ GameObject:
   - component: {fileID: 1227172794}
   - component: {fileID: 1227172793}
   - component: {fileID: 1227172795}
+  - component: {fileID: 1227172797}
+  - component: {fileID: 1227172796}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -1956,6 +1958,36 @@ MonoBehaviour:
   m_BeforeTransparentBundles: []
   m_BeforeStackBundles: []
   m_AfterStackBundles: []
+--- !u!114 &1227172796
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1227172789}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fb485c178fab15844a59c542481f5f77, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  margin: 2
+  z0: 2
+  fighter1: Player1
+  fighter2: Player2
+--- !u!114 &1227172797
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1227172789}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 03cab9b0e64e2f34faf16b781da890a2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fighter1: Player1
+  fighter2: Player2
 --- !u!1001 &1280491633
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2120,7 +2152,9 @@ MonoBehaviour:
   defenseStat: 0
   characterName: 
   playerTag: 
+  alive: 0
   opponentManager: {fileID: 0}
+  healthBar: {fileID: 0}
 --- !u!114 &1350204620
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2135,6 +2169,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   characterName: 
   playerTag: 
+  attackNumber: 0
   playerManager: {fileID: 0}
   AttackEvent: event:/Test_Events/Light_Kick_Test
 --- !u!114 &1350204621
@@ -2806,6 +2841,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   characterName: 
   playerTag: 
+  attackNumber: 0
   playerManager: {fileID: 0}
   AttackEvent: event:/Test_Events/Heavy_Punch_Test
 --- !u!114 &1905594858
@@ -2829,7 +2865,9 @@ MonoBehaviour:
   defenseStat: 0
   characterName: 
   playerTag: 
+  alive: 0
   opponentManager: {fileID: 0}
+  healthBar: {fileID: 0}
 --- !u!114 &1905594859
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -5,6 +5,10 @@ using UnityEngine;
 public class Game_Manager : MonoBehaviour
 {
     public enum GameState { INTRO, MAIN_MENU }
+    float cP1;
+    float cP2;
+    string cN1;
+    string cN2;
     Vector3[] defaultPos1;
     Vector3[] defaultScale1;
     Quaternion[] defaultRot1;
@@ -22,7 +26,7 @@ public class Game_Manager : MonoBehaviour
 
     //Attach Button from the Editor
    
-    public float x = 99.0f;
+    
 
     private static Game_Manager playerInstance; 
     void Awake() {
@@ -40,43 +44,18 @@ public class Game_Manager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        reset = true;
+        
         ps1 = 0;
         ps2 = 0;
         GameObject player1 = GameObject.FindWithTag(p1);
         GameObject player2 = GameObject.FindWithTag(p2);
         Player_Manager player1Manager = player1.GetComponent<Player_Manager>();
         Player_Manager player2Manager = player2.GetComponent<Player_Manager>();
-        Invoke("ResetScene", x);
 
         
     }
     
-    void ResetScene()
-    {
-        
-        GameObject player1 = GameObject.FindWithTag(p1);
-        GameObject player2 = GameObject.FindWithTag(p2);
-        Player_Manager player1Manager = player1.GetComponent<Player_Manager>();
-        Player_Manager player2Manager = player2.GetComponent<Player_Manager>();
-        if (player1Manager.playerHealth > player2Manager.playerHealth)
-        {
-            ps1++;
-            
-        }
-        if (player2Manager.playerHealth > player1Manager.playerHealth)
-        {
-            ps2++;
-            
-        }
-        Application.LoadLevel(Application.loadedLevel);
-        if (ps1 < 2 && ps2 < 2)
-        {
-                       
-                Invoke("ResetScene", x);
-                  
-        }
-    }
+    
     // Update is called once per frame
     void Update()
     {
@@ -103,6 +82,10 @@ public class Game_Manager : MonoBehaviour
                 
             }
         }
+
+    }
+    void spawn()
+    {
 
     }
   
