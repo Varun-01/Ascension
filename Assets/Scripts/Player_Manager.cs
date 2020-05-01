@@ -86,13 +86,13 @@ public class Player_Manager : MonoBehaviour
     }
 
     //public void GiveDamage( string attackName,int damage) //network
-    public void GiveDamage(int damage)
+    public void GiveDamage(int damage) //Network add attackname
     {
         opponentManager.TakeDamage(damage + attackStat);
         Debug.Log("gave damage to opponent");
         Debug.Log(playerTag);
         //Network
-        //attackRequest.sendAttackRequest(attackName,damage);
+        //attackRequest.sendAttackRequest(damage);
     }
 
     void EndGame()

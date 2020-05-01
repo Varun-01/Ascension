@@ -12,16 +12,11 @@ public class Attack : MonoBehaviour {
 	void Awake() {
 		
 		mainObject = GameObject.Find("MainObject");
-		DontDestroyOnLoad(mainObject);
+		//DontDestroyOnLoad(mainObject);
 		//Debug.Log(mainObject != null? "AddMONEYmainObject is not null" : "mainObject is null");
 		cManager = mainObject.GetComponent<ConnectionManager>();
 		msgQueue = mainObject.GetComponent<MessageQueue> ();
-
-		//Debug.Log(msgQueue != null? "msgQueue is not null" : "msgQueue is null");
 		msgQueue.AddCallback(Constants.SMSG_ATT, responseAttack);
-
-		//msgQueue.AddCallback(Constants.SMSG_PLAYERS, responsePlayers);
-		//msgQueue.AddCallback (Constants.SMSG_TEST, responseTest);
 	}
 	
 	// Use this for initialization
@@ -30,19 +25,17 @@ public class Attack : MonoBehaviour {
 	}
 	
 	//Network, entry point function
-	public void sendAttackRequest(string attackName, int damage) {
+	public void sendAttackRequest(int damage) {
 		Debug.Log("Sending attack request...");
-		//int moneyToAdd = 5;
-	
-		cManager.send(requestAttack(attackName,damage));  
+		cManager.send(requestAttack(damage));  
 		//requestLogin is the function in line 78. The function returns a request (type if RequestLogin). 
 		 //inside request, there is a packet(type GamePacket), which contains request_id, CLIENT_VERION,username, passowrd.
 	} //cManager.send() coverts the request into byte[] and send it to server. 
 	
-	public RequestAttack requestAttack(string attackName, int damage) {
+	public RequestAttack requestAttack(int damage) {
 		RequestAttack request = new RequestAttack();
 		if(request != null) {Debug.Log ("request 52 Attack is NOT null*******");}
-		request.send(attackName,damage);
+		request.send(damage);
 		Debug.Log ("called requestAttack function and send");
 		return request;
 	}
