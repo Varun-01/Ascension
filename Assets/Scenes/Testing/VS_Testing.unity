@@ -244,10 +244,9 @@ GameObject:
   - component: {fileID: 244153946}
   - component: {fileID: 244153945}
   - component: {fileID: 244153944}
-  - component: {fileID: 244153943}
   m_Layer: 0
   m_Name: Left_Arm_Hurtbox
-  m_TagString: Untagged
+  m_TagString: Hurtbox
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -266,19 +265,6 @@ Transform:
   m_Father: {fileID: 1153604395}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &244153943
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 244153941}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3636b1c3d22b08e4988d9cc7192fbcaf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  attacked: 0
 --- !u!65 &244153944
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -351,7 +337,6 @@ GameObject:
   - component: {fileID: 248414256}
   - component: {fileID: 248414255}
   - component: {fileID: 248414254}
-  - component: {fileID: 248414257}
   m_Layer: 0
   m_Name: Right_Leg
   m_TagString: HitboxP1
@@ -433,19 +418,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 248414252}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!114 &248414257
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 248414252}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3636b1c3d22b08e4988d9cc7192fbcaf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  attacked: 0
 --- !u!4 &277551850 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400008, guid: 49f2055d53eeb4e5a92af590a44bddee,
@@ -540,13 +512,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 524529799}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -32.38, y: 1, z: -36.1}
+  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
+  m_LocalPosition: {x: -32.38, y: 1, z: -21.72}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!1 &614384030
 GameObject:
   m_ObjectHideFlags: 0
@@ -559,8 +531,7 @@ GameObject:
   - component: {fileID: 614384035}
   - component: {fileID: 614384034}
   - component: {fileID: 614384033}
-  - component: {fileID: 614384032}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Torso_Hurtbox
   m_TagString: Hurtbox
   m_Icon: {fileID: 0}
@@ -581,19 +552,6 @@ Transform:
   m_Father: {fileID: 1595355510}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &614384032
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 614384030}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3636b1c3d22b08e4988d9cc7192fbcaf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  attacked: 0
 --- !u!65 &614384033
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -678,7 +636,6 @@ GameObject:
   - component: {fileID: 785577618}
   - component: {fileID: 785577617}
   - component: {fileID: 785577616}
-  - component: {fileID: 785577619}
   m_Layer: 0
   m_Name: Left_Leg
   m_TagString: HitboxP1
@@ -760,19 +717,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 785577614}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!114 &785577619
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 785577614}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3636b1c3d22b08e4988d9cc7192fbcaf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  attacked: 0
 --- !u!1 &834922286
 GameObject:
   m_ObjectHideFlags: 0
@@ -785,10 +729,9 @@ GameObject:
   - component: {fileID: 834922291}
   - component: {fileID: 834922290}
   - component: {fileID: 834922289}
-  - component: {fileID: 834922288}
   m_Layer: 0
   m_Name: Right_Arm_Hurtbox
-  m_TagString: Untagged
+  m_TagString: Hurtbox
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -807,19 +750,6 @@ Transform:
   m_Father: {fileID: 61465782}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &834922288
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 834922286}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3636b1c3d22b08e4988d9cc7192fbcaf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  attacked: 0
 --- !u!65 &834922289
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -894,7 +824,7 @@ GameObject:
   - component: {fileID: 843994165}
   m_Layer: 0
   m_Name: Left_Arm_Hurtbox
-  m_TagString: Untagged
+  m_TagString: Hurtbox
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -985,10 +915,9 @@ GameObject:
   - component: {fileID: 854029027}
   - component: {fileID: 854029026}
   - component: {fileID: 854029025}
-  - component: {fileID: 854029024}
   m_Layer: 0
   m_Name: Head Hurtbox
-  m_TagString: Untagged
+  m_TagString: Hurtbox
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1007,19 +936,6 @@ Transform:
   m_Father: {fileID: 1964798273}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &854029024
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 854029022}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3636b1c3d22b08e4988d9cc7192fbcaf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  attacked: 0
 --- !u!65 &854029025
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1094,7 +1010,7 @@ GameObject:
   - component: {fileID: 878186623}
   m_Layer: 0
   m_Name: Right_Arm_Hurtbox
-  m_TagString: Untagged
+  m_TagString: Hurtbox
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1286,7 +1202,7 @@ GameObject:
   - component: {fileID: 1094079446}
   m_Layer: 0
   m_Name: Head Hurtbox
-  m_TagString: Untagged
+  m_TagString: Hurtbox
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1384,7 +1300,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1145376624}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0dff77011aeff5243af260d617f1e653, type: 3}
   m_Name: 
@@ -1411,22 +1327,21 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1145376624}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e2319bf3f9ca9cd4094a7be0cbc85486, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   characterName: 
   playerTag: 
+  attackNumber: 0
   playerManager: {fileID: 0}
   hitboxes:
   - {fileID: 223474813}
   - {fileID: 1448603949}
-  - {fileID: 992748228}
-  colliderBehavior: {fileID: 0}
-  checker: 0
-  PlayerStateEvent: event:/Test_Events/Test_Music_Loop
-  PreAttackEvent: event:/Test_Events/Light_Kick_Test
+  attackBoxes:
+  - {fileID: 223474815}
+  - {fileID: 1448603951}
   AttackEvent: event:/Test_Events/Light_Kick_Test
 --- !u!114 &1145376627
 MonoBehaviour:
@@ -1449,8 +1364,8 @@ MonoBehaviour:
   defenseStat: 0
   characterName: 
   playerTag: 
+  alive: 0
   opponentManager: {fileID: 0}
-  PlayerStateEvent: event:/Test_Events/Test_Music_Loop
 --- !u!114 &1145376628
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1606,7 +1521,7 @@ GameObject:
   - component: {fileID: 1198922406}
   m_Layer: 0
   m_Name: Left_Leg_Hurtbox
-  m_TagString: Untagged
+  m_TagString: Hurtbox
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1703,10 +1618,9 @@ GameObject:
   - component: {fileID: 1339245594}
   - component: {fileID: 1339245593}
   - component: {fileID: 1339245592}
-  - component: {fileID: 1339245591}
   m_Layer: 0
   m_Name: Right_Leg_Hurtbox
-  m_TagString: Untagged
+  m_TagString: Hurtbox
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1725,19 +1639,6 @@ Transform:
   m_Father: {fileID: 1837968013}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1339245591
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1339245589}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3636b1c3d22b08e4988d9cc7192fbcaf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  attacked: 0
 --- !u!65 &1339245592
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1934,8 +1835,8 @@ MonoBehaviour:
   defenseStat: 0
   characterName: 
   playerTag: 
+  alive: 0
   opponentManager: {fileID: 0}
-  PlayerStateEvent: event:/Test_Events/Test_Music_Loop
 --- !u!114 &1439516132
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1943,22 +1844,22 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1439516129}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e2319bf3f9ca9cd4094a7be0cbc85486, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   characterName: 
   playerTag: 
+  attackNumber: 0
   playerManager: {fileID: 0}
   hitboxes:
   - {fileID: 1796881968}
   - {fileID: 248414252}
   - {fileID: 785577614}
-  colliderBehavior: {fileID: 0}
-  checker: 0
-  PlayerStateEvent: event:/Test_Events/Test_Music_Loop
-  PreAttackEvent: event:/Test_Events/Light_Kick_Test
+  attackBoxes:
+  - {fileID: 1796881970}
+  - {fileID: 248414254}
   AttackEvent: event:/Test_Events/Light_Kick_Test
 --- !u!114 &1439516133
 MonoBehaviour:
@@ -1967,7 +1868,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1439516129}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0dff77011aeff5243af260d617f1e653, type: 3}
   m_Name: 
@@ -2029,7 +1930,6 @@ GameObject:
   - component: {fileID: 1446408134}
   - component: {fileID: 1446408133}
   - component: {fileID: 1446408132}
-  - component: {fileID: 1446408135}
   m_Layer: 0
   m_Name: Left Arm
   m_TagString: HitboxP1
@@ -2111,19 +2011,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1446408130}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!114 &1446408135
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1446408130}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3636b1c3d22b08e4988d9cc7192fbcaf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  attacked: 0
 --- !u!1 &1448603949
 GameObject:
   m_ObjectHideFlags: 0
@@ -2138,7 +2025,7 @@ GameObject:
   - component: {fileID: 1448603951}
   m_Layer: 0
   m_Name: Right_Leg
-  m_TagString: Untagged
+  m_TagString: HitboxP1
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2314,6 +2201,7 @@ GameObject:
   - component: {fileID: 1540273857}
   - component: {fileID: 1540273856}
   - component: {fileID: 1540273855}
+  - component: {fileID: 1540273859}
   m_Layer: 0
   m_Name: Plane
   m_TagString: ground
@@ -2396,6 +2284,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1540273859
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1540273854}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 26905cf6417324878a476cb1270cc4db, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &1595355510 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400022, guid: 49f2055d53eeb4e5a92af590a44bddee,
@@ -2420,10 +2320,9 @@ GameObject:
   - component: {fileID: 1713353691}
   - component: {fileID: 1713353690}
   - component: {fileID: 1713353689}
-  - component: {fileID: 1713353688}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Left_Leg_Hurtbox
-  m_TagString: Untagged
+  m_TagString: Hurtbox
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2442,19 +2341,6 @@ Transform:
   m_Father: {fileID: 1677856512}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1713353688
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1713353686}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3636b1c3d22b08e4988d9cc7192fbcaf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  attacked: 0
 --- !u!65 &1713353689
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2527,7 +2413,6 @@ GameObject:
   - component: {fileID: 1796881972}
   - component: {fileID: 1796881971}
   - component: {fileID: 1796881970}
-  - component: {fileID: 1796881973}
   m_Layer: 0
   m_Name: Right_Arm
   m_TagString: HitboxP1
@@ -2609,19 +2494,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1796881968}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!114 &1796881973
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1796881968}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3636b1c3d22b08e4988d9cc7192fbcaf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  attacked: 0
 --- !u!4 &1837968013 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400078, guid: 49f2055d53eeb4e5a92af590a44bddee,
@@ -2642,7 +2514,7 @@ GameObject:
   - component: {fileID: 1890032476}
   m_Layer: 0
   m_Name: Right_Leg_Hurtbox
-  m_TagString: Untagged
+  m_TagString: Hurtbox
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
