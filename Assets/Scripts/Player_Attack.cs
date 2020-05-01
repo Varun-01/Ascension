@@ -14,6 +14,11 @@ public class Player_Attack : MonoBehaviour
     public string playerTag;
     public int attackNumber;
     public Player_Manager playerManager;
+    public GameObject[] hitboxes;
+    public Collider[] attackBoxes;
+    private bool _state;
+    private string lastAttack;
+    private Collider tester;
 
     Dictionary<string, int> attackValueTable = new Dictionary<string, int>();
 
@@ -36,6 +41,11 @@ public class Player_Attack : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         orgColHight = col.height;
         orgVectColCenter = col.center;
+        //attack = FMODUnity.RuntimeManager.CreateInstance(AttackEvent);
+        foreach (GameObject box in hitboxes)
+        {
+            box.SetActive(false);
+        }
 
         FMOD.Studio.EventDescription AttackEventDescription;
         AttackInstance.getDescription(out AttackEventDescription);
@@ -52,20 +62,53 @@ public class Player_Attack : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.U))
         {
             launchAttack("LightPunch");
+            StartCoroutine(StartAttack(1.40f, hitboxes[0]));
+            tester = attackBoxes[0];
+            lastAttack = "LightPunch";
         }
         else if (Input.GetKeyDown(KeyCode.I))
         {
             launchAttack("HeavyPunch");
+            StartCoroutine(StartAttack(0.70f, hitboxes[0]));
+            tester = attackBoxes[0];
+            lastAttack = "HeavyPunch";
+            
         }
         else if (Input.GetKeyDown(KeyCode.O))
         {
             launchAttack("LightKick");
+            StartCoroutine(StartAttack(0.70f, hitboxes[1]));
+            tester = attackBoxes[1];
+            lastAttack = "LightKick";
         }
         else if (Input.GetKeyDown(KeyCode.P))
         {
             launchAttack("HeavyKick");
+            StartCoroutine(StartAttack(1.05f, hitboxes[1]));
+            tester = attackBoxes[1];
+            lastAttack = "HeavyKick";
         }
         AttackInstance.setParameterByID(AttackParameterId, attackNumber);
+        if (_state == true)
+        {
+            Collider[] cols = Physics.OverlapBox(tester.bounds.center, tester.bounds.extents, tester.transform.rotation, LayerMask.GetMask("Hurtbox"));
+            if (cols.Length>0)
+            {
+                int damage = getAttackValue(lastAttack);
+                playerManager.GiveDamage(damage);
+                Debug.Log("Success!");
+                return;
+            }
+        }
+    }
+    // coroutine to activate the hitboxes only for the duration of the attack.
+    IEnumerator StartAttack(float attacktime, GameObject hit)
+    {
+        hit.SetActive(true);
+        _state = true;
+        yield return new WaitForSeconds(attacktime);
+        hit.SetActive(false);
+        _state = false;
     }
 
 
@@ -99,9 +142,8 @@ public class Player_Attack : MonoBehaviour
         else {
             anim.SetTrigger(attackName);
             //attackSound(attackName);
-            attackNumber = 1;
-            int damage = getAttackValue(attackName);
-            playerManager.GiveDamage(damage);
+            //attackNumber = 1;
+            //int damage = getAttackValue(attackName);
         }
 
     }

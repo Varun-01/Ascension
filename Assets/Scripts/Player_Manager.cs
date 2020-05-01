@@ -18,7 +18,6 @@ public class Player_Manager : MonoBehaviour
     private Rigidbody rb;
     private Animator anim;
     private AnimatorStateInfo currentBaseState;
-
     GameObject opponent;
     public Player_Manager opponentManager;
     public HealthBar healthBar;
@@ -37,11 +36,11 @@ public class Player_Manager : MonoBehaviour
         playerTag = gameObject.tag;
         Player_Stats playerStats = gameObject.GetComponent<Player_Stats>();
         characterName = gameObject.name;
-        Debug.Log(characterName);
+        //Debug.Log(characterName);
         attackStat = playerStats.getPlayerAttack(characterName);
-        Debug.Log(attackStat);
+        //Debug.Log(attackStat);
         defenseStat = playerStats.getPlayerDefense(characterName);
-        Debug.Log(defenseStat);
+        //Debug.Log(defenseStat);
 
         rb = GetComponent<Rigidbody>();
         anim = GetComponent<Animator>();
@@ -56,7 +55,7 @@ public class Player_Manager : MonoBehaviour
         }
 
         opponentManager = opponent.GetComponent<Player_Manager>();
-        Debug.Log(opponentManager.playerTag);
+        //Debug.Log(opponentManager.playerTag);
 
     }
 
