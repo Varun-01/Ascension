@@ -14,7 +14,7 @@ public class Player_Manager : MonoBehaviour
     public int defenseStat;
     public string characterName;
     public string playerTag;
-
+    public int alive;
     private Rigidbody rb;
     private Animator anim;
     private AnimatorStateInfo currentBaseState;
@@ -23,12 +23,13 @@ public class Player_Manager : MonoBehaviour
     public Player_Manager opponentManager;
 
 
-    [FMODUnity.EventRef]
-    public string PlayerStateEvent = "";
+    //[FMODUnity.EventRef]
+    //public string PlayerStateEvent = "";
 
     // Start is called before the first frame update
     void Start()
     {
+        alive = 1;
         playerHealth = 1000;
         playerTag = gameObject.tag;
         Player_Stats playerStats = gameObject.GetComponent<Player_Stats>();
@@ -59,7 +60,7 @@ public class Player_Manager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        EndGame();
     }
 
     void FixedUpdate()
@@ -90,8 +91,9 @@ public class Player_Manager : MonoBehaviour
 
     void EndGame()
     {
-        if (playerHealth <= 0) { 
-        //endgame
+        if (playerHealth <= 0) {
+            //endgame
+            alive = 0;
         }
     }
 

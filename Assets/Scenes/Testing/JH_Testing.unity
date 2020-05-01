@@ -432,9 +432,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   characterName: 
   playerTag: 
+  attackNumber: 0
   playerManager: {fileID: 0}
-  PlayerStateEvent: 
-  PreAttackEvent: 
   AttackEvent: 
 --- !u!114 &505719632
 MonoBehaviour:
@@ -493,6 +492,29 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 124
   m_CollisionDetection: 0
+--- !u!114 &505719643
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 505719630}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 99a30ecb0d8281e41b11b6fb7cdc82d4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerHealth: 0
+  stunTime: 0.5
+  pushBack: 200
+  currentState: idle
+  currentPosition: 0
+  attackStat: 0
+  defenseStat: 0
+  characterName: 
+  playerTag: 
+  alive: 0
+  opponentManager: {fileID: 0}
 --- !u!1 &534550289
 GameObject:
   m_ObjectHideFlags: 0
@@ -974,7 +996,7 @@ Transform:
   - {fileID: 729422037}
   - {fileID: 1062562045}
   m_Father: {fileID: 1683234474}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1085281924
 GameObject:
@@ -1145,10 +1167,32 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   characterName: 
   playerTag: 
+  attackNumber: 0
   playerManager: {fileID: 0}
-  PlayerStateEvent: 
-  PreAttackEvent: 
   AttackEvent: 
+--- !u!114 &1508576639
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1508576632}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 99a30ecb0d8281e41b11b6fb7cdc82d4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerHealth: 0
+  stunTime: 0.5
+  pushBack: 200
+  currentState: idle
+  currentPosition: 0
+  attackStat: 0
+  defenseStat: 0
+  characterName: 
+  playerTag: 
+  alive: 0
+  opponentManager: {fileID: 0}
 --- !u!1 &1584539630
 GameObject:
   m_ObjectHideFlags: 0
@@ -1178,7 +1222,7 @@ Transform:
   m_Children:
   - {fileID: 1708465249}
   m_Father: {fileID: 1683234474}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0.9, z: 0}
 --- !u!1 &1683234473
 GameObject:
@@ -1208,7 +1252,6 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 2084498940}
   - {fileID: 1065192192}
   - {fileID: 1584539631}
   m_Father: {fileID: 0}
@@ -1424,9 +1467,10 @@ GameObject:
   - component: {fileID: 2084498940}
   - component: {fileID: 2084498941}
   - component: {fileID: 2084498942}
+  - component: {fileID: 2084498943}
   m_Layer: 0
   m_Name: ScriptManager
-  m_TagString: Untagged
+  m_TagString: DoNotDestroy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1442,8 +1486,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 1683234474}
-  m_RootOrder: 0
+  m_Father: {fileID: 0}
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2084498941
 MonoBehaviour:
@@ -1466,6 +1510,21 @@ MonoBehaviour:
   m_GameObject: {fileID: 2084498939}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 84759120e25c99b4aac5abf111187fae, type: 3}
+  m_Script: {fileID: 0}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &2084498943
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2084498939}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0456d36c72f43ea4c9233f118890f873, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ps1: 0
+  ps2: 0
+  x: 10
