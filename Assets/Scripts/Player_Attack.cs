@@ -12,34 +12,48 @@ public class Player_Attack : MonoBehaviour
     private AnimatorStateInfo currentBaseState;
     public string characterName;
     public string playerTag;
+    public int attackNumber;
     public Player_Manager playerManager;
+    public GameObject[] hitboxes;
+    public Collider[] attackBoxes;
+    private bool _state;
+    private string lastAttack;
+    private Collider tester;
 
     Dictionary<string, int> attackValueTable = new Dictionary<string, int>();
 
     [FMODUnity.EventRef]
-    public string PlayerStateEvent = "";
-    FMOD.Studio.EventInstance playerState;
+    FMOD.Studio.EventInstance AttackInstance;
 
-    [FMODUnity.EventRef]
-    FMOD.Studio.EventInstance attack;
-
-    [FMODUnity.EventRef]
-    public string PreAttackEvent = "";
     [FMODUnity.EventRef]
     public string AttackEvent = "";
+
+    FMOD.Studio.PARAMETER_ID AttackParameterId;
     
+
     void Start()
     {
         playerManager = gameObject.GetComponent<Player_Manager>();
-
-        playerState = FMODUnity.RuntimeManager.CreateInstance(PlayerStateEvent);
-        playerState.start();
+        AttackInstance = FMODUnity.RuntimeManager.CreateInstance(AttackEvent);
+        FMODUnity.RuntimeManager.AttachInstanceToGameObject(AttackInstance, GetComponent<Transform>(), GetComponent<Rigidbody>());
         anim = GetComponent<Animator>();
         col = GetComponent<CapsuleCollider>();
         rb = GetComponent<Rigidbody>();
         orgColHight = col.height;
         orgVectColCenter = col.center;
-        attack = FMODUnity.RuntimeManager.CreateInstance(AttackEvent);
+        //attack = FMODUnity.RuntimeManager.CreateInstance(AttackEvent);
+        foreach (GameObject box in hitboxes)
+        {
+            box.SetActive(false);
+        }
+
+        FMOD.Studio.EventDescription AttackEventDescription;
+        AttackInstance.getDescription(out AttackEventDescription);
+        FMOD.Studio.PARAMETER_DESCRIPTION AttackParameterDescription;
+        AttackEventDescription.getParameterDescriptionByName("AttackOrder", out AttackParameterDescription);
+        AttackParameterId = AttackParameterDescription.id;
+
+        AttackInstance.start();
     }
 
     // Update is called once per frame
@@ -48,19 +62,53 @@ public class Player_Attack : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.U))
         {
             launchAttack("LightPunch");
+            StartCoroutine(StartAttack(1.40f, hitboxes[0]));
+            tester = attackBoxes[0];
+            lastAttack = "LightPunch";
         }
         else if (Input.GetKeyDown(KeyCode.I))
         {
             launchAttack("HeavyPunch");
+            StartCoroutine(StartAttack(0.70f, hitboxes[0]));
+            tester = attackBoxes[0];
+            lastAttack = "HeavyPunch";
+            
         }
         else if (Input.GetKeyDown(KeyCode.O))
         {
             launchAttack("LightKick");
+            StartCoroutine(StartAttack(0.70f, hitboxes[1]));
+            tester = attackBoxes[1];
+            lastAttack = "LightKick";
         }
         else if (Input.GetKeyDown(KeyCode.P))
         {
             launchAttack("HeavyKick");
+            StartCoroutine(StartAttack(1.05f, hitboxes[1]));
+            tester = attackBoxes[1];
+            lastAttack = "HeavyKick";
         }
+        AttackInstance.setParameterByID(AttackParameterId, attackNumber);
+        if (_state == true)
+        {
+            Collider[] cols = Physics.OverlapBox(tester.bounds.center, tester.bounds.extents, tester.transform.rotation, LayerMask.GetMask("Hurtbox"));
+            if (cols.Length>0)
+            {
+                int damage = getAttackValue(lastAttack);
+                playerManager.GiveDamage(damage);
+                Debug.Log("Success!");
+                return;
+            }
+        }
+    }
+    // coroutine to activate the hitboxes only for the duration of the attack.
+    IEnumerator StartAttack(float attacktime, GameObject hit)
+    {
+        hit.SetActive(true);
+        _state = true;
+        yield return new WaitForSeconds(attacktime);
+        hit.SetActive(false);
+        _state = false;
     }
 
 
@@ -93,24 +141,28 @@ public class Player_Attack : MonoBehaviour
         }
         else {
             anim.SetTrigger(attackName);
+<<<<<<< HEAD
             attackSound(attackName);
             int damage = getAttackValue(attackName);
             playerManager.GiveDamage(damage); 
             //playerManager.GiveDamage(attackName,damage); //Network
             
+=======
+            //attackSound(attackName);
+            //attackNumber = 1;
+            //int damage = getAttackValue(attackName);
+>>>>>>> Development
         }
 
     }
 
-    void attackSound(string attackName)
+    /*void attackSound(string attackName)
     {
-        //if (!IsPlaying(attack)){
-            //FMODUnity.RuntimeManager.PlayOneShot(AttackEvent, transform.position);
+        if (!IsPlaying(attack)){
+            FMODUnity.RuntimeManager.PlayOneShot(AttackEvent, transform.position);
             attack.start();
             attack.release();
-       // }
-        // heal.setParameterByID(fullHealthParameterId, restoreAll ? 1.0f : 0.0f);
-        //heal.set3DAttributes(FMODUnity.RuntimeUtils.To3DAttributes(gameObject));
+        }
     }
 
     bool IsPlaying(FMOD.Studio.EventInstance instance)
@@ -118,5 +170,5 @@ public class Player_Attack : MonoBehaviour
         FMOD.Studio.PLAYBACK_STATE state;
         instance.getPlaybackState(out state);
         return state != FMOD.Studio.PLAYBACK_STATE.STOPPED;
-    }
+    }*/
 }

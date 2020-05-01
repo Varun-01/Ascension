@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.01.00">
+	<object class="ParameterPreset" id="{8806af8f-3cfc-4e8f-84b2-b25f4ceb370a}">
+		<property name="name">
+			<value>MetroSFX</value>
+		</property>
+		<relationship name="folder">
+			<destination>{72a2898d-5af9-4c9f-90dc-0f20b9997e72}</destination>
+		</relationship>
+		<relationship name="parameter">
+			<destination>{5a913c02-6142-4bc7-b0df-e6beefa647d6}</destination>
+		</relationship>
+	</object>
+	<object class="GameParameter" id="{5a913c02-6142-4bc7-b0df-e6beefa647d6}">
+		<property name="initialValue">
+			<value>0</value>
+		</property>
+	</object>
+</objects>

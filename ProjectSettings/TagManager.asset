@@ -8,6 +8,9 @@ TagManager:
   - Player2
   - ground
   - Hurtbox
+  - DoNotDestroy
+  - HealthBar P1
+  - HealthBar P2
   layers:
   - Default
   - TransparentFX
