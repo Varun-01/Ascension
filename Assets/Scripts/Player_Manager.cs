@@ -21,6 +21,7 @@ public class Player_Manager : MonoBehaviour
 
     GameObject opponent;
     public Player_Manager opponentManager;
+    public HealthBar healthBar;
 
 
     //[FMODUnity.EventRef]
@@ -30,7 +31,9 @@ public class Player_Manager : MonoBehaviour
     void Start()
     {
         alive = 1;
-        playerHealth = 1000;
+        playerHealth = 100;
+        healthBar.SetMaxHealth(playerHealth);
+
         playerTag = gameObject.tag;
         Player_Stats playerStats = gameObject.GetComponent<Player_Stats>();
         characterName = gameObject.name;
@@ -77,6 +80,7 @@ public class Player_Manager : MonoBehaviour
         rb.AddForce(new Vector3(pushBack, 0f, 0f) * -50);
         anim.SetBool("Stun", true);
         playerHealth = (playerHealth - damage /*+ defenseStat*/);
+        healthBar.SetHealth(playerHealth);
         Debug.Log("took damage from opponent");
         Debug.Log(playerHealth + playerTag);
         Invoke("stopStun", stunTime);
