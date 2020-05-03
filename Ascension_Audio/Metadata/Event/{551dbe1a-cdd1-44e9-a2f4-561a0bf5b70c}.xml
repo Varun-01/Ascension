@@ -5,7 +5,7 @@
 			<value>Menu Music</value>
 		</property>
 		<property name="outputFormat">
-			<value>0</value>
+			<value>1</value>
 		</property>
 		<relationship name="folder">
 			<destination>{630489fa-86ae-476b-9e63-c4a10172a676}</destination>
@@ -63,11 +63,21 @@
 			<destination>{0afb8007-60ec-4c4a-9483-1429376c1d88}</destination>
 			<destination>{cc91234b-4c7c-4f47-b33d-5788a175e66e}</destination>
 		</relationship>
+		<relationship name="modules">
+			<destination>{12a5c703-25d7-432a-9c90-28a74ebc1bf6}</destination>
+		</relationship>
 		<relationship name="mixerGroup">
 			<destination>{60bbd40f-10bf-4eec-a810-3ecb072c2f07}</destination>
 		</relationship>
 	</object>
-	<object class="Timeline" id="{57e66829-6afa-4932-9706-9936a93f7ea7}" />
+	<object class="Timeline" id="{57e66829-6afa-4932-9706-9936a93f7ea7}">
+		<relationship name="modules">
+			<destination>{12a5c703-25d7-432a-9c90-28a74ebc1bf6}</destination>
+		</relationship>
+		<relationship name="markers">
+			<destination>{ad548211-f0f3-48be-9b6a-54f89903cf83}</destination>
+		</relationship>
+	</object>
 	<object class="ParameterProxy" id="{77718106-b9dd-4c55-bd0d-9858b0304994}">
 		<relationship name="preset">
 			<destination>{5d04303c-41c4-430b-9f25-1e89289045d4}</destination>
@@ -115,7 +125,18 @@
 			<destination>{3735cba4-4c13-474a-ae7a-3537b77e5427}</destination>
 		</relationship>
 	</object>
+	<object class="SingleSound" id="{12a5c703-25d7-432a-9c90-28a74ebc1bf6}">
+		<property name="length">
+			<value>90.708662131519276</value>
+		</property>
+		<relationship name="audioFile">
+			<destination>{26996008-1332-4832-9280-c268eeea5f0e}</destination>
+		</relationship>
+	</object>
 	<object class="EventMixerGroup" id="{60bbd40f-10bf-4eec-a810-3ecb072c2f07}">
+		<property name="volume">
+			<value>-2</value>
+		</property>
 		<property name="name">
 			<value>Audio 1</value>
 		</property>
@@ -127,6 +148,20 @@
 		</relationship>
 		<relationship name="output">
 			<destination>{e11110ef-8c3a-460c-8f22-8cc0c2f2ab90}</destination>
+		</relationship>
+	</object>
+	<object class="LoopRegion" id="{ad548211-f0f3-48be-9b6a-54f89903cf83}">
+		<property name="position">
+			<value>0</value>
+		</property>
+		<property name="length">
+			<value>90.708662131519276</value>
+		</property>
+		<relationship name="timeline">
+			<destination>{57e66829-6afa-4932-9706-9936a93f7ea7}</destination>
+		</relationship>
+		<relationship name="markerTrack">
+			<destination>{6ef878a0-3e90-4e96-9145-b33d1d1183e5}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusEffectChain" id="{d51b6dd7-55b8-4697-b8ac-3ec7ab6a4850}">
@@ -150,21 +185,33 @@
 	<object class="MixerBusFader" id="{62cc9edb-d193-4d6d-970d-edc36014b471}" />
 	<object class="MixerBusFader" id="{6730f0a8-5273-47f0-81ce-b7439a3674a1}" />
 	<object class="LowpassEffect" id="{54fb9892-6d1b-4e44-8309-175c5e6be3ae}">
+		<property name="bypass">
+			<value>true</value>
+		</property>
 		<relationship name="automators">
 			<destination>{3735cba4-4c13-474a-ae7a-3537b77e5427}</destination>
 		</relationship>
 	</object>
 	<object class="HighpassEffect" id="{8859489b-759e-4823-8f26-3e18f7dd540d}">
+		<property name="bypass">
+			<value>true</value>
+		</property>
 		<relationship name="automators">
 			<destination>{f36dd8bd-7ef8-4eb6-b57c-ad9464237aa3}</destination>
 		</relationship>
 	</object>
 	<object class="FlangerEffect" id="{6fca4e72-8119-4b05-b17f-dcb47b554602}">
+		<property name="bypass">
+			<value>true</value>
+		</property>
 		<relationship name="automators">
 			<destination>{f106e97e-ef64-4830-bdf5-a8af5e5367de}</destination>
 		</relationship>
 	</object>
 	<object class="LowpassEffect" id="{2f31fc77-79ae-4058-9a73-8dc8a577d65d}">
+		<property name="bypass">
+			<value>true</value>
+		</property>
 		<relationship name="automators">
 			<destination>{6cbd9c7d-41ec-4d85-853f-7ac005eb38e2}</destination>
 		</relationship>
@@ -174,6 +221,9 @@
 		</relationship>
 	</object>
 	<object class="HighpassEffect" id="{3f2c9f7e-ea3e-45be-bb71-3a4595d04d2b}">
+		<property name="bypass">
+			<value>true</value>
+		</property>
 		<relationship name="automators">
 			<destination>{37430786-bcfc-432f-a5ad-5e125a387134}</destination>
 		</relationship>
