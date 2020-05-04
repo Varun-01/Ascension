@@ -12,6 +12,9 @@ EditorBuildSettings:
     path: Assets/Scenes/UI Scenes/Main Menu.unity
     guid: cb45ed2f27432488188eef928dadd2b4
   - enabled: 1
+    path: Assets/Scenes/UI Scenes/Connect Menu.unity
+    guid: e55522045bcfa5449ae6ac22b38f308c
+  - enabled: 1
     path: Assets/Scenes/UI Scenes/Character Select.unity
     guid: d67cb8b35c17d4795aa61b5fa243d12e
   - enabled: 1
