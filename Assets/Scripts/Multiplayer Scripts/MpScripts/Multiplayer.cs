@@ -32,34 +32,6 @@ public class Multiplayer : MonoBehaviour {
 
 	}
 	
-	// void OnGUI() {
-	// 	// Background
-	// 	GUI.DrawTexture(new Rect(0, 0, Screen.width, Screen.height), background);
-	// 	// Client Version Label
-		
-	// 	// Login Interface
-	// 	if (!isHidden) {
-	// 		windowRect = new Rect ((Screen.width - width) / 2, Screen.height / 2 - height, width, height);
-	// 		windowRect = GUILayout.Window((int) Constants.GUI_ID.Login, windowRect, MakeWindow, "Login");
-	// 		if (Event.current.type == EventType.KeyUp && Event.current.keyCode == KeyCode.Return) {
-	// 			Submit();
-	// 		}
-	// 	}
-	// }
-	
-	// void MakeWindow(int id) {
-	// 	GUILayout.Label("User ID");
-	// 	GUI.SetNextControlName("username_field");
-	// 	user_id = GUI.TextField(new Rect(10, 45, windowRect.width - 20, 25), user_id, 25);
-	// 	GUILayout.Space(30);
-	// 	GUILayout.Label("Password");
-	// 	GUI.SetNextControlName("password_field");
-	// 	password = GUI.PasswordField(new Rect(10, 100, windowRect.width - 20, 25), password, "*"[0], 25);
-	// 	GUILayout.Space(75);
-	// 	if (GUI.Button(new Rect(windowRect.width / 2 - 50, 135, 100, 30), "Match Player")) {
-	// 		Submit();
-	// 	}
-	// }
 	
 	public void Submit() {
 	
@@ -79,34 +51,12 @@ public class Multiplayer : MonoBehaviour {
 			Constants.USER_ID = args.user_id;
 			Debug.Log ("Successful Matchplay response : " + args.ToString());
 			EditorUtility.DisplayDialog ("Matching Successful", "Opponent: "+args.opponent_id, "Ok");
-            //SceneManager.LoadScene("TestScene");
+            SceneManager.LoadScene("VS_Testing");
 		} else {
 			Debug.Log("Match Failed");
 		}
 	}
 	
-	// public RequestPlayers requestPlayers() {
-	// 	RequestPlayers request = new RequestPlayers();
-	// 	request.send ();
-	// 	return request;
-	// }
-
-	// public void responsePlayers(ExtendedEventArgs eventArgs) {
-	// 	ResponsePlayersEventArgs args = eventArgs as ResponsePlayersEventArgs;
-	// 	int numActivePlayers = args.numActivePlayers;
-	// 	Debug.Log ("Number of Connected Players : " + numActivePlayers);
-	// }
-
-	// 	public RequestTest requestTest(string arithmeticOperator, int testNum) {
-	// 	RequestTest requestTest = new RequestTest ();
-	// 	requestTest.send (arithmeticOperator, testNum);
-	// 	return requestTest;
-	// }
-	
-	// public void responseTest(ExtendedEventArgs eventArgs) {
-	// 	ResponseTestEventArgs args = eventArgs as ResponseTestEventArgs;
-	// 	Debug.Log ("newTestVar updated on server!!!");
-	// }
 
 	public void Show() {
 		isHidden = false;

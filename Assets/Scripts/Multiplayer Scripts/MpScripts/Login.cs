@@ -89,7 +89,7 @@ public class Login : MonoBehaviour {
 			Constants.USER_ID = args.user_id;
 			Debug.Log ("Successful Login response : " + args.ToString());
 			EditorUtility.DisplayDialog ("Login Successful", "You have successfully logged in.\nClick Ok to continue execution and see responses on console", "Ok");
-            SceneManager.LoadScene("VS_Testing");
+            SceneManager.LoadScene("Main Menu");
 		} else {
 			Debug.Log("Login Failed");
 		}

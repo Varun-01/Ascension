@@ -31,7 +31,7 @@ public class Main : MonoBehaviour {
 
 			StartCoroutine(RequestHeartbeat(1f));
 		}
-		SceneManager.LoadScene ("Login");
+		//SceneManager.LoadScene ("Login");
 	}
 	
 	// Update is called once per frame
