@@ -30,6 +30,12 @@ EditorBuildSettings:
     path: Assets/Scenes/MpScenes/Login.unity
     guid: 91cea01776e924b31af225d779f1b724
   - enabled: 1
-    path: Assets/Scenes/MpScenes/Multiplayer.unity
-    guid: f09325f98e8854456bc74db65f020974
+    path: Assets/Scenes/Testing/Dev_Testing.unity
+    guid: 2414a74a2e29eaa42b43ebfc9891b82f
+  - enabled: 1
+    path: Assets/Scenes/Testing/VS_Testing.unity
+    guid: 65c21ed62bd40864592c7e5e305ee9ed
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
   m_configObjects: {}

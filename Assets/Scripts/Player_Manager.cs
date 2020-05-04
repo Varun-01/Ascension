@@ -34,7 +34,7 @@ public class Player_Manager : MonoBehaviour
     {
         alive = 1;
         playerHealth = 100;
-        healthBar.SetMaxHealth(playerHealth);
+//        healthBar.SetMaxHealth(playerHealth);
 
         playerTag = gameObject.tag;
         Player_Stats playerStats = gameObject.GetComponent<Player_Stats>();
@@ -60,12 +60,8 @@ public class Player_Manager : MonoBehaviour
         }
 
         opponentManager = opponent.GetComponent<Player_Manager>();
-<<<<<<< HEAD
-        Debug.Log(opponentManager.playerTag);
-=======
         //Debug.Log(opponentManager.playerTag);
 
->>>>>>> Development
     }
 
     // Update is called once per frame
@@ -88,7 +84,7 @@ public class Player_Manager : MonoBehaviour
         rb.AddForce(new Vector3(pushBack, 0f, 0f) * -50);
         anim.SetBool("Stun", true);
         playerHealth = (playerHealth - damage /*+ defenseStat*/);
-        healthBar.SetHealth(playerHealth);
+        //healthBar.SetHealth(playerHealth);
         Debug.Log("took damage from opponent");
         Debug.Log(playerHealth + playerTag);
         Invoke("stopStun", stunTime);
@@ -101,7 +97,7 @@ public class Player_Manager : MonoBehaviour
         Debug.Log("gave damage to opponent");
         Debug.Log(playerTag);
         //Network
-        //attackRequest.sendAttackRequest(damage);
+        attackRequest.sendAttackRequest(damage);
     }
 
     void EndGame()

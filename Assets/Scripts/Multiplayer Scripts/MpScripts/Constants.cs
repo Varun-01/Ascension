@@ -20,8 +20,8 @@ public class Constants {
 	public static readonly short SMSG_REG = 205;
 	public static readonly short CMSG_ATT = 106;
 	public static readonly short SMSG_ATT = 206;
-	public static readonly short CMSG_LVUP = 107;
-	public static readonly short SMSG_LVUP = 207;
+	public static readonly short CMSG_MOVE = 107;
+	public static readonly short SMSG_MOVE = 207;
 	public static readonly short CMSG_MATCH_PLAYER = 108;
 	public static readonly short SMSG_MATCH_PLAYER = 208;
 	

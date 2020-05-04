@@ -15,7 +15,7 @@ public class NetworkRequestTable {
 		add(Constants.CMSG_TEST, "RequestTest");
 		add(Constants.CMSG_REG, "RequestRegister");//105
 		add(Constants.CMSG_ATT, "RequestAttack");//106
-		add(Constants.CMSG_LVUP, "RequestLvUp");//107
+		add(Constants.CMSG_MOVE, "RequestMove");//107
 		add(Constants.CMSG_MATCH_PLAYER, "RequestMatchPlayer");//108
 	}
 	

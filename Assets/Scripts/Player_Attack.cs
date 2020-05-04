@@ -75,7 +75,7 @@ public class Player_Attack : MonoBehaviour
             
         }
         else if (Input.GetKeyDown(KeyCode.O))
-        {
+        {   //movementRequest.sendMovementRequest("o");
             launchAttack("LightKick");
             StartCoroutine(StartAttack(0.70f, hitboxes[1]));
             tester = attackBoxes[1];
@@ -141,17 +141,10 @@ public class Player_Attack : MonoBehaviour
         }
         else {
             anim.SetTrigger(attackName);
-<<<<<<< HEAD
-            attackSound(attackName);
+            //attackSound(attackName);
             int damage = getAttackValue(attackName);
             playerManager.GiveDamage(damage); 
-            //playerManager.GiveDamage(attackName,damage); //Network
             
-=======
-            //attackSound(attackName);
-            //attackNumber = 1;
-            //int damage = getAttackValue(attackName);
->>>>>>> Development
         }
 
     }

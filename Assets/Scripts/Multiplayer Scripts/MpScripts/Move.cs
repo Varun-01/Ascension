@@ -3,7 +3,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEditor;
 
-public class Attack : MonoBehaviour {
+public class Move : MonoBehaviour {
 	
 	private GameObject mainObject;
 	 private MessageQueue msgQueue;
@@ -16,7 +16,7 @@ public class Attack : MonoBehaviour {
 		//Debug.Log(mainObject != null? "AddMONEYmainObject is not null" : "mainObject is null");
 		cManager = mainObject.GetComponent<ConnectionManager>();
 		msgQueue = mainObject.GetComponent<MessageQueue> ();
-		msgQueue.AddCallback(Constants.SMSG_ATT, responseAttack);
+		msgQueue.AddCallback(Constants.SMSG_MOVE, responseMove);
 	}
 	
 	// Use this for initialization
@@ -25,37 +25,32 @@ public class Attack : MonoBehaviour {
 	}
 	
 	//Network, entry point function
-	public void sendAttackRequest(int damage) {
-		Debug.Log("Sending attack request****************************");
-		cManager.send(requestAttack(damage));  
+	public void sendAttackRequest(string key) {
+		Debug.Log("Sending move request****************************");
+		cManager.send(requestMove(key));  
 		//requestLogin is the function in line 78. The function returns a request (type if RequestLogin). 
 		 //inside request, there is a packet(type GamePacket), which contains request_id, CLIENT_VERION,username, passowrd.
 	} //cManager.send() coverts the request into byte[] and send it to server. 
 	
-	public RequestAttack requestAttack(int damage) {
-		RequestAttack request = new RequestAttack();
-		if(request != null) {Debug.Log ("request 52 Attack is NOT null*******");}
-		request.send(damage);
-		Debug.Log ("called requestAttack function and send");
+	public RequestMove requestMove(string key) {
+		RequestMove request = new RequestMove();
+		if(request != null) {Debug.Log ("request 37 move is NOT null*******");}
+		request.send(key);
+		Debug.Log ("called requestMove function and send");
 		return request;
 	}
 	
-	public void responseAttack(ExtendedEventArgs eventArgs) {
+	public void responseMove(ExtendedEventArgs eventArgs) {
 		
-		ResponseAttackEventArgs args = eventArgs as ResponseAttackEventArgs;
+		ResponseMoveEventArgs args = eventArgs as ResponseMoveEventArgs;
 		if (args.status == 0) {
 			Constants.USER_ID = args.user_id;
 			Debug.Log ("Successful attack response : ");
-			EditorUtility.DisplayDialog ("Attack Successful", "You have successfully attack.\nClick Ok to continue execution and see responses on console", "Ok");
+			EditorUtility.DisplayDialog ("Move Successful", "You have successfully move.\nClick Ok to continue execution and see responses on console", "Ok");
             //SceneManager.LoadScene("Main Menu");
 		} else {
 			Debug.Log("Attack Failed");
 		}
-	}
-
-	public void responseTest(ExtendedEventArgs eventArgs) {
-		ResponseTestEventArgs args = eventArgs as ResponseTestEventArgs;
-		Debug.Log ("newTestVar updated on server!!!");
 	}
 	
 
