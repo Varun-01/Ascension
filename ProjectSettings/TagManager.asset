@@ -11,6 +11,7 @@ TagManager:
   - DoNotDestroy
   - HealthBar P1
   - HealthBar P2
+  - SelectionManager
   layers:
   - Default
   - TransparentFX
