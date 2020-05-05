@@ -11,7 +11,7 @@ public class RequestMove : NetworkRequest {
 	public void send(string key) {
 		Debug.Log ("called requestMove.send() function: "+ request_id);
 	    packet = new GamePacket(request_id);
-		packet.addString(Constants.CLIENT_VERSION);
+		//packet.addString(Constants.CLIENT_VERSION);
 		//packet.addInt32(moneyToAdd);
 		packet.addString(key);
 		//packet.addString(password);

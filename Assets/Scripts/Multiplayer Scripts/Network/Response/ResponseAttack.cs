@@ -10,6 +10,7 @@ public class ResponseAttackEventArgs : ExtendedEventArgs {
 	public int money { get; set; }
 	public short level { get; set; }
 	public string last_logout { get; set; }
+	public int damage {get; set;}
 	
 	public ResponseAttackEventArgs() {
 		event_id = Constants.SMSG_ATT;
@@ -24,6 +25,7 @@ public class ResponseAttack : NetworkResponse {
 	private int money;
 	private short level;
 	private string last_logout;
+	private int damage;
 
 	public ResponseAttack() {
 		//Debug.Log("called ResponseAddMoney constructor");
@@ -32,11 +34,12 @@ public class ResponseAttack : NetworkResponse {
 	public override void parse() {
 		status = DataReader.ReadShort(dataStream);
 		if (status == 0) {
-			user_id = DataReader.ReadInt(dataStream);
-			username = DataReader.ReadString(dataStream);
-			money = DataReader.ReadInt(dataStream);
-			level = DataReader.ReadShort (dataStream);
-			last_logout = DataReader.ReadString(dataStream);
+			// user_id = DataReader.ReadInt(dataStream);
+			// username = DataReader.ReadString(dataStream);
+			// money = DataReader.ReadInt(dataStream);
+			// level = DataReader.ReadShort (dataStream);
+			// last_logout = DataReader.ReadString(dataStream);
+			damage = DataReader.ReadInt(dataStream);
 		}
 	}
 	
@@ -45,11 +48,12 @@ public class ResponseAttack : NetworkResponse {
 		if (status == 0) {
 			args = new ResponseAttackEventArgs();
 			args.status = status;
-			args.user_id = user_id;
-			args.username = username;
-			args.money = money;
-			args.level = level;
-			args.last_logout = last_logout;
+			// args.user_id = user_id;
+			// args.username = username;
+			// args.money = money;
+			// args.level = level;
+			// args.last_logout = last_logout;
+			args.damage = damage;
 		}
 
 		return args;

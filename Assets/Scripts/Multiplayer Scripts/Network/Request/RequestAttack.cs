@@ -11,7 +11,7 @@ public class RequestAttack : NetworkRequest {
 	public void send(int damage) {
 		Debug.Log ("called requestAttack.send() function: "+ request_id);
 	    packet = new GamePacket(request_id);
-		packet.addString(Constants.CLIENT_VERSION);
+		//packet.addString(Constants.CLIENT_VERSION);
 		//packet.addString(attackName);
 		packet.addInt32(damage);
 		//packet.addString(username);

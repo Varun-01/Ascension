@@ -23,7 +23,7 @@ public class NetworkResponseTable {
 	}
 	
 	public static NetworkResponse get(short response_id) {
-		Debug.Log("requestTable.get()"+ response_id   + "NetworkResponse.cs line23");
+		//Debug.Log("requestTable.get()"+ response_id   + "NetworkResponse.cs line23");
 		init ();
 		NetworkResponse response = null;
 		Debug.Log("response_id is :"+response_id);

@@ -35,6 +35,7 @@ public class Attack : MonoBehaviour {
 	public RequestAttack requestAttack(int damage) {
 		RequestAttack request = new RequestAttack();
 		if(request != null) {Debug.Log ("request 52 Attack is NOT null*******");}
+		Debug.Log("Damage is !!!!!!!!!!!!!!"+damage);
 		request.send(damage);
 		Debug.Log ("called requestAttack function and send");
 		return request;
@@ -45,17 +46,12 @@ public class Attack : MonoBehaviour {
 		ResponseAttackEventArgs args = eventArgs as ResponseAttackEventArgs;
 		if (args.status == 0) {
 			Constants.USER_ID = args.user_id;
-			Debug.Log ("Successful attack response : ");
-			EditorUtility.DisplayDialog ("Attack Successful", "You have successfully attack.\nClick Ok to continue execution and see responses on console", "Ok");
+			Debug.Log ("Successful attack response : " + +args.damage);
+			EditorUtility.DisplayDialog ("Attack Successful ", "You have successfully attack.\nClick Ok to continue execution and see responses on console", "Ok");
             //SceneManager.LoadScene("Main Menu");
 		} else {
 			Debug.Log("Attack Failed");
 		}
-	}
-
-	public void responseTest(ExtendedEventArgs eventArgs) {
-		ResponseTestEventArgs args = eventArgs as ResponseTestEventArgs;
-		Debug.Log ("newTestVar updated on server!!!");
 	}
 	
 

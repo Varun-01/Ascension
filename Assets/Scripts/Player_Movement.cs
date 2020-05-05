@@ -41,6 +41,8 @@ namespace UnityChan
         public int buttonPresses = 0; //how many times the player pressed the button within the allowed timeframe
         public float Run = 0f; //acts as boolean - 0 is walk and 1 is run. Used for blending tree in animator.
         public float movementDelay = 0f; //used for smoothing forward and backward animation so that idle animation doesn't activate during "uninterrupted" movement.
+        
+        public Move moveRequest;
 
         private GameObject cameraObject;	 
 		
@@ -58,6 +60,8 @@ namespace UnityChan
 			orgColHight = col.height;
 			orgVectColCenter = col.center;
             Run = 0f;
+            //Network
+            moveRequest = gameObject.GetComponent<Move>();
 		}
 
         /*
@@ -128,9 +132,11 @@ namespace UnityChan
             if (playerDirection == facingRight)
             {
                 if (Input.GetKeyUp(KeyCode.D))
-                {
+                {   
                     Invoke("SetButtonPressesToZero", tapDelay);
                     Run = 0f;
+                    //Network
+                    moveRequest.sendMoveRequest("D");
                 }
             }
             else {
@@ -138,6 +144,8 @@ namespace UnityChan
                 {
                     Invoke("SetButtonPressesToZero", tapDelay);
                     Run = 0f;
+                    //Network
+                    moveRequest.sendMoveRequest("A");
                 }
             }
       

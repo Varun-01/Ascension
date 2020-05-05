@@ -25,8 +25,8 @@ public class Move : MonoBehaviour {
 	}
 	
 	//Network, entry point function
-	public void sendAttackRequest(string key) {
-		Debug.Log("Sending move request****************************");
+	public void sendMoveRequest(string key) {
+		Debug.Log("Sending move request****************************"+key);
 		cManager.send(requestMove(key));  
 		//requestLogin is the function in line 78. The function returns a request (type if RequestLogin). 
 		 //inside request, there is a packet(type GamePacket), which contains request_id, CLIENT_VERION,username, passowrd.
