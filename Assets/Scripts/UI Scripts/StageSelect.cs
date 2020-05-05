@@ -23,6 +23,9 @@ public class StageSelect : MonoBehaviour
     [SerializeField] private AudioClip arrowClickSFX;
     [SerializeField] private AudioClip characterSelectMusic;
 
+    public GameObject selection;
+    public Selection_Manager selectionManager;
+
     public void LeftArrow()
     {
         selectedStageIndex--;
@@ -47,7 +50,8 @@ public class StageSelect : MonoBehaviour
 
     public void Select()
     {
-        Debug.Log(string.Format("Stage {0}:{1} has been selected", selectedStageIndex, stageList[selectedStageIndex].stageName));
+        //Debug.Log(string.Format("Stage {0}:{1} has been selected", selectedStageIndex, stageList[selectedStageIndex].stageName));
+        selectionManager.setStage(string.Format(stageList[selectedStageIndex].stageName));
         SceneManager.LoadScene("Music Select");
     }
 
@@ -75,7 +79,8 @@ public class StageSelect : MonoBehaviour
     void Start()
     {
         UpdateStageSelectionUI();
-
+        selection = GameObject.Find("SelectionManager");
+        selectionManager = selection.GetComponent<Selection_Manager>();
     }
 
     // Update is called once per frame

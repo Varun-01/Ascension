@@ -22,6 +22,9 @@ public class CharacterSelect : MonoBehaviour
     [SerializeField] private AudioClip arrowClickSFX;
     [SerializeField] private AudioClip characterSelectMusic;
 
+    public GameObject selection;
+    public Selection_Manager selectionManager;
+
     public void LeftArrow()
     {
         selectedCharacterIndex--;
@@ -46,7 +49,8 @@ public class CharacterSelect : MonoBehaviour
 
     public void Select()
     {
-        Debug.Log(string.Format("Character {0}:{1} has been selected by Player 1", selectedCharacterIndex, characterList[selectedCharacterIndex].characterName));
+        //Debug.Log(string.Format("Character {0}:{1} has been selected by Player 1", selectedCharacterIndex, characterList[selectedCharacterIndex].characterName));
+        selectionManager.setCharacter1(string.Format(characterList[selectedCharacterIndex].characterName));
     }
     private void UpdateCharacterSelectionUI()
     {
@@ -68,7 +72,9 @@ public class CharacterSelect : MonoBehaviour
     void Start()
     {
         UpdateCharacterSelectionUI();
-        
+        selection = GameObject.Find("SelectionManager");
+        selectionManager = selection.GetComponent<Selection_Manager>();
+
     }
 
     // Update is called once per frame

@@ -19,8 +19,8 @@ public class Game_Manager : MonoBehaviour
     Transform[] models2;
     string p1 = "Player1";
     string p2 = "Player2";
-     public int  ps1;
-     public int  ps2;
+    public int  ps1;
+    public int  ps2;
     bool reset;
     
 
@@ -44,15 +44,12 @@ public class Game_Manager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
         ps1 = 0;
         ps2 = 0;
         GameObject player1 = GameObject.FindWithTag(p1);
         GameObject player2 = GameObject.FindWithTag(p2);
         Player_Manager player1Manager = player1.GetComponent<Player_Manager>();
         Player_Manager player2Manager = player2.GetComponent<Player_Manager>();
-
-        
     }
     
     
@@ -89,8 +86,6 @@ public class Game_Manager : MonoBehaviour
 
     }
   
-    
-    
 }
 
 
