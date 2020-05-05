@@ -663,9 +663,10 @@ GameObject:
   - component: {fileID: 486861409}
   - component: {fileID: 486861410}
   - component: {fileID: 486861411}
+  - component: {fileID: 486861412}
   m_Layer: 0
   m_Name: Main Camera
-  m_TagString: MainCamera
+  m_TagString: DoNotDestroy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -790,6 +791,18 @@ MonoBehaviour:
   parameter: MenuSFX
   TriggerEvent: 11
   value: 2
+--- !u!114 &486861412
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 486861405}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b760083d58e38947ace990a4b2d829c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &970802903
 GameObject:
   m_ObjectHideFlags: 0
