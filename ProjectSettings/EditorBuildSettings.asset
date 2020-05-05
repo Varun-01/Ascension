@@ -24,7 +24,7 @@ EditorBuildSettings:
     path: Assets/Scenes/UI Scenes/Music Select.unity
     guid: 0fd45e5b758de3c47b72dcbc71c3d6c4
   - enabled: 1
-    path: Assets/Scenes/Training 2.0.unity
+    path: Assets/Scenes/Incomplete/Training.unity
     guid: afe124a1136d6bb4fb53732b0a2cd1bf
   - enabled: 1
     path: Assets/Scenes/Incomplete/METRO.unity

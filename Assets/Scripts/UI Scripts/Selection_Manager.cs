@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class Selection_Manager : MonoBehaviour
 {
-    public string character1;
-    public string character2;
+    public string character1 = "UnityChan";
+    public string character2 = "UnityChan Alt";
     public string stage;
     public string music;
 

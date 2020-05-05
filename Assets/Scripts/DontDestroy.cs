@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class DontDestroy : MonoBehaviour
 {
+    private static DontDestroy playerInstance;
     void Awake()
     {
         GameObject[] objs = GameObject.FindGameObjectsWithTag("DoNotDestroy");
@@ -14,5 +15,13 @@ public class DontDestroy : MonoBehaviour
         //}
 
         DontDestroyOnLoad(this.gameObject);
+        if (playerInstance == null)
+        {
+            playerInstance = this;
+        }
+        else
+        {
+            DestroyObject(gameObject);
+        }
     }
 }

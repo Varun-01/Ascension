@@ -235,10 +235,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   characterList:
   - splash: {fileID: 21300000, guid: 5d229ed5418a3234396be48d022d6926, type: 3}
-    characterName: UNITY CHAN
+    characterName: UnityChan
     characterBGColor: {r: 0, g: 0, b: 0, a: 0}
   - splash: {fileID: 21300000, guid: 102719b387110b14ca36708062008ddf, type: 3}
-    characterName: MASTER CHIEF
+    characterName: Master Chief
     characterBGColor: {r: 0, g: 0, b: 0, a: 0}
   characterName: {fileID: 6024814718071702933}
   characterSplash: {fileID: 6024814717337289469}
@@ -450,10 +450,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   characterList:
   - splash: {fileID: 21300000, guid: 5d229ed5418a3234396be48d022d6926, type: 3}
-    characterName: UNITY CHAN
+    characterName: UnityChan
     characterBGColor: {r: 0, g: 0, b: 0, a: 0}
   - splash: {fileID: 21300000, guid: 102719b387110b14ca36708062008ddf, type: 3}
-    characterName: MASTER CHIEF
+    characterName: Master Chief
     characterBGColor: {r: 0, g: 0, b: 0, a: 0}
   characterName: {fileID: 6024814718896240531}
   characterSplash: {fileID: 6024814717737348048}
