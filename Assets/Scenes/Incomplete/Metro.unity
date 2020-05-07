@@ -638,6 +638,38 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.2420552, y: 0.008088423, z: 2.513829}
   m_Center: {x: -0.028913498, y: 0.051051416, z: -1.0317303}
+--- !u!114 &212011382
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 212011375}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b0e04e2572f9a940a47465f6f3c2f00, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: MainCamera
+  parameter: MetroSFX
+  TriggerEvent: 4
+  value: 0
+--- !u!114 &212011383
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 212011375}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b0e04e2572f9a940a47465f6f3c2f00, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: MainCamera
+  parameter: MetroSFX
+  TriggerEvent: 3
+  value: 0
 --- !u!1001 &220868337
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2590,7 +2622,6 @@ GameObject:
   - component: {fileID: 1227172792}
   - component: {fileID: 1227172791}
   - component: {fileID: 1227172790}
-  - component: {fileID: 1227172794}
   - component: {fileID: 1227172793}
   - component: {fileID: 1227172795}
   - component: {fileID: 1227172799}
@@ -2682,31 +2713,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CollisionTag: 
-  Event: event:/Test_Events/Metro_music_Test
+  Event: event:/Music Control Bus
   PlayEvent: 1
   StopEvent: 2
   AllowFadeout: 1
   TriggerOnce: 0
   Preload: 0
-  Params:
-  - Name: Rain
-    Value: 0.106
+  Params: []
   OverrideAttenuation: 0
-  OverrideMinDistance: 0
-  OverrideMaxDistance: 0
---- !u!114 &1227172794
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1227172789}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 86c6556701af9e04380698b89f691b6e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ListenerNumber: -1
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!114 &1227172795
 MonoBehaviour:
   m_ObjectHideFlags: 0
