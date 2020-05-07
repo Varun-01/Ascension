@@ -46,8 +46,8 @@ public class Attack : MonoBehaviour {
 		ResponseAttackEventArgs args = eventArgs as ResponseAttackEventArgs;
 		if (args.status == 0) {
 			Constants.USER_ID = args.user_id;
-			Debug.Log ("Successful attack response : " + +args.damage);
-			EditorUtility.DisplayDialog ("Attack Successful ", "You have successfully attack.\nClick Ok to continue execution and see responses on console", "Ok");
+			Debug.Log ("Successful attack response : " +args.damage);
+			EditorUtility.DisplayDialog ("Attack Successful: "+args.damage, "You have successfully attack.\nClick Ok to continue execution and see responses on console", "Ok");
             //SceneManager.LoadScene("Main Menu");
 		} else {
 			Debug.Log("Attack Failed");

@@ -39,7 +39,7 @@ public class ResponseMove : NetworkResponse {
 			username = DataReader.ReadString(dataStream);
 			money = DataReader.ReadInt(dataStream);
 			level = DataReader.ReadShort (dataStream);
-			last_logout = DataReader.ReadString(dataStream);
+			//last_logout = DataReader.ReadString(dataStream);
 			key = DataReader.ReadString(dataStream);
 		}
 	}

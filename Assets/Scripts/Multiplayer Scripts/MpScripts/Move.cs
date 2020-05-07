@@ -46,7 +46,7 @@ public class Move : MonoBehaviour {
 		if (args.status == 0) {
 			Constants.USER_ID = args.user_id;
 			Debug.Log ("Successful attack response : ");
-			EditorUtility.DisplayDialog ("Move Successful", "You have successfully move.\nClick Ok to continue execution and see responses on console", "Ok");
+			EditorUtility.DisplayDialog ("Move Successful:"+args.key, "You have successfully move.\nClick Ok to continue execution and see responses on console", "Ok");
             //SceneManager.LoadScene("Main Menu");
 		} else {
 			Debug.Log("Attack Failed");
