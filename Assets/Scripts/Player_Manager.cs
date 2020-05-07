@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using UnityEditor;
 
 public class Player_Manager : MonoBehaviour
 {
@@ -76,7 +78,8 @@ public class Player_Manager : MonoBehaviour
     }
 
     public void TakeDamage(int damage)
-    {
+    {   EditorUtility.DisplayDialog ("Inside Opponent.TakeDamage()", "You have successfully attack.\nClick Ok to continue execution and see responses on console", "Ok");
+
         if (anim.GetCurrentAnimatorStateInfo(0).IsName("GetUp")) {
             return;
         }
@@ -88,12 +91,13 @@ public class Player_Manager : MonoBehaviour
         Debug.Log("took damage from opponent");
         Debug.Log(playerHealth + playerTag);
         Invoke("stopStun", stunTime);
+
     }
 
     //public void GiveDamage( string attackName,int damage) //network
     public void GiveDamage(int damage) //Network add attackname
     {
-        opponentManager.TakeDamage(damage + attackStat);
+        //opponentManager.TakeDamage(damage + attackStat);
         Debug.Log("gave damage to opponent");
         Debug.Log(playerTag);
         //Network

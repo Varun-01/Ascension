@@ -44,7 +44,6 @@ namespace UnityChan
         
         public Move moveRequest;
 
-<<<<<<< HEAD
         private GameObject cameraObject;	 
 		
 		static int idleState = Animator.StringToHash ("Base Layer.Idle");
@@ -64,25 +63,6 @@ namespace UnityChan
             //Network
             moveRequest = gameObject.GetComponent<Move>();
 		}
-=======
-        private GameObject cameraObject;
->>>>>>> Development
-
-        static int idleState = Animator.StringToHash("Base Layer.Idle");
-        static int locoState = Animator.StringToHash("Base Layer.Locomotion");
-        static int jumpState = Animator.StringToHash("Base Layer.Jump");
-        static int restState = Animator.StringToHash("Base Layer.Rest");
-
-        void Start()
-        {
-            anim = GetComponent<Animator>();
-            col = GetComponent<CapsuleCollider>();
-            rb = GetComponent<Rigidbody>();
-            cameraObject = GameObject.FindWithTag("MainCamera");
-            orgColHight = col.height;
-            orgVectColCenter = col.center;
-            Run = 0f;
-        }
 
         void Update()
         {

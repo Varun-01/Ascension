@@ -8,6 +8,14 @@ public class Attack : MonoBehaviour {
 	private GameObject mainObject;
 	 private MessageQueue msgQueue;
 	 private ConnectionManager cManager;
+
+	GameObject opponent;
+    public Player_Manager opponentManager;
+
+	public int attackStat;
+    public int defenseStat;
+    public string characterName;
+    public string playerTag;
 	
 	void Awake() {
 		
@@ -21,7 +29,13 @@ public class Attack : MonoBehaviour {
 	
 	// Use this for initialization
 	void Start() {
-
+		opponent = GameObject.FindWithTag("Player1");
+		opponentManager = opponent.GetComponent<Player_Manager>();
+		playerTag = gameObject.tag;
+        Player_Stats playerStats = gameObject.GetComponent<Player_Stats>();
+        characterName = gameObject.name;
+        //Debug.Log(characterName);
+        attackStat = playerStats.getPlayerAttack(characterName);
 	}
 	
 	//Network, entry point function
@@ -34,8 +48,8 @@ public class Attack : MonoBehaviour {
 	
 	public RequestAttack requestAttack(int damage) {
 		RequestAttack request = new RequestAttack();
-		if(request != null) {Debug.Log ("request 52 Attack is NOT null*******");}
-		Debug.Log("Damage is !!!!!!!!!!!!!!"+damage);
+		//if(request != null) {Debug.Log ("request 52 Attack is NOT null*******");}
+		//Debug.Log("Damage is !!!!!!!!!!!!!!"+damage);
 		request.send(damage);
 		Debug.Log ("called requestAttack function and send");
 		return request;
@@ -47,8 +61,9 @@ public class Attack : MonoBehaviour {
 		if (args.status == 0) {
 			Constants.USER_ID = args.user_id;
 			Debug.Log ("Successful attack response : " +args.damage);
-			EditorUtility.DisplayDialog ("Attack Successful: "+args.damage, "You have successfully attack.\nClick Ok to continue execution and see responses on console", "Ok");
-            //SceneManager.LoadScene("Main Menu");
+			//EditorUtility.DisplayDialog ("Attack Successful: "+args.damage, "You have successfully attack.\nClick Ok to continue execution and see responses on console", "Ok");
+            opponentManager.TakeDamage(args.damage + attackStat);
+			//SceneManager.LoadScene("Main Menu");
 		} else {
 			Debug.Log("Attack Failed");
 		}

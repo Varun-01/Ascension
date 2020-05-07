@@ -1320,6 +1320,7 @@ MonoBehaviour:
   buttonPresses: 0
   Run: 0
   movementDelay: 0
+  moveRequest: {fileID: 0}
 --- !u!114 &1145376626
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1434,6 +1435,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 30872899cea3f4329b519e779ca11570, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  opponentManager: {fileID: 0}
+  attackStat: 0
+  defenseStat: 0
+  characterName: 
+  playerTag: 
 --- !u!1 &1151382540
 GameObject:
   m_ObjectHideFlags: 0
@@ -1916,6 +1922,7 @@ MonoBehaviour:
   buttonPresses: 0
   Run: 0
   movementDelay: 0
+  moveRequest: {fileID: 0}
 --- !u!136 &1439516134
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -1970,6 +1977,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 30872899cea3f4329b519e779ca11570, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  opponentManager: {fileID: 0}
+  attackStat: 0
+  defenseStat: 0
+  characterName: 
+  playerTag: 
 --- !u!1 &1446408130
 GameObject:
   m_ObjectHideFlags: 0
@@ -2177,7 +2189,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400328, guid: 49f2055d53eeb4e5a92af590a44bddee, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.339
+      value: 0.32
       objectReference: {fileID: 0}
     - target: {fileID: 400328, guid: 49f2055d53eeb4e5a92af590a44bddee, type: 3}
       propertyPath: m_LocalPosition.z
