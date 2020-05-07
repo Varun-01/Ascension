@@ -18,10 +18,12 @@ public class Flip : MonoBehaviour
         f2 = GameObject.FindWithTag(fighter2).transform;
         timeToGo = Time.fixedTime + 60.0f;
     }
-    void FixedUpdate()
+    void Update()
     {
         if (f1.position.x>f2.position.x)
         {
+            f1 = GameObject.FindWithTag(fighter1).transform;
+            f2 = GameObject.FindWithTag(fighter2).transform;
             //player 1
             Vector3 temp = transform.rotation.eulerAngles;
             temp.y = -95.0f;

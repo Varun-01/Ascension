@@ -15,6 +15,29 @@ EditorBuildSettings:
     path: Assets/Scenes/UI Scenes/Main Menu.unity
     guid: cb45ed2f27432488188eef928dadd2b4
   - enabled: 1
+<<<<<<< HEAD
     path: Assets/Scenes/Testing/VS_Testing.unity
     guid: 65c21ed62bd40864592c7e5e305ee9ed
+=======
+    path: Assets/Scenes/UI Scenes/Connect Menu.unity
+    guid: e55522045bcfa5449ae6ac22b38f308c
+  - enabled: 1
+    path: Assets/Scenes/UI Scenes/Character Select.unity
+    guid: d67cb8b35c17d4795aa61b5fa243d12e
+  - enabled: 1
+    path: Assets/Scenes/UI Scenes/StageSelect.unity
+    guid: 625ff28450186b3439b749666204a0e9
+  - enabled: 1
+    path: Assets/Scenes/UI Scenes/Music Select.unity
+    guid: 0fd45e5b758de3c47b72dcbc71c3d6c4
+  - enabled: 1
+    path: Assets/Scenes/Incomplete/Training.unity
+    guid: afe124a1136d6bb4fb53732b0a2cd1bf
+  - enabled: 1
+    path: Assets/Scenes/Incomplete/METRO.unity
+    guid: 9225f0169bd76e34e9ae265e0eebdb65
+  - enabled: 1
+    path: Assets/Scenes/Incomplete/THE STREETS.unity
+    guid: b6f4f0cd04cb28d48ad6389a755d605d
+>>>>>>> Development
   m_configObjects: {}

@@ -12,18 +12,14 @@ public class Timer : MonoBehaviour
         // Start is called before the first frame update
     void Start()
     {
-        GameObject player1 = GameObject.FindWithTag(p1);
-        GameObject player2 = GameObject.FindWithTag(p2);
-        Player_Manager player1Manager = player1.GetComponent<Player_Manager>();
-        Player_Manager player2Manager = player2.GetComponent<Player_Manager>();
         GameObject gameTimer = GameObject.Find("ScriptManager");
         Game_Manager mainTimer = gameTimer.GetComponent<Game_Manager>();
+
         if (mainTimer.ps1 < 2 && mainTimer.ps2 < 2)
         {
-
             Invoke("ResetScene", x);
-
         }
+        
     }
     void ResetScene()
     {
