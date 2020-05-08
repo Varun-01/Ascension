@@ -6,8 +6,11 @@ using UnityEditor;
 public class Move : MonoBehaviour {
 	
 	private GameObject mainObject;
+	public GameObject opponent;
 	 private MessageQueue msgQueue;
 	 private ConnectionManager cManager;
+
+	 public Player_Movement opponentMovement;
 	
 	void Awake() {
 		
@@ -21,7 +24,8 @@ public class Move : MonoBehaviour {
 	
 	// Use this for initialization
 	void Start() {
-
+		opponent = GameObject.FindWithTag("Player1");
+		opponentMovement = opponent.GetComponent<Player_Movement>();
 	}
 	
 	//Network, entry point function
@@ -45,9 +49,11 @@ public class Move : MonoBehaviour {
 		ResponseMoveEventArgs args = eventArgs as ResponseMoveEventArgs;
 		if (args.status == 0) {
 			Constants.USER_ID = args.user_id;
-			Debug.Log ("Successful attack response : ");
-			EditorUtility.DisplayDialog ("Move Successful:"+args.key, "You have successfully move.\nClick Ok to continue execution and see responses on console", "Ok");
+			Debug.Log ("Successful Move response : ");
+			//EditorUtility.DisplayDialog ("Move Successful:"+args.key, "You have successfully move.\nClick Ok to continue execution and see responses on console", "Ok");
             //SceneManager.LoadScene("Main Menu");
+			opponentMovement.moveLeft();
+		
 		} else {
 			Debug.Log("Attack Failed");
 		}

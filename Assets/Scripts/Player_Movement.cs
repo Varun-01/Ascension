@@ -6,11 +6,6 @@ using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 
-namespace UnityChan
-{
-    [RequireComponent(typeof(Animator))]
-    [RequireComponent(typeof(CapsuleCollider))]
-    [RequireComponent(typeof(Rigidbody))]
 
     public class Player_Movement : MonoBehaviour
     {
@@ -50,6 +45,12 @@ namespace UnityChan
 		static int locoState = Animator.StringToHash ("Base Layer.Locomotion");
 		static int jumpState = Animator.StringToHash ("Base Layer.Jump");
 		static int restState = Animator.StringToHash ("Base Layer.Rest");
+
+        void Awake()
+        {
+            DontDestroyOnLoad(gameObject);
+
+        }
 
 		void Start ()
 		{
@@ -139,7 +140,7 @@ namespace UnityChan
 
             if (playerDirection == facingRight)
             {
-                if (Input.GetKeyDown(KeyCode.D))
+                if (Input.GetKeyDown(KeyCode.D)) // "D"
                 {
                     buttonPresses += 1;
                     if (buttonPresses > 1)
@@ -231,8 +232,8 @@ namespace UnityChan
             }
         }
 
-        void moveRight()
-        {
+        public void moveRight()
+        { Debug.Log("called MoveRignt()");
             if (Run > 0)
             {
                 rb.velocity = transform.forward * runningSpeed;
@@ -245,8 +246,8 @@ namespace UnityChan
             movement = true;
         }
 
-        void moveLeft()
-        {
+        public void moveLeft()
+        {Debug.Log("called MoveLeft()");
             rb.velocity = -(transform.forward * walkingSpeed);
             movement = true;
         }
@@ -265,7 +266,7 @@ namespace UnityChan
             }
         }
 
-        void jump()
+        public void jump()
         {
             anim.SetBool("Jump", true);
             rb.AddForce(Vector3.up * jumpPower, ForceMode.VelocityChange);
@@ -366,4 +367,3 @@ namespace UnityChan
             }
         }
     }
-}
