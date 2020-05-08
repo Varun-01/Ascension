@@ -945,7 +945,7 @@ GameObject:
   - component: {fileID: 490240858}
   - component: {fileID: 490240857}
   m_Layer: 5
-  m_Name: HealthBar
+  m_Name: Player1HealthBar
   m_TagString: HealthBar P1
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2178,8 +2178,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchoredPosition: {x: -0.24993896, y: 0}
+  m_SizeDelta: {x: -0.5, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &822656747
 MonoBehaviour:
@@ -3270,8 +3270,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchoredPosition: {x: -2.9100037, y: 0}
+  m_SizeDelta: {x: -5.81, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1514487167
 MonoBehaviour:
@@ -3757,7 +3757,7 @@ GameObject:
   - component: {fileID: 1856637959}
   - component: {fileID: 1856637958}
   m_Layer: 5
-  m_Name: HealthBar (1)
+  m_Name: Player2HealthBar
   m_TagString: HealthBar P2
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
