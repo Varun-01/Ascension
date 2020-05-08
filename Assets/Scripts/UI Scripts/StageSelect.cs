@@ -10,6 +10,8 @@ public class StageSelect : MonoBehaviour
     private int selectedStageIndex;
     private Color desiredColor;
 
+
+
     [Header("List of Stages")]
     [SerializeField] private List<StageSelectObject> stageList = new List<StageSelectObject>();
 
@@ -57,7 +59,19 @@ public class StageSelect : MonoBehaviour
 
     public void Back()
     {
-        SceneManager.LoadScene("Character Select");
+        //use PlayerPrefs to determine if player came from Local/Multiplayer Character Select Screen
+        string lastScene = PlayerPrefs.GetString("LastScene", null);
+        if (lastScene != null)
+        {
+            if (lastScene == "Character Select Multiplayer")
+            {
+                SceneManager.LoadScene("Character Select Multiplayer");
+            } else
+            {
+                SceneManager.LoadScene("Character Select");
+            }
+        }
+        //SceneManager.LoadScene("Character Select");
     }
     private void UpdateStageSelectionUI()
     {
@@ -81,6 +95,8 @@ public class StageSelect : MonoBehaviour
         UpdateStageSelectionUI();
         selection = GameObject.Find("SelectionManager");
         selectionManager = selection.GetComponent<Selection_Manager>();
+
+        
     }
 
     // Update is called once per frame
