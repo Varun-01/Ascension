@@ -1314,6 +1314,11 @@ MonoBehaviour:
   playerDirection: 0
   movement: 0
   jumpPower: 5
+  col: {fileID: 0}
+  rb: {fileID: 0}
+  orgColHight: 0
+  orgVectColCenter: {x: 0, y: 0, z: 0}
+  anim: {fileID: 0}
   facingLeft: 95
   facingRight: 265
   tapDelay: 0.2
@@ -1423,6 +1428,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b523a335db2ee4e849042f0a8c8e60f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  opponent: {fileID: 0}
+  opponentMovement: {fileID: 0}
 --- !u!114 &1145376639
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1878,7 +1885,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1439516129}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e2319bf3f9ca9cd4094a7be0cbc85486, type: 3}
   m_Name: 
@@ -1902,7 +1909,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1439516129}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0dff77011aeff5243af260d617f1e653, type: 3}
   m_Name: 
@@ -1916,6 +1923,11 @@ MonoBehaviour:
   playerDirection: 0
   movement: 0
   jumpPower: 5
+  col: {fileID: 0}
+  rb: {fileID: 0}
+  orgColHight: 0
+  orgVectColCenter: {x: 0, y: 0, z: 0}
+  anim: {fileID: 0}
   facingLeft: 95
   facingRight: 265
   tapDelay: 0.2
@@ -1965,6 +1977,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b523a335db2ee4e849042f0a8c8e60f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  opponent: {fileID: 0}
+  opponentMovement: {fileID: 0}
 --- !u!114 &1439516144
 MonoBehaviour:
   m_ObjectHideFlags: 0

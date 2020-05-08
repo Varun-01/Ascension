@@ -21,12 +21,12 @@ using System.Collections.Generic;
         public float playerDirection = 0f;
         public bool movement = false;
         public float jumpPower = 5.0f;
-        private CapsuleCollider col;
-        private Rigidbody rb;
-        private float orgColHight;
-        private Vector3 orgVectColCenter;
-        private Animator anim;
-        private AnimatorStateInfo currentBaseState;
+        public CapsuleCollider col;
+        public Rigidbody rb;
+        public float orgColHight;
+        public Vector3 orgVectColCenter;
+        public Animator anim;
+        public AnimatorStateInfo currentBaseState;
 
         public float facingLeft = 95f;
         public float facingRight = 265f;
