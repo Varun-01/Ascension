@@ -214,12 +214,13 @@ GameObject:
   m_Component:
   - component: {fileID: 452717071}
   - component: {fileID: 452717070}
+  - component: {fileID: 452717072}
   m_Layer: 0
   m_Name: CharacterSelectionController1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!114 &452717070
 MonoBehaviour:
@@ -247,6 +248,7 @@ MonoBehaviour:
   characterSelectMusic: {fileID: 0}
   selection: {fileID: 0}
   selectionManager: {fileID: 0}
+  selectionsFromNetwork: {fileID: 0}
 --- !u!4 &452717071
 Transform:
   m_ObjectHideFlags: 0
@@ -261,6 +263,24 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &452717072
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 452717069}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a0ccd640154524105966620ff89cdace, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  opponentManager: {fileID: 0}
+  characterSelect: {fileID: 0}
+  attackStat: 0
+  defenseStat: 0
+  characterName: 
+  playerTag: 
 --- !u!1 &534972579
 GameObject:
   m_ObjectHideFlags: 0
@@ -962,7 +982,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &6024814717571616187
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2906,7 +2926,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1476417036}
+      - m_Target: {fileID: 452717070}
         m_MethodName: Select
         m_Mode: 1
         m_Arguments:

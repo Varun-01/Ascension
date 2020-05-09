@@ -17,6 +17,7 @@ public class NetworkRequestTable {
 		add(Constants.CMSG_ATT, "RequestAttack");//106
 		add(Constants.CMSG_MOVE, "RequestMove");//107
 		add(Constants.CMSG_MATCH_PLAYER, "RequestMatchPlayer");//108
+		add(Constants.SMSG_SELECTIONS, "RequestSelections");//109
 	}
 	
 	public static void add(short request_id, string name) {

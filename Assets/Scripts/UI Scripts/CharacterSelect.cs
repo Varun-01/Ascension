@@ -26,6 +26,8 @@ public class CharacterSelect : MonoBehaviour
     public GameObject selection;
     public Selection_Manager selectionManager;
 
+    public Selections selectionsFromNetwork;
+
     public void LeftArrow()
     {
         selectedCharacterIndex--;
@@ -49,17 +51,49 @@ public class CharacterSelect : MonoBehaviour
     }
 
     public void Select()
-    {
-        //Debug.Log(string.Format("Character {0}:{1} has been selected by Player 1", selectedCharacterIndex, characterList[selectedCharacterIndex].characterName));
-        if(Constants.USER_ID < Constants.OPPONENT_ID){
-            Debug.Log("called <");
-        selectionManager.setCharacter1(string.Format(characterList[selectedCharacterIndex].characterName));
+    { 
+        if(Constants.USER_ID <= Constants.OPPONENT_ID){
+            Debug.Log("<=setLocal Player1 selectedCharacterIndex: "+ selectedCharacterIndex);
+            selectionManager.setCharacter1(string.Format(characterList[selectedCharacterIndex].characterName));
         }else{
-            
-        selectionManager.setCharacter2(string.Format(characterList[selectedCharacterIndex].characterName));
-        Debug.Log("called > "+selectionManager.getCharacter2());
+            Debug.Log("<=setLocal Player2 selectedCharacterIndex: "+ selectedCharacterIndex);
+           selectionManager.setCharacter2(string.Format(characterList[selectedCharacterIndex].characterName)); 
         }
+        selectionsFromNetwork.sendSelectionsRequest(selectedCharacterIndex);
+        //int count = 0;
+        //selectionManager.setCharacter1(string.Format(characterList[selectedCharacterIndex].characterName));
+        //Debug.Log(string.Format("Character {0}:{1} has been selected by Player 1", selectedCharacterIndex, characterList[selectedCharacterIndex].characterName));
+        // while(count<1){
+        // if(Constants.USER_ID <= Constants.OPPONENT_ID){
+        //     Debug.Log("called <");
+        // if(count ==0 ){
+        // selectionManager.setCharacter1(string.Format(characterList[selectedCharacterIndex].characterName));
+        // count++;
+        // }else{
+        // selectionManager.setCharacter2(string.Format(characterList[selectedCharacterIndex].characterName));
+        // }
+        // }else{
+        // if(count==0){
+        // selectionManager.setCharacter1(string.Format(characterList[selectedCharacterIndex].characterName));   
+        // count++; 
+        // }else{
+        // selectionManager.setCharacter2(string.Format(characterList[selectedCharacterIndex].characterName));
+        // Debug.Log("called > "+selectionManager.getCharacter2());}
+        // }
+        // }
     }
+
+    public void selectForNetwork(int networkSelectedCharacterIndex){
+        if(Constants.USER_ID <= Constants.OPPONENT_ID){
+            Debug.Log("<=setNetwork Player2 networkSelectedCharacterIndex: "+ networkSelectedCharacterIndex);
+            selectionManager.setCharacter2(string.Format(characterList[networkSelectedCharacterIndex].characterName));
+        }else{
+            Debug.Log(">setNetwork Player1 networkSelectedCharacterIndex: "+ networkSelectedCharacterIndex);
+           selectionManager.setCharacter1(string.Format(characterList[networkSelectedCharacterIndex].characterName)); 
+        }
+
+    }
+
     private void UpdateCharacterSelectionUI()
     {
         //Splash, Name, Desired Color
@@ -82,11 +116,12 @@ public class CharacterSelect : MonoBehaviour
         UpdateCharacterSelectionUI();
         selection = GameObject.Find("SelectionManager");
         selectionManager = selection.GetComponent<Selection_Manager>();
-
+        DontDestroyOnLoad(gameObject);
         //update playerprefs to determine previous scene
         string currentScene = SceneManager.GetActiveScene().name;
         PlayerPrefs.SetString("LastScene", currentScene);
         PlayerPrefs.Save();
+        selectionsFromNetwork = gameObject.GetComponent<Selections>();
 
     }
 

@@ -24,6 +24,9 @@ public class Constants {
 	public static readonly short SMSG_MOVE = 207;
 	public static readonly short CMSG_MATCH_PLAYER = 108;
 	public static readonly short SMSG_MATCH_PLAYER = 208;
+
+	public static readonly short CMSG_SELECTIONS = 109;
+	public static readonly short SMSG_SELECTIONS = 209;
 	
 	// Other
 	public static readonly string IMAGE_RESOURCES_PATH = "Images/";
