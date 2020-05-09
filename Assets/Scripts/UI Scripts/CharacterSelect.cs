@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class CharacterSelect : MonoBehaviour
 {
@@ -75,11 +76,16 @@ public class CharacterSelect : MonoBehaviour
         selection = GameObject.Find("SelectionManager");
         selectionManager = selection.GetComponent<Selection_Manager>();
 
+        //update playerprefs to determine previous scene
+        string currentScene = SceneManager.GetActiveScene().name;
+        PlayerPrefs.SetString("LastScene", currentScene);
+        PlayerPrefs.Save();
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 }

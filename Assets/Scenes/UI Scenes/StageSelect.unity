@@ -2202,6 +2202,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6881e51357e2b0f4fb4144d7131cf37a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sceneNumber: 4
   stageList:
   - splash: {fileID: 21300000, guid: 29a73e9dbab231b47a07728424257c20, type: 3}
     stageName: THE STREETS
@@ -2217,6 +2218,8 @@ MonoBehaviour:
   backgroundColor: {fileID: 519896606}
   arrowClickSFX: {fileID: 0}
   characterSelectMusic: {fileID: 0}
+  selection: {fileID: 0}
+  selectionManager: {fileID: 0}
 --- !u!4 &1087571318
 Transform:
   m_ObjectHideFlags: 0
