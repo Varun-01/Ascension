@@ -38,4 +38,5 @@ public class Constants {
 	};
 
 	public static int USER_ID = -1;
+	public static int OPPONENT_ID = -1;
 }

@@ -17,6 +17,8 @@ public class Login : MonoBehaviour {
 	private bool isHidden;
 	private MessageQueue msgQueue;
 	private ConnectionManager cManager;
+
+	public int play_id;
 	
 	void Awake() {
 		

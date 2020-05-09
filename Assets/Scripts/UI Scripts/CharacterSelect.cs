@@ -51,7 +51,14 @@ public class CharacterSelect : MonoBehaviour
     public void Select()
     {
         //Debug.Log(string.Format("Character {0}:{1} has been selected by Player 1", selectedCharacterIndex, characterList[selectedCharacterIndex].characterName));
+        if(Constants.USER_ID < Constants.OPPONENT_ID){
+            Debug.Log("called <");
         selectionManager.setCharacter1(string.Format(characterList[selectedCharacterIndex].characterName));
+        }else{
+            
+        selectionManager.setCharacter2(string.Format(characterList[selectedCharacterIndex].characterName));
+        Debug.Log("called > "+selectionManager.getCharacter2());
+        }
     }
     private void UpdateCharacterSelectionUI()
     {
