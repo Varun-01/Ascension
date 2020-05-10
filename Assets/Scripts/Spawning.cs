@@ -30,6 +30,7 @@ public class Spawning : MonoBehaviour
         
         myItem.tag = "Player1";
         myItem1.tag = "Player2";
+
     }
 
     // Update is called once per frame

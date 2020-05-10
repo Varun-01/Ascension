@@ -1319,6 +1319,7 @@ MonoBehaviour:
   orgColHight: 0
   orgVectColCenter: {x: 0, y: 0, z: 0}
   anim: {fileID: 0}
+  movementDirection: 0
   facingLeft: 95
   facingRight: 265
   tapDelay: 0.2
@@ -1326,6 +1327,7 @@ MonoBehaviour:
   Run: 0
   movementDelay: 0
   moveRequest: {fileID: 0}
+  playerManager: {fileID: 0}
 --- !u!114 &1145376626
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1373,7 +1375,9 @@ MonoBehaviour:
   alive: 0
   opponentManager: {fileID: 0}
   healthBar: {fileID: 0}
+  controllable: 0
   attackRequest: {fileID: 0}
+  playerID: 0
 --- !u!114 &1145376628
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1877,7 +1881,9 @@ MonoBehaviour:
   alive: 0
   opponentManager: {fileID: 0}
   healthBar: {fileID: 0}
+  controllable: 0
   attackRequest: {fileID: 0}
+  playerID: 0
 --- !u!114 &1439516132
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1928,6 +1934,7 @@ MonoBehaviour:
   orgColHight: 0
   orgVectColCenter: {x: 0, y: 0, z: 0}
   anim: {fileID: 0}
+  movementDirection: 0
   facingLeft: 95
   facingRight: 265
   tapDelay: 0.2
@@ -1935,6 +1942,7 @@ MonoBehaviour:
   Run: 0
   movementDelay: 0
   moveRequest: {fileID: 0}
+  playerManager: {fileID: 0}
 --- !u!136 &1439516134
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -1962,7 +1970,7 @@ Rigidbody:
   m_AngularDrag: 0
   m_UseGravity: 1
   m_IsKinematic: 0
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_Constraints: 124
   m_CollisionDetection: 0
 --- !u!114 &1439516136

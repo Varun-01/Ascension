@@ -26,8 +26,6 @@ public class Game_Manager : MonoBehaviour
 
     //Attach Button from the Editor
    
-    
-
     private static Game_Manager playerInstance; 
     void Awake() {
         DontDestroyOnLoad(this);
@@ -50,6 +48,16 @@ public class Game_Manager : MonoBehaviour
         GameObject player2 = GameObject.FindWithTag(p2);
         Player_Manager player1Manager = player1.GetComponent<Player_Manager>();
         Player_Manager player2Manager = player2.GetComponent<Player_Manager>();
+
+        /*
+         - get player ID from server
+         - set controlled player boolean:
+            if playerID == 128
+            player1Manager.setControllable();
+            if playerID == 129
+            player2Manager.setControllable();
+         */
+
     }
     
     
@@ -60,10 +68,11 @@ public class Game_Manager : MonoBehaviour
         GameObject player1 = GameObject.FindWithTag(p1);
         GameObject player2 = GameObject.FindWithTag(p2);
         Player_Manager player1Manager = player1.GetComponent<Player_Manager>();
+        
         Player_Manager player2Manager = player2.GetComponent<Player_Manager>();
+        
         if (ps1 < 2 && ps2 < 2)
-        {
-            
+        {  
             if (player1Manager.alive == 0)
             {
                 ps2++;

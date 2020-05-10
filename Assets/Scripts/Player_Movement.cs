@@ -27,6 +27,7 @@ using System.Collections.Generic;
         public Vector3 orgVectColCenter;
         public Animator anim;
         public AnimatorStateInfo currentBaseState;
+        public float movementDirection;
 
         public float facingLeft = 95f;
         public float facingRight = 265f;
@@ -38,6 +39,7 @@ using System.Collections.Generic;
         public float movementDelay = 0f; //used for smoothing forward and backward animation so that idle animation doesn't activate during "uninterrupted" movement.
         
         public Move moveRequest;
+        public Player_Manager playerManager;
 
         private GameObject cameraObject;	 
 		
@@ -54,7 +56,8 @@ using System.Collections.Generic;
 
 		void Start ()
 		{
-			anim = GetComponent<Animator> ();
+            playerManager = GetComponent<Player_Manager>();
+            anim = GetComponent<Animator> ();
 			col = GetComponent<CapsuleCollider> ();
 			rb = GetComponent<Rigidbody> ();
 			cameraObject = GameObject.FindWithTag ("MainCamera");
@@ -80,13 +83,15 @@ using System.Collections.Generic;
 
         void FixedUpdate()
         {
-            /*     direction == 0 : no buttons pressed. 
-                   direction > 0.1 : pressed button to go right. 
-                   direction < -0.1 : pressed button to go left
-            */
+        /*     direction == 0 : no buttons pressed. 
+               direction > 0.1 : pressed button to go right. 
+               direction < -0.1 : pressed button to go left
+        */
 
-            float movementDirection = Input.GetAxisRaw("Vertical");
-            float playerDirection = rb.transform.localEulerAngles.y;
+       // if (playerManager.getControllable())
+        //{
+            movementDirection = Input.GetAxisRaw("Vertical");
+            playerDirection = rb.transform.localEulerAngles.y;
 
             //Debug.Log(playerDirection);
 
@@ -107,6 +112,8 @@ using System.Collections.Generic;
 
             //for animations: if a movement key isnt pressed in .02 seconds then the player is idle and movement animations are stopped
             //character would return to idle state animation if a key wasn't pressed which made the animation from forward to backward clunky.
+            
+        //}
             checkMovementDelay();
 
             checkJump();
@@ -120,8 +127,7 @@ using System.Collections.Generic;
             checkIdle();
 
             checkRest();
-
-        }
+    }
 
         void resetCollider()
         {
@@ -236,11 +242,11 @@ using System.Collections.Generic;
         { Debug.Log("called MoveRignt()");
             if (Run > 0)
             {
-                rb.velocity = transform.forward * runningSpeed;
+                rb.MovePosition(rb.position + transform.forward * runningSpeed / 20);
             }
             else
             {
-                rb.velocity = transform.forward * walkingSpeed;
+                rb.MovePosition(rb.position + transform.forward * walkingSpeed / 20);
             }
 
             movement = true;
@@ -248,7 +254,7 @@ using System.Collections.Generic;
 
         public void moveLeft()
         {Debug.Log("called MoveLeft()");
-            rb.velocity = -(transform.forward * walkingSpeed);
+            rb.MovePosition(rb.position -(transform.forward * walkingSpeed / 20));
             movement = true;
         }
 

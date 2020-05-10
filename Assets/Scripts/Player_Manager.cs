@@ -23,9 +23,10 @@ public class Player_Manager : MonoBehaviour
     GameObject opponent;
     public Player_Manager opponentManager;
     public HealthBar healthBar;
+    public bool controllable = false;
 
     public Attack attackRequest;
-    
+    public int playerID;
 
 
     //[FMODUnity.EventRef]
@@ -34,6 +35,8 @@ public class Player_Manager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        // request player ID and set it
+
         alive = 1;
         playerHealth = 100;
 //        healthBar.SetMaxHealth(playerHealth);
@@ -62,6 +65,7 @@ public class Player_Manager : MonoBehaviour
         }
 
         opponentManager = opponent.GetComponent<Player_Manager>();
+        
         //Debug.Log(opponentManager.playerTag);
 
     }
@@ -114,5 +118,20 @@ public class Player_Manager : MonoBehaviour
 
     void stopStun() {
         anim.SetBool("Stun", false);
+    }
+
+    public void setPlayerID()
+    {
+        playerID = 0; //get playerID
+    }
+
+    public void setControllable()
+    {
+        controllable = true;
+    }
+
+    public bool getControllable()
+    {
+        return controllable;
     }
 }
