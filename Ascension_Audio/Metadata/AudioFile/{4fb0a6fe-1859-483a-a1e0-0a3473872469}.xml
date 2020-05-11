@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.01.00">
+	<object class="AudioFile" id="{4fb0a6fe-1859-483a-a1e0-0a3473872469}">
+		<property name="assetPath">
+			<value>HNS3 Vocals and Shouts 02.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>48</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>1.5686458333333333</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{393f0282-03e2-4e40-aa58-0f00c7a9bc28}</destination>
+		</relationship>
+	</object>
+</objects>
