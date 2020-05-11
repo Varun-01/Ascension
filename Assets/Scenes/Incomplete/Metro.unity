@@ -1023,9 +1023,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CollisionTag: Player2
   Emitters:
-  - Target: {fileID: 1227172793}
+  - Target: {fileID: 1910805800}
     Params:
-    - Name: Rain
+    - Name: MetroSFX
       Value: 1
   TriggerEvent: 3
 --- !u!65 &212011378
@@ -1061,9 +1061,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CollisionTag: Player2
   Emitters:
-  - Target: {fileID: 1227172793}
+  - Target: {fileID: 1910805800}
     Params:
-    - Name: Rain
+    - Name: MetroSFX
       Value: 0
   TriggerEvent: 4
 --- !u!65 &212011381
@@ -6041,6 +6041,37 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
+--- !u!1 &1910805799 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7835176052859635995, guid: 69b39676b8170f543b1335c3a001fb9d,
+    type: 3}
+  m_PrefabInstance: {fileID: 2278203544356364006}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1910805800
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1910805799}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  Event: event:/Rain Control
+  PlayEvent: 1
+  StopEvent: 2
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  Params:
+  - Name: MetroSFX
+    Value: 0
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!1001 &1955501660
 PrefabInstance:
   m_ObjectHideFlags: 0
