@@ -20,9 +20,10 @@ public class Player_Manager : MonoBehaviour
     private Rigidbody rb;
     private Animator anim;
     private AnimatorStateInfo currentBaseState;
-    GameObject opponent;
+    public GameObject opponent;
     public Player_Manager opponentManager;
-    public HealthBar healthBar;
+    public GameObject healthBar;
+    public HealthBar healthBarManager;
     public bool controllable = false;
 
     public Attack attackRequest;
@@ -53,15 +54,18 @@ public class Player_Manager : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         anim = GetComponent<Animator>();
         attackRequest = gameObject.GetComponent<Attack>();
-        
 
         if (playerTag == "Player1")
         {
             opponent = GameObject.FindWithTag("Player2");
+            healthBar = GameObject.FindWithTag("HealthBar P1");
+            healthBarManager = healthBar.GetComponent<HealthBar>();
         }
         else if (playerTag == "Player2")
         {
             opponent = GameObject.FindWithTag("Player2");
+            healthBar = GameObject.FindWithTag("HealthBar P2");
+            healthBarManager = healthBar.GetComponent<HealthBar>();
         }
 
         opponentManager = opponent.GetComponent<Player_Manager>();
@@ -91,7 +95,7 @@ public class Player_Manager : MonoBehaviour
         rb.AddForce(new Vector3(pushBack, 0f, 0f) * -50);
         anim.SetBool("Stun", true);
         playerHealth = (playerHealth - damage /*+ defenseStat*/);
-        //healthBar.SetHealth(playerHealth);
+        healthBarManager.SetHealth(playerHealth);
         Debug.Log("took damage from opponent");
         Debug.Log(playerHealth + playerTag);
         Invoke("stopStun", stunTime);

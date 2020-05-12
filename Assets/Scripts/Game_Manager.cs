@@ -53,7 +53,6 @@ public class Game_Manager : MonoBehaviour
         GameObject player2 = GameObject.FindWithTag(p2);
         Player_Manager player1Manager = player1.GetComponent<Player_Manager>();
         Player_Manager player2Manager = player2.GetComponent<Player_Manager>();
-<<<<<<< HEAD
 
         if (Constants.USER_ID == 128)
         {
@@ -63,14 +62,11 @@ public class Game_Manager : MonoBehaviour
         {
             player2Manager.setControllable();
         }
-=======
+
         //player1.GetComponent<Player_Attack>().enabled = false;
         //player1.GetComponent<Player_Movement>().enabled = false;
         //player2.GetComponent<Player_Attack>().enabled = false;
         //player2.GetComponent<Player_Movement>().enabled = false;
-
-
->>>>>>> Development
     }
     
     
