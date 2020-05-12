@@ -6793,6 +6793,7 @@ GameObject:
   - component: {fileID: 2081658731}
   - component: {fileID: 2081658730}
   - component: {fileID: 2081658734}
+  - component: {fileID: 2081658735}
   m_Layer: 0
   m_Name: FloorCollider
   m_TagString: ground
@@ -6870,7 +6871,7 @@ Transform:
   m_GameObject: {fileID: 2081658729}
   m_LocalRotation: {x: -0, y: -1, z: -0, w: 0.00020019707}
   m_LocalPosition: {x: -0.44, y: 0.44, z: 1.6700001}
-  m_LocalScale: {x: 1.5616614, y: 1, z: 0.098224014}
+  m_LocalScale: {x: 1.0046324, y: 1, z: 0.098224014}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 2
@@ -6886,8 +6887,21 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.13442518, y: 2.6112955, z: 10.000002}
-  m_Center: {x: 4.932787, y: 1.2349981, z: -9.280974e-10}
+  m_Size: {x: 0.1344252, y: 3.5017798, z: 10.000002}
+  m_Center: {x: 4.932787, y: 1.6802403, z: 0.0000000015092074}
+--- !u!65 &2081658735
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2081658729}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.14840424, y: 3.563023, z: 10.000001}
+  m_Center: {x: -4.9257817, y: 1.7775438, z: -3.5552294e-10}
 --- !u!1001 &2081925700
 PrefabInstance:
   m_ObjectHideFlags: 0
