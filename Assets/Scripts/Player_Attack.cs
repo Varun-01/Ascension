@@ -61,48 +61,52 @@ public class Player_Attack : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.U))
-        {   
-            moveRequest.sendMoveRequest("U");
-            launchAttack("LightPunch");
-            StartCoroutine(StartAttack(1.40f, hitboxes[0]));
-            tester = attackBoxes[0];
-            lastAttack = "LightPunch";
-        }
-        else if (Input.GetKeyDown(KeyCode.I))
-        {   
-            moveRequest.sendMoveRequest("I");
-            launchAttack("HeavyPunch");
-            StartCoroutine(StartAttack(0.70f, hitboxes[0]));
-            tester = attackBoxes[0];
-            lastAttack = "HeavyPunch";
-            
-        }
-        else if (Input.GetKeyDown(KeyCode.O))
-        {   moveRequest.sendMoveRequest("O");
-            launchAttack("LightKick");
-            StartCoroutine(StartAttack(0.70f, hitboxes[1]));
-            tester = attackBoxes[1];
-            lastAttack = "LightKick";
-        }
-        else if (Input.GetKeyDown(KeyCode.P))
-        {   
-            moveRequest.sendMoveRequest("P");
-            launchAttack("HeavyKick");
-            StartCoroutine(StartAttack(1.05f, hitboxes[1]));
-            tester = attackBoxes[1];
-            lastAttack = "HeavyKick";
-        }
-        AttackInstance.setParameterByID(AttackParameterId, attackNumber);
-        if (_state == true)
+        if (playerManager.getControllable())
         {
-            Collider[] cols = Physics.OverlapBox(tester.bounds.center, tester.bounds.extents, tester.transform.rotation, LayerMask.GetMask("Hurtbox"));
-            if (cols.Length>0)
+            if (Input.GetKeyDown(KeyCode.U))
             {
-                int damage = getAttackValue(lastAttack);
-                playerManager.GiveDamage(damage);
-                Debug.Log("Success!");
-                return;
+                moveRequest.sendMoveRequest("U");
+                launchAttack("LightPunch");
+                StartCoroutine(StartAttack(1.40f, hitboxes[0]));
+                tester = attackBoxes[0];
+                lastAttack = "LightPunch";
+            }
+            else if (Input.GetKeyDown(KeyCode.I))
+            {
+                moveRequest.sendMoveRequest("I");
+                launchAttack("HeavyPunch");
+                StartCoroutine(StartAttack(0.70f, hitboxes[0]));
+                tester = attackBoxes[0];
+                lastAttack = "HeavyPunch";
+
+            }
+            else if (Input.GetKeyDown(KeyCode.O))
+            {
+                moveRequest.sendMoveRequest("O");
+                launchAttack("LightKick");
+                StartCoroutine(StartAttack(0.70f, hitboxes[1]));
+                tester = attackBoxes[1];
+                lastAttack = "LightKick";
+            }
+            else if (Input.GetKeyDown(KeyCode.P))
+            {
+                moveRequest.sendMoveRequest("P");
+                launchAttack("HeavyKick");
+                StartCoroutine(StartAttack(1.05f, hitboxes[1]));
+                tester = attackBoxes[1];
+                lastAttack = "HeavyKick";
+            }
+            AttackInstance.setParameterByID(AttackParameterId, attackNumber);
+            if (_state == true)
+            {
+                Collider[] cols = Physics.OverlapBox(tester.bounds.center, tester.bounds.extents, tester.transform.rotation, LayerMask.GetMask("Hurtbox"));
+                if (cols.Length > 0)
+                {
+                    int damage = getAttackValue(lastAttack);
+                    playerManager.GiveDamage(damage);
+                    Debug.Log("Success!");
+                    return;
+                }
             }
         }
     }

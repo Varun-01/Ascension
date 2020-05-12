@@ -1350,6 +1350,7 @@ MonoBehaviour:
   attackBoxes:
   - {fileID: 223474815}
   - {fileID: 1448603951}
+  moveRequest: {fileID: 0}
   AttackEvent: event:/Test_Events/Light_Kick_Test
 --- !u!114 &1145376627
 MonoBehaviour:
@@ -1434,6 +1435,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   opponent: {fileID: 0}
   opponentMovement: {fileID: 0}
+  opponentAttack: {fileID: 0}
 --- !u!114 &1145376639
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1883,7 +1885,7 @@ MonoBehaviour:
   healthBar: {fileID: 0}
   controllable: 0
   attackRequest: {fileID: 0}
-  playerID: 0
+  playerID: 128
 --- !u!114 &1439516132
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1907,6 +1909,7 @@ MonoBehaviour:
   attackBoxes:
   - {fileID: 1796881970}
   - {fileID: 248414254}
+  moveRequest: {fileID: 0}
   AttackEvent: event:/Test_Events/Light_Kick_Test
 --- !u!114 &1439516133
 MonoBehaviour:
@@ -1987,6 +1990,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   opponent: {fileID: 0}
   opponentMovement: {fileID: 0}
+  opponentAttack: {fileID: 0}
 --- !u!114 &1439516144
 MonoBehaviour:
   m_ObjectHideFlags: 0

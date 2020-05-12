@@ -88,8 +88,8 @@ using System.Collections.Generic;
                direction < -0.1 : pressed button to go left
         */
 
-       // if (playerManager.getControllable())
-        //{
+        if (playerManager.getControllable())
+        {
             movementDirection = Input.GetAxisRaw("Vertical");
             playerDirection = rb.transform.localEulerAngles.y;
 
@@ -112,17 +112,15 @@ using System.Collections.Generic;
 
             //for animations: if a movement key isnt pressed in .02 seconds then the player is idle and movement animations are stopped
             //character would return to idle state animation if a key wasn't pressed which made the animation from forward to backward clunky.
-            
-        //}
-            checkMovementDelay();
-
             checkJump();
+        }
+
+            checkJumpComplete();
+            checkMovementDelay();
 
             checkStun();
 
             checkAttacking();
-
-            checkJumpComplete();
 
             checkIdle();
 

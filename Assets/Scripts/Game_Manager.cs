@@ -49,15 +49,14 @@ public class Game_Manager : MonoBehaviour
         Player_Manager player1Manager = player1.GetComponent<Player_Manager>();
         Player_Manager player2Manager = player2.GetComponent<Player_Manager>();
 
-        /*
-         - get player ID from server
-         - set controlled player boolean:
-            if playerID == 128
+        if (Constants.USER_ID == 128)
+        {
             player1Manager.setControllable();
-            if playerID == 129
-            player2Manager.setControllable();
-         */
 
+        } else if (Constants.USER_ID == 129)
+        {
+            player2Manager.setControllable();
+        }
     }
     
     
