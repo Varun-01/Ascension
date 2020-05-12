@@ -12,6 +12,17 @@ TagManager:
   - HealthBar P1
   - HealthBar P2
   - SelectionManager
+  - HitboxP1
+  - Round 1
+  - Round 2
+  - Final Round
+  - Fight
+  - Player1 win
+  - Player2 win
+  - p1 1win
+  - p1 2win
+  - p2 1win
+  - p2 2win
   layers:
   - Default
   - TransparentFX

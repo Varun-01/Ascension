@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.01.00">
+	<object class="AudioFile" id="{f54a2d3c-b316-404a-b9c0-6beb0ca42007}">
+		<property name="assetPath">
+			<value>CVT_V2C - Stereo Out.wav</value>
+		</property>
+		<property name="isStreaming">
+			<value>true</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>33.103469387755105</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{393f0282-03e2-4e40-aa58-0f00c7a9bc28}</destination>
+		</relationship>
+	</object>
+</objects>

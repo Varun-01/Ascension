@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.UI;
 using UnityEngine;
+using TMPro;
 
 public class Game_Manager : MonoBehaviour
 {
@@ -22,6 +24,7 @@ public class Game_Manager : MonoBehaviour
     public int  ps1;
     public int  ps2;
     bool reset;
+    public int rNum;
     
 
     //Attach Button from the Editor
@@ -42,12 +45,15 @@ public class Game_Manager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        rNum = 1;
+        UI();
         ps1 = 0;
         ps2 = 0;
         GameObject player1 = GameObject.FindWithTag(p1);
         GameObject player2 = GameObject.FindWithTag(p2);
         Player_Manager player1Manager = player1.GetComponent<Player_Manager>();
         Player_Manager player2Manager = player2.GetComponent<Player_Manager>();
+<<<<<<< HEAD
 
         if (Constants.USER_ID == 128)
         {
@@ -57,13 +63,22 @@ public class Game_Manager : MonoBehaviour
         {
             player2Manager.setControllable();
         }
+=======
+        //player1.GetComponent<Player_Attack>().enabled = false;
+        //player1.GetComponent<Player_Movement>().enabled = false;
+        //player2.GetComponent<Player_Attack>().enabled = false;
+        //player2.GetComponent<Player_Movement>().enabled = false;
+
+
+>>>>>>> Development
     }
     
     
     // Update is called once per frame
     void Update()
     {
-        
+
+       
         GameObject player1 = GameObject.FindWithTag(p1);
         GameObject player2 = GameObject.FindWithTag(p2);
         Player_Manager player1Manager = player1.GetComponent<Player_Manager>();
@@ -75,25 +90,119 @@ public class Game_Manager : MonoBehaviour
             if (player1Manager.alive == 0)
             {
                 ps2++;
+                rNum++;
                 Application.LoadLevel(Application.loadedLevel);
-                
-                              
+                UILoader();
+
             }
             if (player2Manager.alive == 0)
             {
                 ps1++;
+                rNum++;
                 Application.LoadLevel(Application.loadedLevel);
-                
-                
+                UILoader();
             }
         }
 
     }
-    void spawn()
+    public void UILoader()
     {
+        GameObject player1 = GameObject.FindWithTag(p1);
+        GameObject player2 = GameObject.FindWithTag(p2);
+        //player1.GetComponent<Player_Attack>().enabled = false;
+        //player1.GetComponent<Player_Movement>().enabled = false;
+        //player2.GetComponent<Player_Attack>().enabled = false;
+        //player2.GetComponent<Player_Movement>().enabled = false;
+        Invoke("UI", 1);
+    }
+     void UI()
+    {
+        
+        GameObject round1 = GameObject.FindWithTag("Round 1");
+        GameObject round2 = GameObject.FindWithTag("Round 2");
+        GameObject fRound = GameObject.FindWithTag("Final Round");
+        GameObject fight = GameObject.FindWithTag("Fight");
+        GameObject p1Win = GameObject.FindWithTag("Player1 win");
+        GameObject p2Win = GameObject.FindWithTag("Player2 win");
+        GameObject p1_1 = GameObject.FindWithTag("p1 1win");
+        GameObject p1_2 = GameObject.FindWithTag("p1 2win");
+        GameObject p2_1 = GameObject.FindWithTag("p2 1win");
+        GameObject p2_2 = GameObject.FindWithTag("p2 2win");
+        if (rNum==1)
+        {
+            round1.GetComponent<TMPro.TextMeshProUGUI>().enabled = true;
+            Invoke("fightOn", 2);
+        }
+        if (rNum==2)
+        {
+            round2.GetComponent<TMPro.TextMeshProUGUI>().enabled = true;
+            Invoke("fightOn", 2);
+        }
+        if (rNum==3)
+        {
+            fRound.GetComponent<TMPro.TextMeshProUGUI>().enabled = true;
+            Invoke("fightOn", 2);
+        }
+        if (rNum == 4)
+        {
+            if (ps1 > ps2)
+            {
+                p1Win.GetComponent<TMPro.TextMeshProUGUI>().enabled = true;
+            }
+            if (ps1 < ps2)
+            {
+                p2Win.GetComponent<TMPro.TextMeshProUGUI>().enabled = true;
+            }
+        }
+        
+        
+        if (ps2 == 1)
+        {
+            p2_1.GetComponent<Image>().enabled = true;
+        }
+        if (ps2 == 2)
+        {
+            p2_1.GetComponent<Image>().enabled = true;
+            p2_2.GetComponent<Image>().enabled = true;
+        }
+        if (ps1 == 1)
+        {
+            p1_1.GetComponent<Image>().enabled = true;
+        }
+        if (ps1 == 2)
+        {
+            p1_1.GetComponent<Image>().enabled = true;
+            p1_2.GetComponent<Image>().enabled = true;
+        }
+
+
+
 
     }
-  
+    void fightOn()
+    {
+        GameObject player1 = GameObject.FindWithTag(p1);
+        GameObject player2 = GameObject.FindWithTag(p2);
+        //player1.GetComponent<Player_Attack>().enabled = true;
+        //player1.GetComponent<Player_Movement>().enabled = false;
+        //player2.GetComponent<Player_Attack>().enabled = true;
+        //player2.GetComponent<Player_Movement>().enabled = false;
+        GameObject fight = GameObject.FindWithTag("Fight");
+        fight.GetComponent<Image>().enabled = true;
+        Invoke("fightOff", 1);
+    }
+    void fightOff()
+    {
+        GameObject round1 = GameObject.FindWithTag("Round 1");
+        GameObject round2 = GameObject.FindWithTag("Round 2");
+        GameObject fRound = GameObject.FindWithTag("Final Round");
+        GameObject fight = GameObject.FindWithTag("Fight");
+        fight.GetComponent<Image>().enabled = false;
+        round1.GetComponent<TMPro.TextMeshProUGUI>().enabled = false;
+        round2.GetComponent<TMPro.TextMeshProUGUI>().enabled = false;
+        fRound.GetComponent<TMPro.TextMeshProUGUI>().enabled = false;
+    }
+ 
 }
 
 
