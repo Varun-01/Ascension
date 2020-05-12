@@ -29,7 +29,12 @@ public class Attack : MonoBehaviour {
 	
 	// Use this for initialization
 	void Start() {
-		opponent = GameObject.FindWithTag("Player1");
+		//opponent = GameObject.FindWithTag("Player1");
+
+		if(Constants.USER_ID < Constants.OPPONENT_ID){
+		opponent = GameObject.FindWithTag("Player1");}
+		else{opponent = GameObject.FindWithTag("Player2");}
+
 		opponentManager = opponent.GetComponent<Player_Manager>();
 		playerTag = gameObject.tag;
         Player_Stats playerStats = gameObject.GetComponent<Player_Stats>();
@@ -59,10 +64,11 @@ public class Attack : MonoBehaviour {
 		
 		ResponseAttackEventArgs args = eventArgs as ResponseAttackEventArgs;
 		if (args.status == 0) {
-			Constants.USER_ID = args.user_id;
+			//Constants.USER_ID = args.user_id;
 			Debug.Log ("Successful attack response : " +args.damage);
 			//EditorUtility.DisplayDialog ("Attack Successful: "+args.damage, "You have successfully attack.\nClick Ok to continue execution and see responses on console", "Ok");
-            opponentManager.TakeDamage(args.damage + attackStat);
+            if(args.user_id == Constants.OPPONENT_ID){
+			opponentManager.TakeDamage(args.damage + attackStat);}
 			//SceneManager.LoadScene("Main Menu");
 		} else {
 			Debug.Log("Attack Failed");

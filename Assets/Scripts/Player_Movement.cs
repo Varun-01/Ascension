@@ -239,7 +239,7 @@ using System.Collections.Generic;
         }
 
         public void moveRight()
-        { Debug.Log("called MoveRignt()");
+        { 
             if (Run > 0)
             {
                 rb.MovePosition(rb.position + transform.forward * runningSpeed / 20);
@@ -253,7 +253,7 @@ using System.Collections.Generic;
         }
 
         public void moveLeft()
-        {Debug.Log("called MoveLeft()");
+        {
             rb.MovePosition(rb.position -(transform.forward * walkingSpeed / 20));
             movement = true;
         }

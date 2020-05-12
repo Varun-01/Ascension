@@ -60,24 +60,24 @@ public class Move : MonoBehaviour {
 		
 		ResponseMoveEventArgs args = eventArgs as ResponseMoveEventArgs;
 		if (args.status == 0) {
-			Constants.USER_ID = args.user_id;
+			//Constants.USER_ID = args.user_id;
 			Debug.Log ("Successful Move response : ");
 			//EditorUtility.DisplayDialog ("Move Successful:"+args.key, "You have successfully move.\nClick Ok to continue execution and see responses on console", "Ok");
             //SceneManager.LoadScene("Main Menu");
 			
 			//@todo it should not be an if else relationship
+			// if(attackKeyTable.ContainsKey(args.key)){
+			// opponentAttack.launchAttackFromNet(attackKeyTable[args.key]);}
+			// else{
+			// opponentMovement.checkMovement(1,-95);}
+
+			if(args.user_id == Constants.OPPONENT_ID){
+		
 			if(attackKeyTable.ContainsKey(args.key)){
 			opponentAttack.launchAttackFromNet(attackKeyTable[args.key]);}
-			else{
-			opponentMovement.checkMovement(1,-95);}
-			
-
-			// if(Constants.USER_ID < Constants.OPPONENT_ID){
-			// opponentMovement.checkMovement(1,-95);
-			// }else{
-			// 	opponentMovement.checkMovement(-1,95);
-			// }
-		
+			else{opponentMovement.checkMovement(1,-95);}
+			}
+				
 		} else {
 			Debug.Log("Attack Failed");
 		}
