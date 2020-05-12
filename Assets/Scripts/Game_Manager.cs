@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine.UI;
 using UnityEngine;
 using TMPro;
-
+using UnityEngine.SceneManagement;
 public class Game_Manager : MonoBehaviour
 {
     public enum GameState { INTRO, MAIN_MENU }
@@ -127,20 +127,23 @@ public class Game_Manager : MonoBehaviour
             round2.GetComponent<TMPro.TextMeshProUGUI>().enabled = true;
             Invoke("fightOn", 2);
         }
-        if (rNum==3)
+        if (rNum==3 && ps1!= 2 && ps2!=2)
         {
             fRound.GetComponent<TMPro.TextMeshProUGUI>().enabled = true;
             Invoke("fightOn", 2);
         }
-        if (rNum == 4)
+        if (rNum == 4 || ps1==2 || ps2==2)
         {
             if (ps1 > ps2)
             {
                 p1Win.GetComponent<TMPro.TextMeshProUGUI>().enabled = true;
+                Invoke("sceneChange", 5);
+
             }
             if (ps1 < ps2)
             {
                 p2Win.GetComponent<TMPro.TextMeshProUGUI>().enabled = true;
+                Invoke("sceneChange", 5);
             }
         }
         
@@ -190,6 +193,10 @@ public class Game_Manager : MonoBehaviour
         round1.GetComponent<TMPro.TextMeshProUGUI>().enabled = false;
         round2.GetComponent<TMPro.TextMeshProUGUI>().enabled = false;
         fRound.GetComponent<TMPro.TextMeshProUGUI>().enabled = false;
+    }
+    void sceneChange()
+    {
+        SceneManager.LoadScene("Character Select Multiplayer");
     }
  
 }
