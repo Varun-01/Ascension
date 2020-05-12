@@ -196,7 +196,7 @@ using System.Collections.Generic;
 
         }
 
-        void checkMovement(float movementDirection, float playerDirection)
+        public void checkMovement(float movementDirection, float playerDirection)
         {
             if (movementDirection > 0.1)
             {

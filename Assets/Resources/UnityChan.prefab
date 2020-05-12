@@ -8222,8 +8222,10 @@ GameObject:
   - component: {fileID: 4447121455721667405}
   - component: {fileID: 4447121455721667404}
   - component: {fileID: 4447121455721667403}
+  - component: {fileID: -9120031952259746732}
+  - component: {fileID: 1660872392210387473}
   m_Layer: 0
-  m_Name: Unity-Chan (1)
+  m_Name: UnityChan
   m_TagString: Player2
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8516,12 +8518,20 @@ MonoBehaviour:
   playerDirection: 0
   movement: 0
   jumpPower: 5
+  col: {fileID: 0}
+  rb: {fileID: 0}
+  orgColHight: 0
+  orgVectColCenter: {x: 0, y: 0, z: 0}
+  anim: {fileID: 0}
+  movementDirection: 0
   facingLeft: 95
   facingRight: 265
   tapDelay: 0.2
   buttonPresses: 0
   Run: 0
   movementDelay: 0
+  moveRequest: {fileID: 0}
+  playerManager: {fileID: 0}
 --- !u!114 &4447121455721667405
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8544,6 +8554,7 @@ MonoBehaviour:
   attackBoxes:
   - {fileID: 4447121454766104640}
   - {fileID: 4447121455487657232}
+  moveRequest: {fileID: 0}
   AttackEvent: event:/Test_Events/Light_Kick_Test
 --- !u!114 &4447121455721667404
 MonoBehaviour:
@@ -8569,6 +8580,9 @@ MonoBehaviour:
   alive: 0
   opponentManager: {fileID: 0}
   healthBar: {fileID: 0}
+  controllable: 0
+  attackRequest: {fileID: 0}
+  playerID: 0
 --- !u!114 &4447121455721667403
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8581,6 +8595,38 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ccafa1927ddd6aa4fa98a8834e67d37a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &-9120031952259746732
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4447121455492339676}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 30872899cea3f4329b519e779ca11570, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  opponentManager: {fileID: 0}
+  attackStat: 0
+  defenseStat: 0
+  characterName: 
+  playerTag: 
+--- !u!114 &1660872392210387473
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4447121455492339676}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b523a335db2ee4e849042f0a8c8e60f8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  opponent: {fileID: 0}
+  opponentMovement: {fileID: 0}
+  opponentAttack: {fileID: 0}
 --- !u!1 &4447121455492339678
 GameObject:
   m_ObjectHideFlags: 0

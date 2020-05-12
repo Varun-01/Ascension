@@ -19,6 +19,7 @@ public class Player_Attack : MonoBehaviour
     private bool _state;
     private string lastAttack;
     private Collider tester;
+    public Move moveRequest;
 
     Dictionary<string, int> attackValueTable = new Dictionary<string, int>();
 
@@ -54,20 +55,23 @@ public class Player_Attack : MonoBehaviour
         AttackParameterId = AttackParameterDescription.id;
 
         AttackInstance.start();
+        moveRequest = gameObject.GetComponent<Move>();
     }
 
     // Update is called once per frame
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.U))
-        {
+        {   
+            moveRequest.sendMoveRequest("U");
             launchAttack("LightPunch");
             StartCoroutine(StartAttack(1.40f, hitboxes[0]));
             tester = attackBoxes[0];
             lastAttack = "LightPunch";
         }
         else if (Input.GetKeyDown(KeyCode.I))
-        {
+        {   
+            moveRequest.sendMoveRequest("I");
             launchAttack("HeavyPunch");
             StartCoroutine(StartAttack(0.70f, hitboxes[0]));
             tester = attackBoxes[0];
@@ -75,14 +79,15 @@ public class Player_Attack : MonoBehaviour
             
         }
         else if (Input.GetKeyDown(KeyCode.O))
-        {   //movementRequest.sendMovementRequest("o");
+        {   moveRequest.sendMoveRequest("O");
             launchAttack("LightKick");
             StartCoroutine(StartAttack(0.70f, hitboxes[1]));
             tester = attackBoxes[1];
             lastAttack = "LightKick";
         }
         else if (Input.GetKeyDown(KeyCode.P))
-        {
+        {   
+            moveRequest.sendMoveRequest("P");
             launchAttack("HeavyKick");
             StartCoroutine(StartAttack(1.05f, hitboxes[1]));
             tester = attackBoxes[1];
@@ -144,6 +149,25 @@ public class Player_Attack : MonoBehaviour
             //attackSound(attackName);
             int damage = getAttackValue(attackName);
             playerManager.GiveDamage(damage); 
+            
+        }
+
+    }
+
+    public void launchAttackFromNet(string attackName)
+    {
+
+        if (anim.GetCurrentAnimatorStateInfo(0).IsTag("Attack"))
+        {
+            Debug.Log("In attack mode, attack not counted");
+            return;
+
+        }
+        else {
+            anim.SetTrigger(attackName);
+            //attackSound(attackName);
+            //int damage = getAttackValue(attackName);
+            //playerManager.GiveDamage(damage); 
             
         }
 

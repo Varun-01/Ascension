@@ -61,7 +61,7 @@ public class Player_Manager : MonoBehaviour
         }
         else if (playerTag == "Player2")
         {
-            opponent = GameObject.FindWithTag("Player1");
+            opponent = GameObject.FindWithTag("Player2");
         }
 
         opponentManager = opponent.GetComponent<Player_Manager>();
@@ -82,7 +82,7 @@ public class Player_Manager : MonoBehaviour
     }
 
     public void TakeDamage(int damage)
-    {   EditorUtility.DisplayDialog ("Inside Opponent.TakeDamage()", "You have successfully attack.\nClick Ok to continue execution and see responses on console", "Ok");
+    {   //EditorUtility.DisplayDialog ("Inside Opponent.TakeDamage()", "You have successfully attack.\nClick Ok to continue execution and see responses on console", "Ok");
 
         if (anim.GetCurrentAnimatorStateInfo(0).IsName("GetUp")) {
             return;

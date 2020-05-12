@@ -52,7 +52,8 @@ public class Multiplayer : MonoBehaviour {
 			Constants.OPPONENT_ID = args.opponent_id;
 			Debug.Log ("Successful Matchplay response : " + args.ToString());
 			EditorUtility.DisplayDialog ("Matching Successful", "Your Opponent: "+Constants.OPPONENT_ID, "Ok");
-            SceneManager.LoadScene("Character Select");
+            //SceneManager.LoadScene("VS_Testing");
+			SceneManager.LoadScene("Character Select");
 		} else {
 			Debug.Log("Match Failed");
 		}

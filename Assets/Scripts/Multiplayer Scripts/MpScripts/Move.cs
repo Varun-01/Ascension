@@ -1,5 +1,6 @@
 using UnityEngine;
-
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine.SceneManagement;
 using UnityEditor;
 
@@ -11,6 +12,9 @@ public class Move : MonoBehaviour {
 	 private ConnectionManager cManager;
 
 	 public Player_Movement opponentMovement;
+	 public Player_Attack opponentAttack;
+
+	 Dictionary<string, string> attackKeyTable = new Dictionary<string, string>();
 	
 	void Awake() {
 		
@@ -24,8 +28,16 @@ public class Move : MonoBehaviour {
 	
 	// Use this for initialization
 	void Start() {
-		opponent = GameObject.FindWithTag("Player1");
+		if(Constants.USER_ID < Constants.OPPONENT_ID){
+		opponent = GameObject.FindWithTag("Player2");}
+		else{opponent = GameObject.FindWithTag("Player1");}
 		opponentMovement = opponent.GetComponent<Player_Movement>();
+		opponentAttack = opponent.GetComponent<Player_Attack>();
+
+		attackKeyTable.Add("U","LightPunch");
+		attackKeyTable.Add("I","HeavyPunch");
+		attackKeyTable.Add("O","LightKick");
+		attackKeyTable.Add("P","HeavyKick");
 	}
 	
 	//Network, entry point function
@@ -52,7 +64,19 @@ public class Move : MonoBehaviour {
 			Debug.Log ("Successful Move response : ");
 			//EditorUtility.DisplayDialog ("Move Successful:"+args.key, "You have successfully move.\nClick Ok to continue execution and see responses on console", "Ok");
             //SceneManager.LoadScene("Main Menu");
-			opponentMovement.moveLeft();
+			
+			//@todo it should not be an if else relationship
+			if(attackKeyTable.ContainsKey(args.key)){
+			opponentAttack.launchAttackFromNet(attackKeyTable[args.key]);}
+			else{
+			opponentMovement.checkMovement(1,-95);}
+			
+
+			// if(Constants.USER_ID < Constants.OPPONENT_ID){
+			// opponentMovement.checkMovement(1,-95);
+			// }else{
+			// 	opponentMovement.checkMovement(-1,95);
+			// }
 		
 		} else {
 			Debug.Log("Attack Failed");

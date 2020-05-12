@@ -26,7 +26,7 @@ public class Login : MonoBehaviour {
 		DontDestroyOnLoad(mainObject);
 		cManager = mainObject.GetComponent<ConnectionManager>();
 		msgQueue = mainObject.GetComponent<MessageQueue> ();
-		msgQueue.AddCallback(Constants.SMSG_AUTH, ResponseLogin);
+		msgQueue.AddCallback(Constants.SMSG_AUTH, responseLogin);
 		// msgQueue.AddCallback(Constants.SMSG_PLAYERS, responsePlayers);
 		// msgQueue.AddCallback (Constants.SMSG_TEST, responseTest);
 	}
@@ -85,7 +85,7 @@ public class Login : MonoBehaviour {
 		return request;
 	}
 	
-	public void ResponseLogin(ExtendedEventArgs eventArgs) {
+	public void responseLogin(ExtendedEventArgs eventArgs) {
 		ResponseLoginEventArgs args = eventArgs as ResponseLoginEventArgs;
 		if (args.status == 0) {
 			Constants.USER_ID = args.user_id;
