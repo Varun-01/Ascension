@@ -8220,10 +8220,10 @@ GameObject:
   - component: {fileID: 4447121455721667402}
   - component: {fileID: 4447121455721667406}
   - component: {fileID: 4447121455721667405}
-  - component: {fileID: 4447121455721667404}
   - component: {fileID: 4447121455721667403}
+  - component: {fileID: -6981151274310285748}
   m_Layer: 0
-  m_Name: Unity-Chan (1)
+  m_Name: UnityChan
   m_TagString: Player2
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8491,7 +8491,7 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.5
+  m_Radius: 0.2
   m_Height: 1.5
   m_Direction: 1
   m_Center: {x: 0, y: 0.75, z: 0}
@@ -8545,30 +8545,6 @@ MonoBehaviour:
   - {fileID: 4447121454766104640}
   - {fileID: 4447121455487657232}
   AttackEvent: event:/Test_Events/Light_Kick_Test
---- !u!114 &4447121455721667404
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4447121455492339676}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 99a30ecb0d8281e41b11b6fb7cdc82d4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerHealth: 1000
-  stunTime: 0.5
-  pushBack: 3
-  currentState: idle
-  currentPosition: 0
-  attackStat: 0
-  defenseStat: 0
-  characterName: 
-  playerTag: 
-  alive: 0
-  opponentManager: {fileID: 0}
-  healthBar: {fileID: 0}
 --- !u!114 &4447121455721667403
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8581,6 +8557,30 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ccafa1927ddd6aa4fa98a8834e67d37a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &-6981151274310285748
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4447121455492339676}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 99a30ecb0d8281e41b11b6fb7cdc82d4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerHealth: 0
+  stunTime: 0.5
+  pushBack: 200
+  currentState: idle
+  currentPosition: 0
+  attackStat: 0
+  defenseStat: 0
+  characterName: 
+  playerTag: 
+  alive: 0
+  opponentManager: {fileID: 0}
+  healthBar: {fileID: 0}
 --- !u!1 &4447121455492339678
 GameObject:
   m_ObjectHideFlags: 0
