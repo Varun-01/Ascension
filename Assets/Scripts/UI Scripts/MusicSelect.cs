@@ -18,6 +18,7 @@ public class MusicSelect : MonoBehaviour
     [SerializeField] private TextMeshProUGUI trackName;
     [SerializeField] private Image musicSplash;
     [SerializeField] private Image backgroundColor;
+    [SerializeField] private GameObject discName;
 
     [Header("Sounds")]
     [SerializeField] private AudioClip arrowClickSFX;
@@ -67,6 +68,8 @@ public class MusicSelect : MonoBehaviour
         musicSplash.sprite = trackList[selectedMusicIndex].splash;
         trackName.text = trackList[selectedMusicIndex].trackName;
         desiredColor = trackList[selectedMusicIndex].musicBGColor;
+        discName = trackList[selectedMusicIndex].disc;
+        Debug.Log(discName);
     }
 
     [System.Serializable]
@@ -75,6 +78,7 @@ public class MusicSelect : MonoBehaviour
         public Sprite splash;
         public string trackName;
         public Color musicBGColor;
+        public GameObject disc;
     }
 
     // Start is called before the first frame update
