@@ -22,11 +22,17 @@ public class Game_Manager : MonoBehaviour
     public int  ps1;
     public int  ps2;
     bool reset;
-    
+    public string music;
+
+
+    /*
+    [FMODUnity.EventRef]
+    public string MusicEvent = "";
+
+    FMOD.Studio.EventInstance MusicState;
+    */
 
     //Attach Button from the Editor
-   
-    
 
     private static Game_Manager playerInstance; 
     void Awake() {
@@ -50,9 +56,15 @@ public class Game_Manager : MonoBehaviour
         GameObject player2 = GameObject.FindWithTag(p2);
         Player_Manager player1Manager = player1.GetComponent<Player_Manager>();
         Player_Manager player2Manager = player2.GetComponent<Player_Manager>();
+        GameObject selectionManagerObj = GameObject.Find("SelectionManager");
+        Selection_Manager selectionManager = selectionManagerObj.GetComponent<Selection_Manager>();
+        //MusicEvent = mChar.getMusic();
+
+        //MusicState = FMODUnity.RuntimeManager.CreateInstance(MusicEvent);
+        //MusicState.start();
     }
-    
-    
+
+
     // Update is called once per frame
     void Update()
     {

@@ -13,6 +13,9 @@ public class Spawning : MonoBehaviour
 
     public string player1;
     public string player2;
+    
+    
+
     // Start is called before the first frame update
     void Start()
     {
@@ -20,6 +23,7 @@ public class Spawning : MonoBehaviour
         Selection_Manager mChar = character.GetComponent<Selection_Manager>();
         player1 = mChar.getCharacter1();
         player2 = mChar.getCharacter2();
+        
         if (player1 == player2)
         {
             player2 = mChar.getCharacter2()+" Alt";
