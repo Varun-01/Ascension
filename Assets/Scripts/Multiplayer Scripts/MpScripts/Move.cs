@@ -15,8 +15,9 @@ public class Move : MonoBehaviour {
 	 public Player_Attack opponentAttack;
 
 	 Dictionary<string, string> attackKeyTable = new Dictionary<string, string>();
-	
-	void Awake() {
+     Dictionary<string, float> movementKeyTable = new Dictionary<string, float>();
+
+    void Awake() {
 		
 		mainObject = GameObject.Find("MainObject");
 		//DontDestroyOnLoad(mainObject);
@@ -38,7 +39,10 @@ public class Move : MonoBehaviour {
 		attackKeyTable.Add("I","HeavyPunch");
 		attackKeyTable.Add("O","LightKick");
 		attackKeyTable.Add("P","HeavyKick");
-	}
+
+        movementKeyTable.Add("D", 1);
+        movementKeyTable.Add("A", -1);
+    }
 	
 	//Network, entry point function
 	public void sendMoveRequest(string key) {
@@ -75,7 +79,9 @@ public class Move : MonoBehaviour {
 		
 			if(attackKeyTable.ContainsKey(args.key)){
 			opponentAttack.launchAttackFromNet(attackKeyTable[args.key]);}
-			else{opponentMovement.checkMovement(1,-95);}
+			else{
+                    opponentMovement.checkMovement(movementKeyTable[args.key]);
+                }
 			}
 				
 		} else {

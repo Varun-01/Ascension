@@ -108,7 +108,7 @@ using System.Collections.Generic;
             checkDoubleTap(playerDirection);
 
             //depending on movement direction and player direction, different force applied.
-            checkMovement(movementDirection, playerDirection);
+            checkMovement(movementDirection);
 
             //for animations: if a movement key isnt pressed in .02 seconds then the player is idle and movement animations are stopped
             //character would return to idle state animation if a key wasn't pressed which made the animation from forward to backward clunky.
@@ -116,6 +116,7 @@ using System.Collections.Generic;
         }
 
             checkJumpComplete();
+            
             checkMovementDelay();
 
             checkStun();
@@ -194,8 +195,10 @@ using System.Collections.Generic;
 
         }
 
-        public void checkMovement(float movementDirection, float playerDirection)
+        public void checkMovement(float movementDirection)
         {
+            playerDirection = rb.transform.localEulerAngles.y;
+
             if (movementDirection > 0.1)
             {
                 if (playerDirection == facingRight)
