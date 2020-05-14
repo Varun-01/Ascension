@@ -90,13 +90,14 @@ public class Player_Attack : MonoBehaviour
             lastAttack = "HeavyKick";
         }
         //AttackInstance.setParameterByID(AttackParameterId, attackNumber);
+        
         if (_state == true)
         {
             Collider[] cols = Physics.OverlapBox(tester.bounds.center, tester.bounds.extents, tester.transform.rotation, LayerMask.GetMask("Hurtbox"));
             if (cols.Length>0)
             {
                 int damage = getAttackValue(lastAttack);
-                playerManager.GiveDamage(damage);
+                playerManager.GiveDamage(damage, lastAttack);
                 Debug.Log("Success!");
                 return;
             }
@@ -136,32 +137,11 @@ public class Player_Attack : MonoBehaviour
 
         if (anim.GetCurrentAnimatorStateInfo(0).IsTag("Attack"))
         {
-            Debug.Log("In attack mode, attack not counted");
+            //Debug.Log("In attack mode, attack not counted");
             return;
-
         }
         else {
             anim.SetTrigger(attackName);
-            //attackSound(attackName);
-            //attackNumber = 1;
-            //int damage = getAttackValue(attackName);
-        }
-
-    }
-
-    /*void attackSound(string attackName)
-    {
-        if (!IsPlaying(attack)){
-            FMODUnity.RuntimeManager.PlayOneShot(AttackEvent, transform.position);
-            attack.start();
-            attack.release();
         }
     }
-
-    bool IsPlaying(FMOD.Studio.EventInstance instance)
-    {
-        FMOD.Studio.PLAYBACK_STATE state;
-        instance.getPlaybackState(out state);
-        return state != FMOD.Studio.PLAYBACK_STATE.STOPPED;
-    }*/
 }
