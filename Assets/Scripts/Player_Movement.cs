@@ -331,7 +331,7 @@ using System.Collections.Generic;
             }
         }
 
-        void completeJump()
+        public void completeJump()
         {
             anim.SetBool("Jump", false);
         }

@@ -107,7 +107,7 @@ public class Move : MonoBehaviour {
 	void Update() {
 	}
 
-	// void FixedUpdate(){
-	// 	opponentMovement.checkJumpComplete();
-	// }
+	void FixedUpdate(){
+		opponentMovement.completeJump();
+	}
 }
