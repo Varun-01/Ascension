@@ -200,6 +200,7 @@ using System.Collections.Generic;
 
         public void checkMovement(float movementDirection)
         {
+
             playerDirection = rb.transform.localEulerAngles.y;
 
             if (movementDirection > 0.1)
