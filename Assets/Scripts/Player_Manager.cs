@@ -63,7 +63,7 @@ public class Player_Manager : MonoBehaviour
         }
         else if (playerTag == "Player2")
         {
-            opponent = GameObject.FindWithTag("Player2");
+            opponent = GameObject.FindWithTag("Player1");
             healthBar = GameObject.FindWithTag("HealthBar P2");
             healthBarManager = healthBar.GetComponent<HealthBar>();
         }
