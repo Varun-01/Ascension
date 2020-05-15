@@ -83,6 +83,13 @@ using System.Collections.Generic;
 
         void FixedUpdate()
         {
+
+            if (Input.GetKeyDown(KeyCode.D)){
+                moveRequest.sendMoveRequest("D");
+            }
+            if (Input.GetKeyDown(KeyCode.A)){
+                moveRequest.sendMoveRequest("A");
+            }
         /*     direction == 0 : no buttons pressed. 
                direction > 0.1 : pressed button to go right. 
                direction < -0.1 : pressed button to go left
@@ -178,8 +185,6 @@ using System.Collections.Generic;
                 {   
                     Invoke("SetButtonPressesToZero", tapDelay);
                     Run = 0f;
-                    //Network
-                    moveRequest.sendMoveRequest("D");
                 }
             }
             else
@@ -188,8 +193,6 @@ using System.Collections.Generic;
                 {
                     Invoke("SetButtonPressesToZero", tapDelay);
                     Run = 0f;
-                    //Network
-                    moveRequest.sendMoveRequest("A");
                 }
             }
 

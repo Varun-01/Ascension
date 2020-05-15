@@ -60,6 +60,7 @@ public class CharacterSelect : MonoBehaviour
            selectionManager.setCharacter2(string.Format(characterList[selectedCharacterIndex].characterName)); 
         }
         selectionsFromNetwork.sendSelectionsRequest(selectedCharacterIndex);
+        SceneManager.LoadScene("StageSelect"); 
         //int count = 0;
         //selectionManager.setCharacter1(string.Format(characterList[selectedCharacterIndex].characterName));
         //Debug.Log(string.Format("Character {0}:{1} has been selected by Player 1", selectedCharacterIndex, characterList[selectedCharacterIndex].characterName));
