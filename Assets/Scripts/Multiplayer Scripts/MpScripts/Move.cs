@@ -54,7 +54,7 @@ public class Move : MonoBehaviour {
 	
 	public RequestMove requestMove(string key) {
 		RequestMove request = new RequestMove();
-		if(request != null) {Debug.Log ("request 37 move is NOT null*******");}
+		//if(request != null) {Debug.Log ("request 37 move is NOT null*******");}
 		request.send(key);
 		Debug.Log ("called requestMove function and send");
 		return request;
@@ -80,8 +80,13 @@ public class Move : MonoBehaviour {
 			if(attackKeyTable.ContainsKey(args.key)){
 			opponentAttack.launchAttackFromNet(attackKeyTable[args.key]);}
 			else{
+					if(movementKeyTable.ContainsKey(args.key)){
                     opponentMovement.checkMovement(movementKeyTable[args.key]);
+					}
                 }
+				if(args.key=="Jump"){
+						opponentMovement.jump();
+						}
 			}
 				
 		} else {
@@ -101,4 +106,8 @@ public class Move : MonoBehaviour {
 	// Update is called once per frame
 	void Update() {
 	}
+
+	// void FixedUpdate(){
+	// 	opponentMovement.checkJumpComplete();
+	// }
 }

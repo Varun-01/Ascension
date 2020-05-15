@@ -90,6 +90,9 @@ using System.Collections.Generic;
             if (Input.GetKeyDown(KeyCode.A)){
                 moveRequest.sendMoveRequest("A");
             }
+            if (Input.GetButtonDown("Jump")){
+                moveRequest.sendMoveRequest("Jump");
+            }
         /*     direction == 0 : no buttons pressed. 
                direction > 0.1 : pressed button to go right. 
                direction < -0.1 : pressed button to go left
@@ -263,7 +266,7 @@ using System.Collections.Generic;
             movement = true;
         }
 
-        void checkJump()
+        public void checkJump()
         {
             if (Input.GetButtonDown("Jump"))
             {
@@ -283,7 +286,7 @@ using System.Collections.Generic;
             rb.AddForce(Vector3.up * jumpPower, ForceMode.VelocityChange);
         }
 
-        void checkJumpComplete()
+        public void checkJumpComplete()
         {
             if (currentBaseState.nameHash == jumpState)
             {
