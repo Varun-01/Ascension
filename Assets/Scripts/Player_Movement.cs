@@ -84,12 +84,6 @@ using System.Collections.Generic;
         void FixedUpdate()
         {
 
-            if (Input.GetKeyDown(KeyCode.D)){
-                moveRequest.sendMoveRequest("D");
-            }
-            if (Input.GetKeyDown(KeyCode.A)){
-                moveRequest.sendMoveRequest("A");
-            }
         /*     direction == 0 : no buttons pressed. 
                direction > 0.1 : pressed button to go right. 
                direction < -0.1 : pressed button to go left
@@ -115,6 +109,15 @@ using System.Collections.Generic;
             checkDoubleTap(playerDirection);
 
             //depending on movement direction and player direction, different force applied.
+            
+            if (movementDirection == 1)
+            {
+                moveRequest.sendMoveRequest("D");
+            } else if (movementDirection == -1)
+            {
+                moveRequest.sendMoveRequest("A");
+            }
+
             checkMovement(movementDirection);
 
             //for animations: if a movement key isnt pressed in .02 seconds then the player is idle and movement animations are stopped
