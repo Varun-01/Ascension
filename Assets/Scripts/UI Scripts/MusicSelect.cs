@@ -8,6 +8,7 @@ using UnityEngine.SceneManagement;
 public class MusicSelect : MonoBehaviour
 {
     private int selectedMusicIndex;
+    //private int previousMusicIndex;
     private Color desiredColor;
 
     [Header("List of Tracks")]
@@ -18,10 +19,15 @@ public class MusicSelect : MonoBehaviour
     [SerializeField] private TextMeshProUGUI trackName;
     [SerializeField] private Image musicSplash;
     [SerializeField] private Image backgroundColor;
+    [SerializeField] private GameObject discName;
+    [SerializeField] private GameObject previousDisc;
 
     [Header("Sounds")]
     [SerializeField] private AudioClip arrowClickSFX;
     [SerializeField] private AudioClip characterSelectMusic;
+
+    public GameObject selection;
+    public Selection_Manager selectionManager;
 
     public void LeftArrow()
     {
@@ -47,8 +53,11 @@ public class MusicSelect : MonoBehaviour
 
     public void Select()
     {
-        Debug.Log(string.Format("Track {0}:{1} has been selected", selectedMusicIndex, trackList[selectedMusicIndex].trackName));
-        //SceneManager.LoadScene("Music Select"); load game scene here
+        //Debug.Log(string.Format("Track {0}:{1} has been selected", selectedMusicIndex, trackList[selectedMusicIndex].trackName));
+
+        selectionManager.setMusic(string.Format(trackList[selectedMusicIndex].trackName));
+        string stage = selectionManager.getStage();
+        SceneManager.LoadScene(stage); //load game scene here
     }
 
     public void Back()
@@ -61,6 +70,11 @@ public class MusicSelect : MonoBehaviour
         musicSplash.sprite = trackList[selectedMusicIndex].splash;
         trackName.text = trackList[selectedMusicIndex].trackName;
         desiredColor = trackList[selectedMusicIndex].musicBGColor;
+        discName = trackList[selectedMusicIndex].disc;
+        discName.SetActive(true);
+        previousDisc = trackList[selectedMusicIndex].previousDisc;
+        previousDisc.SetActive(false);
+        Debug.Log(discName);
     }
 
     [System.Serializable]
@@ -69,13 +83,17 @@ public class MusicSelect : MonoBehaviour
         public Sprite splash;
         public string trackName;
         public Color musicBGColor;
+        public GameObject disc;
+        public GameObject previousDisc;
     }
 
     // Start is called before the first frame update
     void Start()
     {
+        Destroy(GameObject.FindGameObjectWithTag("DoNotDestroyMusic"));
         UpdateMusicSelectionUI();
-
+        selection = GameObject.Find("SelectionManager");
+        selectionManager = selection.GetComponent<Selection_Manager>();
     }
 
     // Update is called once per frame

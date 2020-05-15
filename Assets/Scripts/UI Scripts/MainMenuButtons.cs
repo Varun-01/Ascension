@@ -15,4 +15,19 @@ public class MainMenuButtons : MonoBehaviour
         SceneManager.LoadScene("Character Select");
     }
 
+    public void RandomMatch()
+    {
+
+    }
+
+    public void Connect()
+    {
+        SceneManager.LoadScene("Connect Menu");
+    }
+
+    public void ConnectBack()
+    {
+        SceneManager.LoadScene("Main Menu");
+    }
+
 }

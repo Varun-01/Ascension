@@ -26,6 +26,11 @@ public class Player_Manager : MonoBehaviour
     //[FMODUnity.EventRef]
     //public string PlayerStateEvent = "";
 
+    [FMODUnity.EventRef]
+    public string AttackEvent = "";
+    //[FMODUnity.EventRef]
+    //public string HealEvent = "";
+
     // Start is called before the first frame update
     void Start()
     {
@@ -81,15 +86,17 @@ public class Player_Manager : MonoBehaviour
         playerHealth = (playerHealth - damage /*+ defenseStat*/);
         healthBar.SetHealth(playerHealth);
         Debug.Log("took damage from opponent");
-        Debug.Log(playerHealth + playerTag);
+        //Debug.Log(playerHealth + playerTag);
         Invoke("stopStun", stunTime);
     }
 
-    public void GiveDamage(int damage)
+    public void GiveDamage(int damage, string lastAttack)
     {
         opponentManager.TakeDamage(damage + attackStat);
-        Debug.Log("gave damage to opponent");
-        Debug.Log(playerTag);
+        //AttackEvent = "event:/" + lastAttack;
+        FMODUnity.RuntimeManager.PlayOneShot(AttackEvent, transform.position);
+        //Debug.Log("gave damage to opponent");
+        //sDebug.Log(playerTag);
     }
 
     void EndGame()
