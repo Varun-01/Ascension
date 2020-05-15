@@ -118,6 +118,15 @@ using System.Collections.Generic;
             checkDoubleTap(playerDirection);
 
             //depending on movement direction and player direction, different force applied.
+            
+            if (movementDirection == 1)
+            {
+                moveRequest.sendMoveRequest("D");
+            } else if (movementDirection == -1)
+            {
+                moveRequest.sendMoveRequest("A");
+            }
+
             checkMovement(movementDirection);
 
             //for animations: if a movement key isnt pressed in .02 seconds then the player is idle and movement animations are stopped
