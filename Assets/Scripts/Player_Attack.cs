@@ -14,11 +14,13 @@ public class Player_Attack : MonoBehaviour
     public string playerTag;
     public int attackNumber;
     public Player_Manager playerManager;
+    
     public GameObject[] hitboxes;
     public Collider[] attackBoxes;
     private bool _state;
     private string lastAttack;
     private Collider tester;
+    private bool hit;
 
     Dictionary<string, int> attackValueTable = new Dictionary<string, int>();
 
@@ -62,6 +64,7 @@ public class Player_Attack : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.U))
         {
             launchAttack("LightPunch");
+            // activates the appropriate hitbox for attack duration
             StartCoroutine(StartAttack(1.40f, hitboxes[0]));
             tester = attackBoxes[0];
             lastAttack = "LightPunch";
@@ -69,6 +72,7 @@ public class Player_Attack : MonoBehaviour
         else if (Input.GetKeyDown(KeyCode.I))
         {
             launchAttack("HeavyPunch");
+            // activates the appropriate hitbox for attack duration
             StartCoroutine(StartAttack(0.70f, hitboxes[0]));
             tester = attackBoxes[0];
             lastAttack = "HeavyPunch";
@@ -77,6 +81,7 @@ public class Player_Attack : MonoBehaviour
         else if (Input.GetKeyDown(KeyCode.O))
         {
             launchAttack("LightKick");
+            // activates the appropriate hitbox for attack duration
             StartCoroutine(StartAttack(0.70f, hitboxes[1]));
             tester = attackBoxes[1];
             lastAttack = "LightKick";
@@ -84,6 +89,7 @@ public class Player_Attack : MonoBehaviour
         else if (Input.GetKeyDown(KeyCode.P))
         {
             launchAttack("HeavyKick");
+            // activates the appropriate hitbox for attack duration
             StartCoroutine(StartAttack(1.05f, hitboxes[1]));
             tester = attackBoxes[1];
             lastAttack = "HeavyKick";
@@ -94,11 +100,30 @@ public class Player_Attack : MonoBehaviour
             Collider[] cols = Physics.OverlapBox(tester.bounds.center, tester.bounds.extents, tester.transform.rotation, LayerMask.GetMask("Hurtbox"));
             if (cols.Length>0)
             {
-                int damage = getAttackValue(lastAttack);
-                playerManager.GiveDamage(damage);
-                Debug.Log("Success!");
-                return;
+                foreach (Collider c in cols)
+                {
+                    if (c.transform.root.tag != tester.transform.root.tag)
+                    {
+                        hit = true;
+                    }
+                    else
+                    {
+                        hit = false;   
+                    }
+
+                }
+                if(hit)
+                {
+                    Debug.Log("Opponent");
+                    int damage = getAttackValue(lastAttack);
+                    playerManager.GiveDamage(damage);
+                    Debug.Log("Success!");
+                //return;
+                }
+                
             }
+            else
+            {}
         }
     }
     // coroutine to activate the hitboxes only for the duration of the attack.
@@ -106,6 +131,7 @@ public class Player_Attack : MonoBehaviour
     {
         hit.SetActive(true);
         _state = true;
+        // keeps the attackbox active for the attack duration
         yield return new WaitForSeconds(attacktime);
         hit.SetActive(false);
         _state = false;
