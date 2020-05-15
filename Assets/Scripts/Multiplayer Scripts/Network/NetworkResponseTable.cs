@@ -17,6 +17,8 @@ public class NetworkResponseTable {
 		add(Constants.SMSG_MOVE, "ResponseMove");//207
 		add(Constants.SMSG_MATCH_PLAYER, "ResponseMatchPlayer");//208
 		add(Constants.SMSG_SELECTIONS, "ResponseSelections"); //209
+		add(Constants.SMSG_SELECTSTAGE, "ResponseSelectStage"); //210
+		add(Constants.SMSG_SELECTMUSIC, "ResponseSelectMusic");//211
 	}
 	
 	public static void add(short response_id, string name) {

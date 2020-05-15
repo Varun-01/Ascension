@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using UnityEngine.SceneManagement;
+using UnityEditor;
 
 public class MusicSelect : MonoBehaviour
 {
@@ -25,6 +26,13 @@ public class MusicSelect : MonoBehaviour
 
     public GameObject selection;
     public Selection_Manager selectionManager;
+
+    SelectMusicNet selectMusicNet;
+
+    public void Awake(){
+         selection = GameObject.Find("SelectionManager");
+        selectionManager = selection.GetComponent<Selection_Manager>();
+    }
 
     public void LeftArrow()
     {
@@ -51,9 +59,21 @@ public class MusicSelect : MonoBehaviour
     public void Select()
     {
         //Debug.Log(string.Format("Track {0}:{1} has been selected", selectedMusicIndex, trackList[selectedMusicIndex].trackName));
-
+        if(Constants.USER_ID < Constants.OPPONENT_ID){
+        selectMusicNet.sendMusicSelectRequest(selectedMusicIndex);
         selectionManager.setMusic(string.Format(trackList[selectedMusicIndex].trackName));
         string stage = selectionManager.getStage();
+        SceneManager.LoadScene(stage); //load game scene here
+        }
+        else{
+            EditorUtility.DisplayDialog ("Please wait for your opponent to selct the Music ", "Waitting ....", "Ok");
+        }
+    }
+
+    public void selectForNetwork (int selectedMusicIndex)
+    {   Debug.Log("called Music selectForNetwork"+ selectedMusicIndex);
+         selectionManager.setMusic(string.Format(trackList[selectedMusicIndex].trackName));
+         string stage = selectionManager.getStage();
         SceneManager.LoadScene(stage); //load game scene here
     }
 
@@ -81,8 +101,10 @@ public class MusicSelect : MonoBehaviour
     void Start()
     {
         UpdateMusicSelectionUI();
-        selection = GameObject.Find("SelectionManager");
-        selectionManager = selection.GetComponent<Selection_Manager>();
+       
+        //Debug.Log(selection != null? "selection in MusicSelect is not null" : "selection in MusicSelect is null");
+        
+        selectMusicNet = gameObject.GetComponent<SelectMusicNet>();
     }
 
     // Update is called once per frame

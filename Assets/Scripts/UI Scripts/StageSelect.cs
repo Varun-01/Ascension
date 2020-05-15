@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using UnityEngine.SceneManagement;
+using UnityEditor;
 
 public class StageSelect : MonoBehaviour
 {
@@ -27,6 +28,8 @@ public class StageSelect : MonoBehaviour
 
     public GameObject selection;
     public Selection_Manager selectionManager;
+
+    public SelectStageNet selectStageNet;
 
     public void LeftArrow()
     {
@@ -53,6 +56,18 @@ public class StageSelect : MonoBehaviour
     public void Select()
     {
         //Debug.Log(string.Format("Stage {0}:{1} has been selected", selectedStageIndex, stageList[selectedStageIndex].stageName));
+        if(Constants.USER_ID < Constants.OPPONENT_ID){
+        selectStageNet.sendStageSelectRequest(selectedStageIndex);
+        selectionManager.setStage(string.Format(stageList[selectedStageIndex].stageName));
+
+        SceneManager.LoadScene("Music Select");}
+        else{
+            EditorUtility.DisplayDialog ("Please wait for your opponent to selct the stage ", "Waitting ....", "Ok");
+        }
+    }
+
+    public void selectForNetwork(int selectedStageIndex)
+    {
         selectionManager.setStage(string.Format(stageList[selectedStageIndex].stageName));
         SceneManager.LoadScene("Music Select");
     }
@@ -95,7 +110,7 @@ public class StageSelect : MonoBehaviour
         UpdateStageSelectionUI();
         selection = GameObject.Find("SelectionManager");
         selectionManager = selection.GetComponent<Selection_Manager>();
-
+        selectStageNet = gameObject.GetComponent<SelectStageNet>();
         
     }
 

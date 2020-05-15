@@ -27,6 +27,12 @@ public class Constants {
 
 	public static readonly short CMSG_SELECTIONS = 109;
 	public static readonly short SMSG_SELECTIONS = 209;
+
+	public static readonly short CMSG_SELECTSTAGE = 110;
+	public static readonly short SMSG_SELECTSTAGE = 210;
+
+	public static readonly short CMSG_SELECTMUSIC = 111;
+	public static readonly short SMSG_SELECTMUSIC = 211;
 	
 	// Other
 	public static readonly string IMAGE_RESOURCES_PATH = "Images/";

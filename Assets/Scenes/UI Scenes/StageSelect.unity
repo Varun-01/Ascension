@@ -2183,6 +2183,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1087571318}
   - component: {fileID: 1087571317}
+  - component: {fileID: 1087571319}
   m_Layer: 0
   m_Name: StageSelectionController
   m_TagString: Untagged
@@ -2202,7 +2203,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6881e51357e2b0f4fb4144d7131cf37a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneNumber: 4
   stageList:
   - splash: {fileID: 21300000, guid: 29a73e9dbab231b47a07728424257c20, type: 3}
     stageName: THE STREETS
@@ -2220,6 +2220,7 @@ MonoBehaviour:
   characterSelectMusic: {fileID: 0}
   selection: {fileID: 0}
   selectionManager: {fileID: 0}
+  selectStageNet: {fileID: 0}
 --- !u!4 &1087571318
 Transform:
   m_ObjectHideFlags: 0
@@ -2234,6 +2235,24 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1087571319
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1087571316}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc469a3ac8a4d4c43a541f8c2cf252a8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  opponentManager: {fileID: 0}
+  stageSelect: {fileID: 0}
+  attackStat: 0
+  defenseStat: 0
+  characterName: 
+  playerTag: 
 --- !u!1 &1189660670
 GameObject:
   m_ObjectHideFlags: 0

@@ -358,6 +358,7 @@ GameObject:
   m_Component:
   - component: {fileID: 322577825}
   - component: {fileID: 322577824}
+  - component: {fileID: 322577826}
   m_Layer: 0
   m_Name: MusicSelectionController
   m_TagString: Untagged
@@ -395,6 +396,8 @@ MonoBehaviour:
   backgroundColor: {fileID: 660690940}
   arrowClickSFX: {fileID: 0}
   characterSelectMusic: {fileID: 0}
+  selection: {fileID: 0}
+  selectionManager: {fileID: 0}
 --- !u!4 &322577825
 Transform:
   m_ObjectHideFlags: 0
@@ -409,6 +412,24 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &322577826
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 322577823}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18da560e1e8c34a009ea4c8b05230fa9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  opponentManager: {fileID: 0}
+  musicSelect: {fileID: 0}
+  attackStat: 0
+  defenseStat: 0
+  characterName: 
+  playerTag: 
 --- !u!1 &476721446
 GameObject:
   m_ObjectHideFlags: 0
