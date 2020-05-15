@@ -118,7 +118,7 @@ public class Player_Attack : MonoBehaviour
                 {
                     Debug.Log("Opponent");
                     int damage = getAttackValue(lastAttack);
-                    playerManager.GiveDamage(damage);
+                    playerManager.GiveDamage(damage, lastAttack);
                     Debug.Log("Success!");
                 //return;
                 }
