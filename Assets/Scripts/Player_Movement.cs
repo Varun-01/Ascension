@@ -84,15 +84,6 @@ using System.Collections.Generic;
         void FixedUpdate()
         {
 
-            if (Input.GetKeyDown(KeyCode.D)){
-                moveRequest.sendMoveRequest("D");
-            }
-            if (Input.GetKeyDown(KeyCode.A)){
-                moveRequest.sendMoveRequest("A");
-            }
-            if (Input.GetButtonDown("Jump")){
-                moveRequest.sendMoveRequest("Jump");
-            }
         /*     direction == 0 : no buttons pressed. 
                direction > 0.1 : pressed button to go right. 
                direction < -0.1 : pressed button to go left
@@ -132,19 +123,23 @@ using System.Collections.Generic;
             //for animations: if a movement key isnt pressed in .02 seconds then the player is idle and movement animations are stopped
             //character would return to idle state animation if a key wasn't pressed which made the animation from forward to backward clunky.
             checkJump();
-        }
+
+            if (Input.GetButtonDown("Jump"))
+            {
+                moveRequest.sendMoveRequest("Jump");
+            }
+            checkAttacking();
 
             checkJumpComplete();
-            
+
             checkMovementDelay();
 
             checkStun();
 
-            checkAttacking();
-
             checkIdle();
 
             checkRest();
+        }
     }
 
         void resetCollider()
