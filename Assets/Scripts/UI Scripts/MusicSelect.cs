@@ -19,6 +19,9 @@ public class MusicSelect : MonoBehaviour
     [SerializeField] private TextMeshProUGUI trackName;
     [SerializeField] private Image musicSplash;
     [SerializeField] private Image backgroundColor;
+    [SerializeField] private GameObject discName;
+    [SerializeField] private GameObject previousDisc;
+    [SerializeField] private GameObject nextDisc;
 
     [Header("Sounds")]
     [SerializeField] private AudioClip arrowClickSFX;
@@ -43,6 +46,8 @@ public class MusicSelect : MonoBehaviour
         }
 
         UpdateMusicSelectionUI();
+        nextDisc = trackList[selectedMusicIndex].nextDisc;
+        nextDisc.SetActive(false);
     }
 
     public void RightArrow()
@@ -54,6 +59,8 @@ public class MusicSelect : MonoBehaviour
         }
 
         UpdateMusicSelectionUI();
+        previousDisc = trackList[selectedMusicIndex].previousDisc;
+        previousDisc.SetActive(false);
     }
 
     public void Select()
@@ -87,6 +94,13 @@ public class MusicSelect : MonoBehaviour
         musicSplash.sprite = trackList[selectedMusicIndex].splash;
         trackName.text = trackList[selectedMusicIndex].trackName;
         desiredColor = trackList[selectedMusicIndex].musicBGColor;
+        discName = trackList[selectedMusicIndex].disc;
+        discName.SetActive(true);
+        //previousDisc = trackList[selectedMusicIndex].previousDisc;
+        //previousDisc.SetActive(false);
+        //nextDisc = trackList[selectedMusicIndex].nextDisc;
+        //nextDisc.SetActive(true);
+        Debug.Log(discName);
     }
 
     [System.Serializable]
@@ -95,15 +109,24 @@ public class MusicSelect : MonoBehaviour
         public Sprite splash;
         public string trackName;
         public Color musicBGColor;
+        public GameObject disc;
+        public GameObject previousDisc;
+        public GameObject nextDisc;
     }
 
     // Start is called before the first frame update
     void Start()
     {
-        UpdateMusicSelectionUI();
-       
-        //Debug.Log(selection != null? "selection in MusicSelect is not null" : "selection in MusicSelect is null");
         
+        Destroy(GameObject.FindGameObjectWithTag("DoNotDestroyMusic"));//added this from dev branch ? -BJN
+
+        UpdateMusicSelectionUI();
+
+        //Debug.Log(selection != null? "selection in MusicSelect is not null" : "selection in MusicSelect is null");
+
+        selection = GameObject.Find("SelectionManager");//added this from dev branch ? -BJN
+        selectionManager = selection.GetComponent<Selection_Manager>();//added this from dev branch ? -BJN
+
         selectMusicNet = gameObject.GetComponent<SelectMusicNet>();
     }
 
