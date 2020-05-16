@@ -33,6 +33,11 @@ public class Player_Manager : MonoBehaviour
     //[FMODUnity.EventRef]
     //public string PlayerStateEvent = "";
 
+    [FMODUnity.EventRef]
+    public string AttackEvent = "";
+    //[FMODUnity.EventRef]
+    //public string HealEvent = "";
+
     // Start is called before the first frame update
     void Start()
     {
@@ -97,10 +102,11 @@ public class Player_Manager : MonoBehaviour
         playerHealth = (playerHealth - damage /*+ defenseStat*/);
         healthBarManager.SetHealth(playerHealth);
         Debug.Log("took damage from opponent");
-        Debug.Log(playerHealth + playerTag);
+        //Debug.Log(playerHealth + playerTag);
         Invoke("stopStun", stunTime);
 
     }
+
 
     //public void GiveDamage( string attackName,int damage) //network
     public void GiveDamage(int damage) //Network add attackname
@@ -110,6 +116,11 @@ public class Player_Manager : MonoBehaviour
         Debug.Log(playerTag);
         //Network
         attackRequest.sendAttackRequest(damage);
+        opponentManager.TakeDamage(damage + attackStat);
+        //AttackEvent = "event:/" + lastAttack;
+        FMODUnity.RuntimeManager.PlayOneShot(AttackEvent, transform.position);
+        //Debug.Log("gave damage to opponent");
+        //sDebug.Log(playerTag);
     }
 
     void EndGame()

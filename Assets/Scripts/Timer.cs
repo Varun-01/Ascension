@@ -33,15 +33,11 @@ public class Timer : MonoBehaviour
         if (player1Manager.playerHealth > player2Manager.playerHealth)
         {
             mainTimer.ps1++;
-            mainTimer.rNum++;
-            mainTimer.UILoader(); ;
-
+            
         }
         if (player2Manager.playerHealth > player1Manager.playerHealth)
         {
             mainTimer.ps2++;
-            mainTimer.rNum++;
-            mainTimer.UILoader(); ;
 
         }
         Application.LoadLevel(Application.loadedLevel);

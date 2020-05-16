@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.01.00">
 	<object class="Event" id="{d545596d-f4a1-4dc3-82a8-f309f9cb0213}">
 		<property name="name">
-			<value>Combo_SetA_3</value>
+			<value>Heavy Punch</value>
 		</property>
 		<property name="outputFormat">
 			<value>1</value>

@@ -9,6 +9,7 @@ using UnityEditor;
 public class MusicSelect : MonoBehaviour
 {
     private int selectedMusicIndex;
+    //private int previousMusicIndex;
     private Color desiredColor;
 
     [Header("List of Tracks")]
@@ -19,6 +20,8 @@ public class MusicSelect : MonoBehaviour
     [SerializeField] private TextMeshProUGUI trackName;
     [SerializeField] private Image musicSplash;
     [SerializeField] private Image backgroundColor;
+    [SerializeField] private GameObject discName;
+    [SerializeField] private GameObject previousDisc;
 
     [Header("Sounds")]
     [SerializeField] private AudioClip arrowClickSFX;
@@ -87,6 +90,11 @@ public class MusicSelect : MonoBehaviour
         musicSplash.sprite = trackList[selectedMusicIndex].splash;
         trackName.text = trackList[selectedMusicIndex].trackName;
         desiredColor = trackList[selectedMusicIndex].musicBGColor;
+        discName = trackList[selectedMusicIndex].disc;
+        discName.SetActive(true);
+        previousDisc = trackList[selectedMusicIndex].previousDisc;
+        previousDisc.SetActive(false);
+        Debug.Log(discName);
     }
 
     [System.Serializable]
@@ -95,11 +103,14 @@ public class MusicSelect : MonoBehaviour
         public Sprite splash;
         public string trackName;
         public Color musicBGColor;
+        public GameObject disc;
+        public GameObject previousDisc;
     }
 
     // Start is called before the first frame update
     void Start()
     {
+        Destroy(GameObject.FindGameObjectWithTag("DoNotDestroyMusic"));
         UpdateMusicSelectionUI();
        
         //Debug.Log(selection != null? "selection in MusicSelect is not null" : "selection in MusicSelect is null");
