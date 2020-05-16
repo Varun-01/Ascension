@@ -10,7 +10,9 @@ public class Attack : MonoBehaviour {
 	 private ConnectionManager cManager;
 
 	GameObject opponent;
+	GameObject thisPlayer;
     public Player_Manager opponentManager;
+	public Player_Manager thisPlayerManager;
 
 	public int attackStat;
     public int defenseStat;
@@ -32,10 +34,16 @@ public class Attack : MonoBehaviour {
 		//opponent = GameObject.FindWithTag("Player1");
 
 		if(Constants.USER_ID < Constants.OPPONENT_ID){
-		opponent = GameObject.FindWithTag("Player1");}
-		else{opponent = GameObject.FindWithTag("Player2");}
+		opponent = GameObject.FindWithTag("Player1");
+		thisPlayer = GameObject.FindWithTag("Player2");
+		}
+		else{opponent = GameObject.FindWithTag("Player2");
+		thisPlayer = GameObject.FindWithTag("Player1");
+		}
 
 		opponentManager = opponent.GetComponent<Player_Manager>();
+		thisPlayerManager = opponent.GetComponent<Player_Manager>();
+
 		playerTag = gameObject.tag;
         Player_Stats playerStats = gameObject.GetComponent<Player_Stats>();
         characterName = gameObject.name;
@@ -68,7 +76,7 @@ public class Attack : MonoBehaviour {
 			Debug.Log ("Successful attack response : " +args.damage);
 			//EditorUtility.DisplayDialog ("Attack Successful: "+args.damage, "You have successfully attack.\nClick Ok to continue execution and see responses on console", "Ok");
             if(args.user_id == Constants.OPPONENT_ID){
-			opponentManager.TakeDamage(args.damage + attackStat);}
+			thisPlayerManager.TakeDamage(args.damage + attackStat);}
 			//SceneManager.LoadScene("Main Menu");
 		} else {
 			Debug.Log("Attack Failed");

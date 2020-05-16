@@ -34,8 +34,8 @@ public class ResponseAttack : NetworkResponse {
 	public override void parse() {
 		status = DataReader.ReadShort(dataStream);
 		if (status == 0) {
-			// user_id = DataReader.ReadInt(dataStream);
-			// username = DataReader.ReadString(dataStream);
+			 user_id = DataReader.ReadInt(dataStream);
+			 username = DataReader.ReadString(dataStream);
 			// money = DataReader.ReadInt(dataStream);
 			// level = DataReader.ReadShort (dataStream);
 			// last_logout = DataReader.ReadString(dataStream);
@@ -48,8 +48,8 @@ public class ResponseAttack : NetworkResponse {
 		if (status == 0) {
 			args = new ResponseAttackEventArgs();
 			args.status = status;
-			// args.user_id = user_id;
-			// args.username = username;
+			 args.user_id = user_id;
+			 args.username = username;
 			// args.money = money;
 			// args.level = level;
 			// args.last_logout = last_logout;
