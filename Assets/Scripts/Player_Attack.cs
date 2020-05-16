@@ -20,6 +20,8 @@ public class Player_Attack : MonoBehaviour
     private string lastAttack;
     private Collider tester;
     public Move moveRequest;
+    private bool detected;
+    private bool sent;
 
     Dictionary<string, int> attackValueTable = new Dictionary<string, int>();
 
@@ -37,7 +39,7 @@ public class Player_Attack : MonoBehaviour
         {
             box.SetActive(false);
         }
-       
+       sent = false;
         moveRequest = gameObject.GetComponent<Move>();
     }
 
@@ -85,10 +87,20 @@ public class Player_Attack : MonoBehaviour
                 Collider[] cols = Physics.OverlapBox(tester.bounds.center, tester.bounds.extents, tester.transform.rotation, LayerMask.GetMask("Hurtbox"));
                 if (cols.Length > 0)
                 {
-                    int damage = getAttackValue(lastAttack);
-                    playerManager.GiveDamage(damage);
-                    Debug.Log("Success!");
-                    return;
+                    foreach (Collider c in cols)
+                    {
+                        if (c.transform.root.tag != tester.transform.root.tag)
+                        {
+                            detected = true;
+                            if (detected == true && sent != true)
+                            {
+                                int damage = getAttackValue(lastAttack);
+                                playerManager.GiveDamage(damage);
+                                Debug.Log("Success");
+                                sent = true;
+                            }
+                        }
+                    }
                 }
             }
         }
@@ -100,6 +112,7 @@ public class Player_Attack : MonoBehaviour
         _state = true;
         yield return new WaitForSeconds(attacktime);
         hit.SetActive(false);
+        sent = false;
         _state = false;
     }
 
@@ -134,8 +147,8 @@ public class Player_Attack : MonoBehaviour
         else {
             anim.SetTrigger(attackName);
             //attackSound(attackName);
-            int damage = getAttackValue(attackName);
-            playerManager.GiveDamage(damage); 
+            //int damage = getAttackValue(attackName);
+            //playerManager.GiveDamage(damage); 
             
         }
 
