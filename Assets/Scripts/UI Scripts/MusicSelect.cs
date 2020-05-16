@@ -22,6 +22,7 @@ public class MusicSelect : MonoBehaviour
     [SerializeField] private Image backgroundColor;
     [SerializeField] private GameObject discName;
     [SerializeField] private GameObject previousDisc;
+    [SerializeField] private GameObject nextDisc;
 
     [Header("Sounds")]
     [SerializeField] private AudioClip arrowClickSFX;
@@ -46,6 +47,8 @@ public class MusicSelect : MonoBehaviour
         }
 
         UpdateMusicSelectionUI();
+        nextDisc = trackList[selectedMusicIndex].nextDisc;
+        nextDisc.SetActive(false);
     }
 
     public void RightArrow()
@@ -57,6 +60,8 @@ public class MusicSelect : MonoBehaviour
         }
 
         UpdateMusicSelectionUI();
+        previousDisc = trackList[selectedMusicIndex].previousDisc;
+        previousDisc.SetActive(false);
     }
 
     public void Select()
@@ -105,16 +110,19 @@ public class MusicSelect : MonoBehaviour
         public Color musicBGColor;
         public GameObject disc;
         public GameObject previousDisc;
-    }
-
-    // Start is called before the first frame update
+        public GameObject nextDisc;
     void Start()
     {
-        Destroy(GameObject.FindGameObjectWithTag("DoNotDestroyMusic"));
-        UpdateMusicSelectionUI();
-       
-        //Debug.Log(selection != null? "selection in MusicSelect is not null" : "selection in MusicSelect is null");
+
         
+        Destroy(GameObject.FindGameObjectWithTag("DoNotDestroyMusic"));//added this from dev branch ? -BJN
+        UpdateMusicSelectionUI();
+
+        //Debug.Log(selection != null? "selection in MusicSelect is not null" : "selection in MusicSelect is null");
+
+        selection = GameObject.Find("SelectionManager");//added this from dev branch ? -BJN
+        selectionManager = selection.GetComponent<Selection_Manager>();//added this from dev branch ? -BJN
+
         selectMusicNet = gameObject.GetComponent<SelectMusicNet>();
     }
 
