@@ -541,21 +541,25 @@ MonoBehaviour:
 <<<<<<< HEAD
     disc: {fileID: 136573586}
     previousDisc: {fileID: 1984970899}
+    nextDisc: {fileID: 1848478593}
   - splash: {fileID: 21300000, guid: 362c9b855b67cf843a1524576a1d2ab7, type: 3}
     trackName: TRACK 2
     musicBGColor: {r: 0, g: 0, b: 0, a: 0}
     disc: {fileID: 1848478593}
     previousDisc: {fileID: 136573586}
+    nextDisc: {fileID: 55457708}
   - splash: {fileID: 21300000, guid: 1970d896e87f1ac43ba4d7b7ea3e60b9, type: 3}
     trackName: TRACK 3
     musicBGColor: {r: 0, g: 0, b: 0, a: 0}
     disc: {fileID: 55457708}
     previousDisc: {fileID: 1848478593}
+    nextDisc: {fileID: 1984970899}
   - splash: {fileID: 21300000, guid: d6877d0c1fc72ad49b03f74f4313d9e8, type: 3}
     trackName: TRACK 4
     musicBGColor: {r: 0, g: 0, b: 0, a: 0}
     disc: {fileID: 1984970899}
     previousDisc: {fileID: 55457708}
+<<<<<<< HEAD
 =======
     disc: {fileID: 31792802}
     previousDisc: {fileID: 1864061477}
@@ -579,15 +583,22 @@ MonoBehaviour:
     previousDisc: {fileID: 1866518372}
     nextDisc: {fileID: 31792802}
 >>>>>>> f6b7be5569a09bda8946ef54fecfb774f6093b52
+=======
+    nextDisc: {fileID: 136573586}
+>>>>>>> Development
   trackName: {fileID: 1993039285}
   musicSplash: {fileID: 1616595198}
   backgroundColor: {fileID: 660690940}
   discName: {fileID: 0}
   previousDisc: {fileID: 0}
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
   nextDisc: {fileID: 0}
 >>>>>>> f6b7be5569a09bda8946ef54fecfb774f6093b52
+=======
+  nextDisc: {fileID: 0}
+>>>>>>> Development
   arrowClickSFX: {fileID: 0}
   characterSelectMusic: {fileID: 0}
   selection: {fileID: 0}

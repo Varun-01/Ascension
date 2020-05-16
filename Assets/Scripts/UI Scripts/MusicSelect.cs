@@ -97,8 +97,10 @@ public class MusicSelect : MonoBehaviour
         desiredColor = trackList[selectedMusicIndex].musicBGColor;
         discName = trackList[selectedMusicIndex].disc;
         discName.SetActive(true);
-        previousDisc = trackList[selectedMusicIndex].previousDisc;
-        previousDisc.SetActive(false);
+        //previousDisc = trackList[selectedMusicIndex].previousDisc;
+        //previousDisc.SetActive(false);
+        //nextDisc = trackList[selectedMusicIndex].nextDisc;
+        //nextDisc.SetActive(true);
         Debug.Log(discName);
     }
 
@@ -111,6 +113,10 @@ public class MusicSelect : MonoBehaviour
         public GameObject disc;
         public GameObject previousDisc;
         public GameObject nextDisc;
+
+    }
+
+    // Start is called before the first frame update
     void Start()
     {
 

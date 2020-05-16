@@ -14,6 +14,7 @@ public class Player_Attack : MonoBehaviour
     public string playerTag;
     public int attackNumber;
     public Player_Manager playerManager;
+    
     public GameObject[] hitboxes;
     public Collider[] attackBoxes;
     private bool _state;
@@ -22,6 +23,8 @@ public class Player_Attack : MonoBehaviour
     public Move moveRequest;
     private bool detected;
     private bool sent;
+    private bool hit;
+
 
     Dictionary<string, int> attackValueTable = new Dictionary<string, int>();
 
@@ -123,6 +126,8 @@ public class Player_Attack : MonoBehaviour
                     }
                 }
             }
+            else
+            {}
         }
     }
     // coroutine to activate the hitboxes only for the duration of the attack.
@@ -130,6 +135,7 @@ public class Player_Attack : MonoBehaviour
     {
         hit.SetActive(true);
         _state = true;
+        // keeps the attackbox active for the attack duration
         yield return new WaitForSeconds(attacktime);
         hit.SetActive(false);
         sent = false;
