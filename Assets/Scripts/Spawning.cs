@@ -18,7 +18,7 @@ public class Spawning : MonoBehaviour
 
     // Start is called before the first frame update
     void Start()
-    {
+    {///*
         GameObject character = GameObject.Find("SelectionManager");
         Selection_Manager mChar = character.GetComponent<Selection_Manager>();
         player1 = mChar.getCharacter1();
@@ -27,8 +27,9 @@ public class Spawning : MonoBehaviour
         if (player1 == player2)
         {
             player2 = mChar.getCharacter2()+" Alt";
-        }
-        
+        }//*/
+        //player1 = "UnityChan";
+        //player2 = "UnityChan Alt";
         Transform myItem = (Instantiate(Resources.Load(player1), new Vector3(p1x, p1y, p1z), Quaternion.Euler(0, -95, 0)) as GameObject).transform;
         Transform myItem1 = (Instantiate(Resources.Load(player2), new Vector3(p2x, p2y, p2z), Quaternion.Euler(0, 95, 0)) as GameObject).transform;
         
