@@ -77,7 +77,7 @@ public class Game_Manager : MonoBehaviour
         //player2.GetComponent<Player_Movement>().enabled = false;
         GameObject selectionManagerObj = GameObject.Find("SelectionManager");
         Selection_Manager selectionManager = selectionManagerObj.GetComponent<Selection_Manager>();
-        MusicEvent = mChar.getMusic();
+        MusicEvent = selectionManager.getMusic();
 
         MusicState = FMODUnity.RuntimeManager.CreateInstance(MusicEvent);
         MusicState.start();
