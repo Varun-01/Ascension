@@ -104,7 +104,6 @@ public class Player_Manager : MonoBehaviour
         Debug.Log("took damage from opponent");
         //Debug.Log(playerHealth + playerTag);
         Invoke("stopStun", stunTime);
-
     }
 
 
@@ -113,7 +112,7 @@ public class Player_Manager : MonoBehaviour
     {
         //opponentManager.TakeDamage(damage + attackStat);
         Debug.Log("gave damage to opponent");
-        Debug.Log(playerTag);
+        //Debug.Log(playerTag);
         //Network
         attackRequest.sendAttackRequest(damage);
         opponentManager.TakeDamage(damage + attackStat);
