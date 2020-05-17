@@ -135,7 +135,7 @@ GameObject:
   - component: {fileID: 84590029}
   m_Layer: 5
   m_Name: Fight Banner
-  m_TagString: Final Round
+  m_TagString: Fight
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -988,13 +988,13 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0.00012207031, w: 0}
   m_textInfo:
     textComponent: {fileID: 331825014}
-    characterCount: 7
+    characterCount: 0
     spriteCount: 0
-    spaceCount: 1
-    wordCount: 2
+    spaceCount: 0
+    wordCount: 0
     linkCount: 0
-    lineCount: 1
-    pageCount: 1
+    lineCount: 0
+    pageCount: 0
     materialCount: 1
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
@@ -2896,13 +2896,13 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0.00012207031, w: 0}
   m_textInfo:
     textComponent: {fileID: 1449685676}
-    characterCount: 7
+    characterCount: 0
     spriteCount: 0
-    spaceCount: 1
-    wordCount: 2
+    spaceCount: 0
+    wordCount: 0
     linkCount: 0
-    lineCount: 1
-    pageCount: 1
+    lineCount: 0
+    pageCount: 0
     materialCount: 1
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
@@ -3435,13 +3435,13 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0.00012207031, w: 0}
   m_textInfo:
     textComponent: {fileID: 1670927643}
-    characterCount: 15
+    characterCount: 0
     spriteCount: 0
-    spaceCount: 2
-    wordCount: 3
+    spaceCount: 0
+    wordCount: 0
     linkCount: 0
-    lineCount: 1
-    pageCount: 1
+    lineCount: 0
+    pageCount: 0
     materialCount: 1
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
@@ -3609,7 +3609,7 @@ GameObject:
   - component: {fileID: 1792389312}
   m_Layer: 5
   m_Name: Trophy Win Icon P2:1
-  m_TagString: p1 2win
+  m_TagString: p2 1win
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4574,13 +4574,13 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0.00012207031, w: 0}
   m_textInfo:
     textComponent: {fileID: 2057151926}
-    characterCount: 11
+    characterCount: 0
     spriteCount: 0
-    spaceCount: 1
-    wordCount: 2
+    spaceCount: 0
+    wordCount: 0
     linkCount: 0
-    lineCount: 1
-    pageCount: 1
+    lineCount: 0
+    pageCount: 0
     materialCount: 1
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
