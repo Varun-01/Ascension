@@ -118,7 +118,7 @@ public class Player_Manager : MonoBehaviour
         attackRequest.sendAttackRequest(damage);
         opponentManager.TakeDamage(damage + attackStat);
         //AttackEvent = "event:/" + lastAttack;
-        FMODUnity.RuntimeManager.PlayOneShot(AttackEvent, transform.position);
+        //FMODUnity.RuntimeManager.PlayOneShot(AttackEvent, transform.position);
         //Debug.Log("gave damage to opponent");
         //sDebug.Log(playerTag);
     }

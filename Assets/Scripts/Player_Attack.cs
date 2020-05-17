@@ -27,7 +27,7 @@ public class Player_Attack : MonoBehaviour
 
 
     Dictionary<string, int> attackValueTable = new Dictionary<string, int>();
-
+    /*
     [FMODUnity.EventRef]
     FMOD.Studio.EventInstance AttackInstance;
 
@@ -35,13 +35,13 @@ public class Player_Attack : MonoBehaviour
     public string AttackEvent = "";
 
     FMOD.Studio.PARAMETER_ID AttackParameterId;
-    
+    */
 
     void Start()
     {
         playerManager = gameObject.GetComponent<Player_Manager>();
-        AttackInstance = FMODUnity.RuntimeManager.CreateInstance(AttackEvent);
-        FMODUnity.RuntimeManager.AttachInstanceToGameObject(AttackInstance, GetComponent<Transform>(), GetComponent<Rigidbody>());
+        //AttackInstance = FMODUnity.RuntimeManager.CreateInstance(AttackEvent);
+        //FMODUnity.RuntimeManager.AttachInstanceToGameObject(AttackInstance, GetComponent<Transform>(), GetComponent<Rigidbody>());
         anim = GetComponent<Animator>();
         col = GetComponent<CapsuleCollider>();
         rb = GetComponent<Rigidbody>();
@@ -53,14 +53,14 @@ public class Player_Attack : MonoBehaviour
             box.SetActive(false);
         }
 
-
+/*
         FMOD.Studio.EventDescription AttackEventDescription;
         AttackInstance.getDescription(out AttackEventDescription);
         FMOD.Studio.PARAMETER_DESCRIPTION AttackParameterDescription;
         AttackEventDescription.getParameterDescriptionByName("AttackOrder", out AttackParameterDescription);
         AttackParameterId = AttackParameterDescription.id;
         AttackInstance.start();
-
+        */
        sent = false;
 
         moveRequest = gameObject.GetComponent<Move>();
@@ -104,7 +104,7 @@ public class Player_Attack : MonoBehaviour
                 tester = attackBoxes[1];
                 lastAttack = "HeavyKick";
             }
-            AttackInstance.setParameterByID(AttackParameterId, attackNumber);
+            //AttackInstance.setParameterByID(AttackParameterId, attackNumber);
             if (_state == true)
             {
                 Collider[] cols = Physics.OverlapBox(tester.bounds.center, tester.bounds.extents, tester.transform.rotation, LayerMask.GetMask("Hurtbox"));

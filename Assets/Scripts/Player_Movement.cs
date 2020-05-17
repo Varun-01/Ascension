@@ -128,6 +128,7 @@ using System.Collections.Generic;
             {
                 moveRequest.sendMoveRequest("Jump");
             }
+
             checkAttacking();
 
             checkJumpComplete();
@@ -255,6 +256,7 @@ using System.Collections.Generic;
             if (Run > 0)
             {
                 rb.MovePosition(rb.position + transform.forward * runningSpeed / 20);
+                
             }
             else
             {
