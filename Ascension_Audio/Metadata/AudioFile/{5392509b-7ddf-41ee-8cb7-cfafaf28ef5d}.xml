@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.01.00">
+	<object class="AudioFile" id="{5392509b-7ddf-41ee-8cb7-cfafaf28ef5d}">
+		<property name="assetPath">
+			<value>Juke Box Riddim temp 130.wav</value>
+		</property>
+		<property name="isStreaming">
+			<value>true</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>88.615374149659857</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{393f0282-03e2-4e40-aa58-0f00c7a9bc28}</destination>
+		</relationship>
+	</object>
+</objects>
