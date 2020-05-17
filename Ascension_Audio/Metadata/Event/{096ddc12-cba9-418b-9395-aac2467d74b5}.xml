@@ -184,7 +184,7 @@
 			<value>46.122267573696142</value>
 		</property>
 		<property name="volume">
-			<value>-8</value>
+			<value>-10</value>
 		</property>
 		<relationship name="audioFile">
 			<destination>{bdf9a8ad-c58b-416c-9a38-69d9bf1d3bfc}</destination>
@@ -193,6 +193,9 @@
 	<object class="SingleSound" id="{3ff813cf-9323-4bd5-a05b-bae261d88646}">
 		<property name="length">
 			<value>11.530566893424036</value>
+		</property>
+		<property name="volume">
+			<value>2</value>
 		</property>
 		<relationship name="audioFile">
 			<destination>{d830fea2-ac35-420a-9829-b4159b9fc782}</destination>
@@ -205,6 +208,9 @@
 		<property name="length">
 			<value>11.530566893424036</value>
 		</property>
+		<property name="volume">
+			<value>2</value>
+		</property>
 		<relationship name="audioFile">
 			<destination>{d830fea2-ac35-420a-9829-b4159b9fc782}</destination>
 		</relationship>
@@ -216,6 +222,9 @@
 		<property name="length">
 			<value>11.530566893424036</value>
 		</property>
+		<property name="volume">
+			<value>2</value>
+		</property>
 		<relationship name="audioFile">
 			<destination>{d830fea2-ac35-420a-9829-b4159b9fc782}</destination>
 		</relationship>
@@ -226,6 +235,9 @@
 		</property>
 		<property name="length">
 			<value>11.530566893424036</value>
+		</property>
+		<property name="volume">
+			<value>2</value>
 		</property>
 		<relationship name="audioFile">
 			<destination>{d830fea2-ac35-420a-9829-b4159b9fc782}</destination>
@@ -381,7 +393,7 @@
 			<value>0.55000000000000004</value>
 		</property>
 		<property name="value">
-			<value>-40</value>
+			<value>-33</value>
 		</property>
 	</object>
 	<object class="AutomationPoint" id="{ed178a86-2949-4f09-97eb-3f13d1d42bc2}">
@@ -389,7 +401,7 @@
 			<value>1</value>
 		</property>
 		<property name="value">
-			<value>-15</value>
+			<value>-11.5</value>
 		</property>
 	</object>
 </objects>
