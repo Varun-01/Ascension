@@ -128,6 +128,7 @@ using System.Collections.Generic;
             {
                 moveRequest.sendMoveRequest("Jump");
             }
+
             checkAttacking();
 
             checkJumpComplete();
@@ -205,9 +206,9 @@ using System.Collections.Generic;
 
         }
 
-        public void checkMovement(float movementDirection)
+        public void checkMovement(float playerMovementDirection)
         {
-
+            movementDirection = playerMovementDirection;
             playerDirection = rb.transform.localEulerAngles.y;
 
             if (movementDirection > 0.1)
@@ -255,6 +256,7 @@ using System.Collections.Generic;
             if (Run > 0)
             {
                 rb.MovePosition(rb.position + transform.forward * runningSpeed / 20);
+                
             }
             else
             {
