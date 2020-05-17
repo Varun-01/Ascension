@@ -445,7 +445,7 @@ MonoBehaviour:
   Is3D: 0
   IsOneShot: 0
   Parameters:
-  - {fileID: 6265425615486800342}
+  - {fileID: 0}
   MinDistance: 0
   MaxDistance: 0
   Length: 0
@@ -465,7 +465,7 @@ MonoBehaviour:
   Min: 0
   Max: 3
   Default: 0
-  Exists: 1
+  Exists: 0
 --- !u!114 &-2071114993766194757
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -512,17 +512,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
   m_Name: parameter:/Rain Control/MetroSFX
   m_EditorClassIdentifier: 
-  Path: event:/Heavy Kick
-  guid: 71b539e4d3b9cd45a7d46c7cc12933b3
-  Banks:
-  - {fileID: 797992261797851268}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 0
-  MaxDistance: 0
-  Length: 0
+  Name: 
+  Min: 0
+  Max: 0
+  Default: 0
+  Exists: 0
 --- !u!114 &-791560602064476853
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -619,13 +613,14 @@ MonoBehaviour:
   - {fileID: 8889819320953123582}
   - {fileID: 797992261797851268}
   - {fileID: 4147023776444660162}
+  - {fileID: 7274365176131605937}
   EditorEvents:
   - {fileID: 5485624840716209511}
   - {fileID: -9140131208251307561}
   - {fileID: 8514873695970270038}
   - {fileID: 5387374790944474990}
   - {fileID: 7905607615116492018}
-  - {fileID: -931843659541335349}
+  - {fileID: 0}
   - {fileID: -2236294218807050999}
   - {fileID: -6794647245278195996}
   - {fileID: 5543797922623655001}
@@ -653,7 +648,7 @@ MonoBehaviour:
   - {fileID: 4147023776444660162}
   StringsBanks:
   - {fileID: 8889819320953123582}
-  stringsBankWriteTime: 637253186470000000
+  stringsBankWriteTime: 637252616400000000
   cacheVersion: 3
 --- !u!114 &59361076184057246
 MonoBehaviour:
@@ -675,7 +670,7 @@ MonoBehaviour:
   Is3D: 0
   IsOneShot: 0
   Parameters:
-  - {fileID: 7197823324795752182}
+  - {fileID: 0}
   MinDistance: 0
   MaxDistance: 0
   Length: 19000
@@ -696,7 +691,7 @@ MonoBehaviour:
   lastModified: 637253186470000000
   LoadResult: 0
   FileSizes: []
-  Exists: 1
+  Exists: 0
 --- !u!114 &1025637283976697982
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -805,7 +800,7 @@ MonoBehaviour:
   lastModified: 637253186470000000
   LoadResult: 0
   FileSizes: []
-  Exists: 1
+  Exists: 0
 --- !u!114 &4266626448193317999
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -822,7 +817,7 @@ MonoBehaviour:
   Min: 0
   Max: 8
   Default: 0
-  Exists: 1
+  Exists: 0
 --- !u!114 &4508311566641147765
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -908,6 +903,24 @@ MonoBehaviour:
   Max: 3
   Default: 0
   Exists: 0
+--- !u!114 &5090283424524351804
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Beta Master.bank
+  m_EditorClassIdentifier: 
+  Path: Ascension_Audio/Build/Desktop/Beta Master.bank
+  SubDir: 
+  lastModified: 637252616400000000
+  LoadResult: 0
+  FileSizes: []
+  Exists: 1
 --- !u!114 &5387374790944474990
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -947,7 +960,7 @@ MonoBehaviour:
   Min: 0
   Max: 7
   Default: 0
-  Exists: 1
+  Exists: 0
 --- !u!114 &5485624840716209511
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1120,6 +1133,24 @@ MonoBehaviour:
   Max: 3
   Default: 0
   Exists: 0
+--- !u!114 &7274365176131605937
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Beta Master.bank
+  m_EditorClassIdentifier: 
+  Path: Ascension_Audio/Build/Desktop/Beta Master.bank
+  SubDir: 
+  lastModified: 637252616400000000
+  LoadResult: 0
+  FileSizes: []
+  Exists: 1
 --- !u!114 &7307286182171382991
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1348,7 +1379,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: Ascension_Audio/Build/Desktop/Test Master.strings.bank
   SubDir: 
-  lastModified: 637253186470000000
+  lastModified: 637252616400000000
   LoadResult: 0
   FileSizes:
   - Name: Desktop

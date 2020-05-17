@@ -2184,6 +2184,7 @@ GameObject:
   - component: {fileID: 1087571318}
   - component: {fileID: 1087571317}
   - component: {fileID: 1087571319}
+  - component: {fileID: 1087571320}
   m_Layer: 0
   m_Name: StageSelectionController
   m_TagString: Untagged
@@ -2253,6 +2254,29 @@ MonoBehaviour:
   defenseStat: 0
   characterName: 
   playerTag: 
+--- !u!114 &1087571320
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1087571316}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 27c23814c5932524f966e55f76ba8900, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  trackList: []
+  trackName: {fileID: 0}
+  musicSplash: {fileID: 0}
+  backgroundColor: {fileID: 0}
+  discName: {fileID: 0}
+  previousDisc: {fileID: 0}
+  nextDisc: {fileID: 0}
+  arrowClickSFX: {fileID: 0}
+  characterSelectMusic: {fileID: 0}
+  selection: {fileID: 0}
+  selectionManager: {fileID: 0}
 --- !u!1 &1189660670
 GameObject:
   m_ObjectHideFlags: 0

@@ -71,7 +71,12 @@ public class MusicSelect : MonoBehaviour
         selectMusicNet.sendMusicSelectRequest(selectedMusicIndex);
         selectionManager.setMusic(string.Format(trackList[selectedMusicIndex].trackName));
         string stage = selectionManager.getStage();
+        //Debug.Log("Character now are "+ selectionManager.getCharacter1() + " and "+ selectionManager.getCharacter2());
+        if(selectionManager.getCharacter2() != ""){
         SceneManager.LoadScene(stage); //load game scene here
+        }else{
+            EditorUtility.DisplayDialog ("Please wait for your opponent to selct the Character ", "Waitting ....", "Ok");
+        }
         }
         else{
             EditorUtility.DisplayDialog ("Please wait for your opponent to selct the Music ", "Waitting ....", "Ok");
@@ -79,7 +84,7 @@ public class MusicSelect : MonoBehaviour
     }
 
     public void selectForNetwork (int selectedMusicIndex)
-    {   Debug.Log("called Music selectForNetwork"+ selectedMusicIndex);
+    {   
          selectionManager.setMusic(string.Format(trackList[selectedMusicIndex].trackName));
          string stage = selectionManager.getStage();
         SceneManager.LoadScene(stage); //load game scene here

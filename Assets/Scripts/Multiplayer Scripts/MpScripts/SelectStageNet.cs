@@ -64,9 +64,10 @@ public class SelectStageNet : MonoBehaviour {
 			Debug.Log ("Successful select Stage response : " +args.selectedStageIndex);
 			//EditorUtility.DisplayDialog ("Music Successful: "+args.selectedStageIndex, "You have successfully attack.\nClick Ok to continue execution and see responses on console", "Ok");
             if(args.user_id  < Constants.USER_ID){
+
 			stageSelect.selectForNetwork(args.selectedStageIndex);}
 			//characterSelect.Select();
-			SceneManager.LoadScene("Music Select");
+			//SceneManager.LoadScene("Music Select");
 		} else {
 			Debug.Log("Attack Failed");
 		}

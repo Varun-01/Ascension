@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using UnityEngine.SceneManagement;
+using UnityEditor;
 
 public class CharacterSelect : MonoBehaviour
 {
@@ -61,6 +62,13 @@ public class CharacterSelect : MonoBehaviour
         }
         selectionsFromNetwork.sendSelectionsRequest(selectedCharacterIndex);
         SceneManager.LoadScene("StageSelect"); 
+
+        // if(selectionManager.getCharacter2() != ""){
+        // SceneManager.LoadScene("StageSelect"); //load game scene here
+        // }else{
+        //     EditorUtility.DisplayDialog ("Please wait for your opponent to selct the Character ", "Waitting ....", "Ok");
+        // }
+
         //int count = 0;
         //selectionManager.setCharacter1(string.Format(characterList[selectedCharacterIndex].characterName));
         //Debug.Log(string.Format("Character {0}:{1} has been selected by Player 1", selectedCharacterIndex, characterList[selectedCharacterIndex].characterName));

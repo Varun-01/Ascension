@@ -80,6 +80,7 @@ MonoBehaviour:
   - Test Master
   Banks:
   - Beta Master
+  - Beta Master
   BanksToLoad: []
   LiveUpdatePort: 9264
   EnableMemoryTracking: 0

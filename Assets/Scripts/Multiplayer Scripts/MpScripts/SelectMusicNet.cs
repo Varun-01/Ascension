@@ -12,6 +12,8 @@ public class SelectMusicNet : MonoBehaviour {
 	GameObject musicSelectionControllerOBj;
     public Player_Manager opponentManager;
 	public MusicSelect musicSelect;
+	public GameObject selection;
+    public Selection_Manager selectionManager;
 
 	public int attackStat;
     public int defenseStat;
@@ -31,7 +33,8 @@ public class SelectMusicNet : MonoBehaviour {
 		cManager = mainObject.GetComponent<ConnectionManager>();
 		msgQueue = mainObject.GetComponent<MessageQueue>();
 		msgQueue.AddCallback(Constants.SMSG_SELECTMUSIC, responseSelectMusic);
-
+		selection = GameObject.Find("SelectionManager");
+        selectionManager = selection.GetComponent<Selection_Manager>();
 	}
 	
 	// Use this for initialization
@@ -64,7 +67,10 @@ public class SelectMusicNet : MonoBehaviour {
 			Debug.Log ("Successful select Music response : " +args.selectedMusicIndex);
 			//EditorUtility.DisplayDialog ("Music Successful: "+args.selectedMusicIndex, "You have successfully attack.\nClick Ok to continue execution and see responses on console", "Ok");
             if(args.user_id  < Constants.USER_ID){
-			musicSelect.selectForNetwork(args.selectedMusicIndex);}
+			musicSelect.selectForNetwork(args.selectedMusicIndex);
+			    // string stage = selectionManager.getStage();
+				// SceneManager.LoadScene(stage); 
+			}
 			//characterSelect.Select();
 			//SceneManager.LoadScene("Stage");
 		} else {

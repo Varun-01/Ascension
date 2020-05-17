@@ -60,7 +60,13 @@ public class StageSelect : MonoBehaviour
         selectStageNet.sendStageSelectRequest(selectedStageIndex);
         selectionManager.setStage(string.Format(stageList[selectedStageIndex].stageName));
 
-        SceneManager.LoadScene("Music Select");}
+        //SceneManager.LoadScene("Music Select");
+        if(selectionManager.getCharacter2() != ""){
+        SceneManager.LoadScene("Music Select"); //load game scene here
+        }else{
+            EditorUtility.DisplayDialog ("Your opponent is selcting the Character ", "Please try again ....", "Ok");
+        }
+        }
         else{
             EditorUtility.DisplayDialog ("Please wait for your opponent to selct the stage ", "Waitting ....", "Ok");
         }
@@ -107,6 +113,9 @@ public class StageSelect : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        if(Constants.OPPONENT_ID< Constants.USER_ID){
+            SceneManager.LoadScene("Music Select");
+        }
         UpdateStageSelectionUI();
         selection = GameObject.Find("SelectionManager");
         selectionManager = selection.GetComponent<Selection_Manager>();
