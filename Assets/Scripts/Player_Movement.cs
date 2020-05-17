@@ -140,6 +140,9 @@ using System.Collections.Generic;
             checkIdle();
 
             checkRest();
+
+            movement = false;
+            anim.SetBool("Movement", movement);
         }
     }
 
@@ -185,7 +188,7 @@ using System.Collections.Generic;
             }
         }
 
-        void checkDoubleTap(float playerDirection)
+        public void checkDoubleTap(float playerDirection)
         {
             if (playerDirection == facingRight)
             {
@@ -235,7 +238,7 @@ using System.Collections.Generic;
             }
     }
 
-        void checkMovementDelay()
+        public void checkMovementDelay()
         {
             if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.A))
             {
