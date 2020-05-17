@@ -233,7 +233,9 @@ using System.Collections.Generic;
                     moveRight();
                 }
             }
-        }
+            movement = false;
+            anim.SetBool("Movement", movement);  
+    }
 
         void checkMovementDelay()
         {

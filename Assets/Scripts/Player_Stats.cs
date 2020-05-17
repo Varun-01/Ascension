@@ -16,12 +16,12 @@ public class Player_Stats : MonoBehaviour
 
     void initAttackTable() {
         //playerAttackTable.Add("characterName", 0);
-        playerAttackTable.Add("Unity-Chan", 5);
+        playerAttackTable.Add("Unity-Chan", 100);
     }
 
     void initDefenseTable() {
         //playerDefenseTable.Add("characterName", 0);
-        playerDefenseTable.Add("Unity-Chan", 5);
+        playerDefenseTable.Add("Unity-Chan", 100);
     }
 
     public int getPlayerAttack(string player) {

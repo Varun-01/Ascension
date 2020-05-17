@@ -7989,7 +7989,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 124
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
 --- !u!136 &7798316195438363687
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -8062,7 +8062,6 @@ MonoBehaviour:
   - {fileID: 2908080952846831001}
   - {fileID: 8417709996503992390}
   moveRequest: {fileID: 0}
-  AttackEvent: event:/Test_Events/Light_Kick_Test
 --- !u!114 &7015403519294660917
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8085,11 +8084,14 @@ MonoBehaviour:
   characterName: 
   playerTag: 
   alive: 0
+  opponent: {fileID: 0}
   opponentManager: {fileID: 0}
   healthBar: {fileID: 0}
+  healthBarManager: {fileID: 0}
   controllable: 0
   attackRequest: {fileID: 0}
   playerID: 0
+  AttackEvent: 
 --- !u!114 &8627451731057240559
 MonoBehaviour:
   m_ObjectHideFlags: 0
