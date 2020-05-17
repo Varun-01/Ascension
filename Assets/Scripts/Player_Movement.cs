@@ -140,6 +140,9 @@ using System.Collections.Generic;
             checkIdle();
 
             checkRest();
+
+            movement = false;
+            anim.SetBool("Movement", movement);
         }
     }
 
@@ -233,8 +236,6 @@ using System.Collections.Generic;
                     moveRight();
                 }
             }
-            movement = false;
-            anim.SetBool("Movement", movement);  
     }
 
         void checkMovementDelay()
