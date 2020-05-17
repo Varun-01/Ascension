@@ -29,12 +29,12 @@ public class Game_Manager : MonoBehaviour
     public string music;
 
 
-    /*
+    
     [FMODUnity.EventRef]
     public string MusicEvent = "";
 
     FMOD.Studio.EventInstance MusicState;
-    */
+    
 
     //Attach Button from the Editor
     private static Game_Manager playerInstance; 
@@ -77,10 +77,10 @@ public class Game_Manager : MonoBehaviour
         //player2.GetComponent<Player_Movement>().enabled = false;
         GameObject selectionManagerObj = GameObject.Find("SelectionManager");
         Selection_Manager selectionManager = selectionManagerObj.GetComponent<Selection_Manager>();
-        //MusicEvent = mChar.getMusic();
+        MusicEvent = mChar.getMusic();
 
-        //MusicState = FMODUnity.RuntimeManager.CreateInstance(MusicEvent);
-        //MusicState.start();
+        MusicState = FMODUnity.RuntimeManager.CreateInstance(MusicEvent);
+        MusicState.start();
     }
 
 
