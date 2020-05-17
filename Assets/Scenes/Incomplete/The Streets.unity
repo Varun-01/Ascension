@@ -9054,6 +9054,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ps1: 0
   ps2: 0
+  music: 
 --- !u!4 &1495419271
 Transform:
   m_ObjectHideFlags: 0
@@ -9156,6 +9157,7 @@ GameObject:
   - component: {fileID: 1526361867}
   - component: {fileID: 1526361866}
   - component: {fileID: 1526361865}
+  - component: {fileID: 1526361868}
   m_Layer: 0
   m_Name: GameObject
   m_TagString: Untagged
@@ -9183,8 +9185,6 @@ MonoBehaviour:
   p2z: -2
   player1: Master Chief
   player2: Master Chief Alt
-  music: 
-  MusicEvent: 
 --- !u!114 &1526361866
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9197,7 +9197,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f305a02d28ca0042a446234014fe437, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  x: 99
 --- !u!4 &1526361867
 Transform:
   m_ObjectHideFlags: 0
@@ -9213,6 +9212,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1526361868
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1526361864}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18542af985e66486cabe268268eda18d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  x: 99
 --- !u!4 &1527209532 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4517893018949164, guid: 553d5ab60b93b904896a8af286bdbe32,
