@@ -152,6 +152,7 @@ public class Game_Manager : MonoBehaviour
         {
             fRound.GetComponent<TMPro.TextMeshProUGUI>().enabled = true;
             Invoke("fightOn", 2);
+            FMODUnity.RuntimeManager.StudioSystem.setParameterByName("RoundCount", 3);
         }
         if (rNum == 4 || ps1 == 2 || ps2 == 2)
         {
