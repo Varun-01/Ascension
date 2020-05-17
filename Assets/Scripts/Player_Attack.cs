@@ -149,7 +149,7 @@ public class Player_Attack : MonoBehaviour
         attackValueTable.Add("LightPunch", 50);
         attackValueTable.Add("LightKick", 50);
         attackValueTable.Add("HeavyPunch", 100);
-        attackValueTable.Add("HeavyKick", 100;
+        attackValueTable.Add("HeavyKick", 100);
     }
 
     public int getAttackValue(string attackName)
