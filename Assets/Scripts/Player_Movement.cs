@@ -206,9 +206,9 @@ using System.Collections.Generic;
 
         }
 
-        public void checkMovement(float movementDirection)
+        public void checkMovement(float playerMovementDirection)
         {
-
+            movementDirection = playerMovementDirection;
             playerDirection = rb.transform.localEulerAngles.y;
 
             if (movementDirection > 0.1)
