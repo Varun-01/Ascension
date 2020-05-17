@@ -48,11 +48,11 @@ using System.Collections.Generic;
 		static int jumpState = Animator.StringToHash ("Base Layer.Jump");
 		static int restState = Animator.StringToHash ("Base Layer.Rest");
 
-        void Awake()
+        /*void Awake()
         {
             DontDestroyOnLoad(gameObject);
 
-        }
+        }*/
 
 		void Start ()
 		{
@@ -140,9 +140,6 @@ using System.Collections.Generic;
             checkIdle();
 
             checkRest();
-
-            movement = false;
-            anim.SetBool("Movement", movement);
         }
     }
 
