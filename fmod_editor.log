@@ -1,13 +1,18 @@
 [LOG] System::create                           : Header version = 2.01.00. Current version = 2.01.00.
-[LOG] Manager::init                            : maxchannels = 256 studioflags = 00000006 flags 00000000 extradriverdata 0x0.
+[LOG] Manager::init                            : maxchannels = 256 studioflags = 00000006 flags 00000000 extradriverdata 0000000000000000.
 [LOG] SystemI::init                            : Initialize version=20100 (108403), maxchannels=256, flags=0x00020000
-[LOG] SystemI::setOutputInternal               : Setting output to 'FMOD Core Audio Output'
-[LOG] OutputCoreAudio::init                    : Output running 2 channels at 44100Hz sample rate.
-[LOG] OutputCoreAudio::init                    : Maximum hardware read size: 1024 samples, Software buffer size: 512 samples, Number of software buffers: 4.
-[WRN] SystemI::init                            : Output requires a sample rate of 44100Hz, resampling will occur.
+[LOG] SystemI::setOutputInternal               : Setting output to 'FMOD WASAPI Output'
+[LOG] OutputWASAPI::init                       : Mix Format (WAVEFORMATEX): wFormatTag=0xFFFE, nChannels=2, nSamplesPerSec=48000, nAvgBytesPerSec=384000, nBlockAlign=8, wBitsPerSample=32, cbSize=22.
+[LOG] OutputWASAPI::init                       : Mix Format (WAVEFORMATEXTENSIBLE): wValidBitsPerSample=32, dwChannelMask=0x00000003, SubFormat=00000003-0000-0010-8000-00AA00389B71.
+[LOG] OutputWASAPI::init                       : Output buffer size: 4096 samples, latency: 0.00ms, period: 10.00ms, DSP buffer: 1024 * 4
 [LOG] Thread::initThread                       : Init FMOD stream thread. Affinity: 0x8000000000000003, Priority: 0xFFFF7FFB, Stack Size: 98304, Semaphore: No, Sleep Time: 10, Looping: Yes.
+<<<<<<< HEAD
 [LOG] Thread::initThread                       : Init FMOD mixer thread. Affinity: 0x8000000000000001, Priority: 0xFFFF7FFA, Stack Size: 81920, Semaphore: Yes, Sleep Time: 0, Looping: Yes.
 [LOG] AsyncManager::init                       : manager 0x7fb133eb0808 isAsync 0 updatePeriod 0.02
+=======
+[LOG] Thread::initThread                       : Init FMOD mixer thread. Affinity: 0x8000000000000001, Priority: 0xFFFF7FFA, Stack Size: 81920, Semaphore: No, Sleep Time: 0, Looping: Yes.
+[LOG] AsyncManager::init                       : manager 000001C323CF22C8 isAsync 0 updatePeriod 0.02
+>>>>>>> 25f69bab0704db3303db7e2590a842b00efeec9b
 [LOG] AsyncManager::init                       : done
 [LOG] PlaybackSystem::init                     : 
 [LOG] Thread::initThread                       : Init FMOD Studio sample load thread. Affinity: 0x8000000000000003, Priority: 0xFFFF7FFD, Stack Size: 98304, Semaphore: No, Sleep Time: 1, Looping: No.
@@ -15,6 +20,222 @@
 [LOG] Thread::initThread                       : Init FMOD Studio bank load thread. Affinity: 0x8000000000000003, Priority: 0xFFFF7FFD, Stack Size: 98304, Semaphore: No, Sleep Time: 1, Looping: No.
 [LOG] Manager::init                            : done.
 [LOG] Manager::readBank                        : fileversion = 132, compatVersion = 132 (oldest = 44, newest = 132)
+[LOG] SystemI::createSoundInternal             : Create name='', mode=0x02000202
+[LOG] SystemI::createSoundInternal             : exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             : exinfo->length             = 10148064
+[LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 36672
+[LOG] SystemI::createSoundInternal             : exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 00000097666FF218
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             : exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FF8744077E0
+[LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FF8744077B0
+[LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FF8744078B0
+[LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FF874407970
+[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 000001C323AD8C38
+[LOG] SystemI::createSoundInternal             : exinfo->initialseekpostype = 1
+[LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 5
+[LOG] SystemI::createSoundInternal             : Sample 0/1: name='Button 2', format=5, channels=2, frequency=48000, lengthbytes=832, lengthpcm=1094, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.999969.
 [LOG] Manager::readBank                        : fileversion = 132, compatVersion = 132 (oldest = 44, newest = 132)
 [LOG] Manager::readBank                        : fileversion = 132, compatVersion = 132 (oldest = 44, newest = 132)
 [LOG] Manager::readBank                        : fileversion = 132, compatVersion = 132 (oldest = 44, newest = 132)
+[LOG] Manager::readBank                        : fileversion = 132, compatVersion = 132 (oldest = 44, newest = 132)
+[LOG] Manager::readBank                        : fileversion = 132, compatVersion = 132 (oldest = 44, newest = 132)
+[LOG] Manager::readBank                        : fileversion = 132, compatVersion = 132 (oldest = 44, newest = 132)
+[LOG] Manager::readBank                        : fileversion = 132, compatVersion = 132 (oldest = 44, newest = 132)
+[LOG] Manager::readBank                        : fileversion = 132, compatVersion = 132 (oldest = 44, newest = 132)
+[LOG] Manager::readBank                        : fileversion = 132, compatVersion = 132 (oldest = 44, newest = 132)
+[LOG] Manager::readBank                        : fileversion = 132, compatVersion = 132 (oldest = 44, newest = 132)
+[LOG] Manager::readBank                        : fileversion = 132, compatVersion = 132 (oldest = 44, newest = 132)
+[LOG] Manager::readBank                        : fileversion = 132, compatVersion = 132 (oldest = 44, newest = 132)
+[LOG] Manager::readBank                        : fileversion = 132, compatVersion = 132 (oldest = 44, newest = 132)
+[LOG] Manager::readBank                        : fileversion = 132, compatVersion = 132 (oldest = 44, newest = 132)
+[LOG] Manager::readBank                        : fileversion = 132, compatVersion = 132 (oldest = 44, newest = 132)
+[LOG] SystemI::createSound                     : filename = Ascension_Audio/Build\Desktop/Beta Master.bank : mode 02010082
+[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] SystemI::createSound                     : setdata soundi = 000001C345AD6F38 : node = 000001C345882BE0
+[LOG] SystemI::createSound                     : add node to async list : head = 000001C345AA5ED8.  list count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000001C345AD6F38
+[LOG] SystemI::createSoundInternal             :     Create name='Ascension_Audio/Build\Desktop/Beta Master.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 10148064
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 36672
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 000001C345882CF0
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekposition = 10000
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='CVT_V3 - Stereo Out', format=5, channels=2, frequency=48000, lengthbytes=453344, lengthpcm=1588966, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.969214.
+[LOG] SoundI::release                          :      (000001C3243F1008)
+[LOG] SoundI::release                          :         Test loop - Stereo Out (000001C32255A888)
+[LOG] SoundI::release                          :      (000001C3243F1178)
+[LOG] SoundI::release                          :         LLZ_Shuffle_3 (000001C32255DC88)
+[LOG] SoundI::release                          :      (000001C3243F2428)
+[LOG] SoundI::release                          :         CVT_intro - Stereo Out (000001C32255CF88)
+[LOG] SoundI::release                          :      (000001C3243F2708)
+[LOG] SoundI::release                          :         HNS3 Vocals and Shouts 02 (000001C32255C768)
+[LOG] SoundI::release                          :      (000001C3243F05F8)
+[LOG] SoundI::release                          :         V10_intro - Stereo Out (000001C32255CC48)
+[LOG] SoundI::release                          :      (000001C3243F18A8)
+[LOG] SoundI::release                          :         cat-cry1 (000001C32255D7A8)
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000001C345AD6F38
+[LOG] SoundI::release                          : Ascend (000001C3205AE528)
+[LOG] SoundI::release                          :     Ascend (000001C32255D948)
+[LOG] SoundI::release                          :     Ascend (000001C3205ADCB8)
+[LOG] Manager::readBank                        : fileversion = 132, compatVersion = 132 (oldest = 44, newest = 132)
+[LOG] Manager::readBank                        : fileversion = 132, compatVersion = 132 (oldest = 44, newest = 132)
+[LOG] Manager::readBank                        : fileversion = 132, compatVersion = 132 (oldest = 44, newest = 132)
+[LOG] SoundI::release                          : CVT_V3 - Stereo Out (000001C345AD6F38)
+[LOG] SoundI::release                          :     CVT_V3 - Stereo Out (000001C32040B718)
+[LOG] SoundI::release                          :     CVT_V3 - Stereo Out (000001C345AD7298)
+[LOG] SystemI::createSound                     : filename = Ascension_Audio/Build\Desktop/Beta Master.bank : mode 02010082
+[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] SystemI::createSound                     : setdata soundi = 000001C345AD6F38 : node = 000001C345882BE0
+[LOG] SystemI::createSound                     : add node to async list : head = 000001C345AA5ED8.  list count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000001C345AD6F38
+[LOG] SystemI::createSoundInternal             :     Create name='Ascension_Audio/Build\Desktop/Beta Master.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 10148064
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 36672
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 000001C345882CF0
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekposition = 10000
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='CVT_V3 - Stereo Out', format=5, channels=2, frequency=48000, lengthbytes=453344, lengthpcm=1588966, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.969214.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000001C345AD6F38
+[LOG] Manager::readBank                        : fileversion = 132, compatVersion = 132 (oldest = 44, newest = 132)
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000001C345AD7298
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000001C345AD7298
+[LOG] Manager::readBank                        : fileversion = 132, compatVersion = 132 (oldest = 44, newest = 132)
+[LOG] SystemI::createSound                     : filename = Ascension_Audio/Build\Desktop/Beta Master.bank : mode 02010082
+[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] SystemI::createSound                     : setdata soundi = 000001C3205AE528 : node = 000001C3458825A0
+[LOG] SystemI::createSound                     : add node to async list : head = 000001C345AA5ED8.  list count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000001C3205AE528
+[LOG] SystemI::createSoundInternal             :     Create name='Ascension_Audio/Build\Desktop/Beta Master.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 10148064
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 36672
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 000001C3458826B0
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='Juke Box Riddim', format=5, channels=2, frequency=48000, lengthbytes=1282368, lengthpcm=4607936, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.793762.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000001C3205AE528
+[LOG] SoundI::release                          : CVT_V3 - Stereo Out (000001C345AD6F38)
+[LOG] SoundI::release                          :     CVT_V3 - Stereo Out (000001C32040D2B8)
+[LOG] SoundI::release                          :     CVT_V3 - Stereo Out (000001C345AD7298)
+[LOG] Manager::readBank                        : fileversion = 132, compatVersion = 132 (oldest = 44, newest = 132)
+[LOG] Manager::readBank                        : fileversion = 132, compatVersion = 132 (oldest = 44, newest = 132)
+[LOG] SystemI::createSoundInternal             : Create name='', mode=0x02000202
+[LOG] SystemI::createSoundInternal             : exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             : exinfo->length             = 10148064
+[LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 36672
+[LOG] SystemI::createSoundInternal             : exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 00000097666FF218
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             : exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FF8744077E0
+[LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FF8744077B0
+[LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FF8744078B0
+[LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FF874407970
+[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 000001C345B169F8
+[LOG] SystemI::createSoundInternal             : exinfo->initialseekpostype = 1
+[LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 5
+[LOG] SystemI::createSoundInternal             : Sample 0/1: name='Quit Select button', format=5, channels=2, frequency=48000, lengthbytes=800, lengthpcm=1011, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.472900.
+[LOG] SoundI::release                          : Juke Box Riddim (000001C3205AE528)
+[LOG] SoundI::release                          :     Juke Box Riddim (000001C32040CDD8)
+[LOG] SoundI::release                          :     Juke Box Riddim (000001C3205AF2A8)
+[LOG] Manager::readBank                        : fileversion = 132, compatVersion = 132 (oldest = 44, newest = 132)
+[LOG] Manager::readBank                        : fileversion = 132, compatVersion = 132 (oldest = 44, newest = 132)
+[LOG] Manager::readBank                        : fileversion = 132, compatVersion = 132 (oldest = 44, newest = 132)
+[LOG] Manager::readBank                        : fileversion = 132, compatVersion = 132 (oldest = 44, newest = 132)
+<<<<<<< HEAD
+=======
+[LOG] PlaybackSystem::acquireMasterBus         : Setting master channel group format to 6
+[LOG] SystemI::createSound                     : filename = Ascension_Audio/Build\Desktop/Beta Master.bank : mode 02010082
+[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] SystemI::createSound                     : setdata soundi = 000001C3205AE6D8 : node = 000001C3455490F0
+[LOG] SystemI::createSound                     : add node to async list : head = 000001C345AA5ED8.  list count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000001C3205AE6D8
+[LOG] SystemI::createSoundInternal             :     Create name='Ascension_Audio/Build\Desktop/Beta Master.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 10148064
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 36672
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 000001C345549200
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekposition = 10000
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='CVT_V3 - Stereo Out', format=5, channels=2, frequency=48000, lengthbytes=453344, lengthpcm=1588966, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.969214.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000001C3205AE6D8
+[LOG] SystemI::createSound                     : filename = Ascension_Audio/Build\Desktop/Beta Master.bank : mode 02010082
+[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] SystemI::createSound                     : setdata soundi = 000001C345AD7448 : node = 000001C320370330
+[LOG] SystemI::createSound                     : add node to async list : head = 000001C345AA5ED8.  list count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000001C345AD7448
+[LOG] SystemI::createSoundInternal             :     Create name='Ascension_Audio/Build\Desktop/Beta Master.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSound                     :     filename = Ascension_Audio/Build\Desktop/Test Master.bank : mode 02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 10148064
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 36672
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 000001C320370440
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSound                     :     FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSound                     :     setdata soundi = 000001C345AD75F8 : node = 000001C320370E70
+[LOG] SystemI::createSound                     :     add node to async list : head = 000001C345AA5ED8.  list count = 0
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='Street', format=5, channels=2, frequency=48000, lengthbytes=688416, lengthpcm=2653204, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.335693.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000001C345AD7448
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000001C345AD75F8
+[LOG] SystemI::createSoundInternal             :     Create name='Ascension_Audio/Build\Desktop/Test Master.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 1691488
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 17792
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 000001C320370F80
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='rain_medium', format=5, channels=1, frequency=48000, lengthbytes=482144, lengthpcm=2692474, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.430023.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000001C345AD75F8
+[LOG] SoundI::release                          : CVT_V3 - Stereo Out (000001C3205AE6D8)
+[LOG] SoundI::release                          :     CVT_V3 - Stereo Out (000001C32040C418)
+[LOG] SoundI::release                          :     CVT_V3 - Stereo Out (000001C3205AE528)
+[LOG] SoundI::release                          : rain_medium (000001C345AD75F8)
+[LOG] SoundI::release                          :     rain_medium (000001C32040ABB8)
+[LOG] SoundI::release                          :     rain_medium (000001C345AD7298)
+[LOG] SoundI::release                          : Street (000001C345AD7448)
+[LOG] SoundI::release                          :     Street (000001C32040B718)
+[LOG] SoundI::release                          :     Street (000001C345AD6F38)
+[LOG] SoundI::release                          :  (000001C30DB01988)
+[LOG] SoundI::release                          :     Quit Select button (000001C32040C5B8)
+[LOG] SoundI::release                          :  (000001C347C9F268)
+[LOG] SoundI::release                          :     Button 2 (000001C32040C278)
+[LOG] Thread::callback                         : FMOD Studio update thread finished.
+[LOG] Thread::callback                         : FMOD Studio bank load thread finished.
+[LOG] Profile::disconnectAll                   : Profiler disconnecting all clients
+[LOG] Thread::callback                         : FMOD Studio sample load thread finished.
+[LOG] LiveUpdate::release                      : 
+[LOG] LiveUpdate::reset                        : Reset connection (reason Disconnected)
+[LOG] Thread::callback                         : FMOD stream thread finished.
+[LOG] Thread::callback                         : FMOD mixer thread finished.
+[LOG] Profile::disconnectAll                   : Profiler disconnecting all clients
+[LOG] SystemI::close                           : Closed.
+[LOG] Thread::callback                         : FMOD Studio bank load thread finished.
+[LOG] Thread::callback                         : FMOD Studio sample load thread finished.
+[LOG] LiveUpdate::release                      : 
+[LOG] LiveUpdate::reset                        : Reset connection (reason Disconnected)
+[LOG] Thread::callback                         : FMOD stream thread finished.
+[LOG] Thread::callback                         : FMOD mixer thread finished.
+[LOG] SystemI::close                           : Closed.
+[LOG] Thread::callback                         : FMOD nonblocking thread (0) finished.
+[LOG] Thread::callback                         : FMOD file thread finished.
+>>>>>>> 25f69bab0704db3303db7e2590a842b00efeec9b

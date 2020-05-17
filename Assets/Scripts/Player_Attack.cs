@@ -146,10 +146,10 @@ public class Player_Attack : MonoBehaviour
     void initAttackValueTable()
     {
         //attackValueTable.Add("animation", 0);
-        attackValueTable.Add("LightPunch", 2);
-        attackValueTable.Add("LightKick", 2);
-        attackValueTable.Add("HeavyPunch", 5);
-        attackValueTable.Add("HeavyKick", 5);
+        attackValueTable.Add("LightPunch", 50);
+        attackValueTable.Add("LightKick", 50);
+        attackValueTable.Add("HeavyPunch", 100);
+        attackValueTable.Add("HeavyKick", 100);
     }
 
     public int getAttackValue(string attackName)
@@ -173,8 +173,8 @@ public class Player_Attack : MonoBehaviour
         else {
             anim.SetTrigger(attackName);
             //attackSound(attackName);
-            //int damage = getAttackValue(attackName);
-            //playerManager.GiveDamage(damage); 
+            int damage = getAttackValue(attackName);
+            playerManager.GiveDamage(damage); 
             
         }
 
@@ -192,9 +192,8 @@ public class Player_Attack : MonoBehaviour
         else {
             anim.SetTrigger(attackName);
             //attackSound(attackName);
-            //int damage = getAttackValue(attackName);
-            //playerManager.GiveDamage(damage); 
-            
+            int damage = getAttackValue(attackName);
+            playerManager.GiveDamage(damage);
         }
 
     }
