@@ -140,9 +140,6 @@ using System.Collections.Generic;
             checkIdle();
 
             checkRest();
-
-            movement = false;
-            anim.SetBool("Movement", movement);
         }
     }
 
