@@ -64,7 +64,7 @@ public class StageSelect : MonoBehaviour
         if(selectionManager.getCharacter2() != ""){
         SceneManager.LoadScene("Music Select"); //load game scene here
         }else{
-            EditorUtility.DisplayDialog ("Your opponent is selcting the Character ", "Please try again ....", "Ok");
+            EditorUtility.DisplayDialog ("Your opponent is selcting the Character ", "Please click 'slelect' again ....", "Ok");
         }
         }
         else{
