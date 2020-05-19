@@ -4304,7 +4304,6 @@ GameObject:
   - component: {fileID: 1227172792}
   - component: {fileID: 1227172791}
   - component: {fileID: 1227172790}
-  - component: {fileID: 1227172793}
   - component: {fileID: 1227172795}
   - component: {fileID: 1227172799}
   - component: {fileID: 1227172798}
@@ -4383,29 +4382,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 8.541, y: -179.97801, z: -0.0050000004}
---- !u!114 &1227172793
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1227172789}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  CollisionTag: 
-  Event: event:/Music Control Bus
-  PlayEvent: 1
-  StopEvent: 2
-  AllowFadeout: 1
-  TriggerOnce: 0
-  Preload: 0
-  Params: []
-  OverrideAttenuation: 0
-  OverrideMinDistance: 1
-  OverrideMaxDistance: 20
 --- !u!114 &1227172794
 MonoBehaviour:
   m_ObjectHideFlags: 0
