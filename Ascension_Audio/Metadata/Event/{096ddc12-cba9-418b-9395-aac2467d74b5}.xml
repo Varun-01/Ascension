@@ -5,7 +5,7 @@
 			<value>Rain Control</value>
 		</property>
 		<property name="outputFormat">
-			<value>2</value>
+			<value>1</value>
 		</property>
 		<relationship name="folder">
 			<destination>{4fcd423e-5076-4a1c-ba04-4b799ee39c7f}</destination>
@@ -276,7 +276,6 @@
 	<object class="MixerBusEffectChain" id="{24bc4032-229e-48b9-922d-83cabd4d54c2}">
 		<relationship name="effects">
 			<destination>{8b2bb3a4-7a9b-4d85-bbe8-80297c02c760}</destination>
-			<destination>{935a64e1-51d4-4cdb-b447-80b26dd82ba5}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{29c10188-8731-4d7e-8c40-2a8cdc715d75}" />
@@ -321,7 +320,6 @@
 	</object>
 	<object class="MixerBusPanner" id="{c17e5652-42b4-42ac-96fb-29bfe4cd6f53}" />
 	<object class="MixerBusFader" id="{8b2bb3a4-7a9b-4d85-bbe8-80297c02c760}" />
-	<object class="SpatialiserEffect" id="{935a64e1-51d4-4cdb-b447-80b26dd82ba5}" />
 	<object class="AutomationCurve" id="{2c761e7b-1c32-450e-bab8-336b64dd15b6}">
 		<relationship name="parameter">
 			<destination>{5a913c02-6142-4bc7-b0df-e6beefa647d6}</destination>

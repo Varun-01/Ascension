@@ -5,7 +5,7 @@
 			<value>Music Control Bus</value>
 		</property>
 		<property name="outputFormat">
-			<value>2</value>
+			<value>1</value>
 		</property>
 		<relationship name="folder">
 			<destination>{4fcd423e-5076-4a1c-ba04-4b799ee39c7f}</destination>
@@ -888,7 +888,6 @@
 	<object class="MixerBusEffectChain" id="{683df04e-a6a8-4274-804e-cf8a8b26bf1e}">
 		<relationship name="effects">
 			<destination>{3372877d-8a9f-4fab-9da3-a12825381992}</destination>
-			<destination>{5d561f7d-1d36-4895-b035-d43684760e36}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{d12f7436-18ef-4bf1-b3a5-94dd34e26af0}" />
@@ -1141,7 +1140,6 @@
 		</relationship>
 	</object>
 	<object class="MixerBusFader" id="{3372877d-8a9f-4fab-9da3-a12825381992}" />
-	<object class="SpatialiserEffect" id="{5d561f7d-1d36-4895-b035-d43684760e36}" />
 	<object class="AutomationCurve" id="{6f35b4c2-f50c-4c10-94f2-50919063e9e5}">
 		<relationship name="parameter">
 			<destination>{0afeb1ae-c7df-4c60-9592-21ce4971b29f}</destination>

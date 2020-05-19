@@ -5,7 +5,7 @@
 			<value>StreetSFX</value>
 		</property>
 		<property name="outputFormat">
-			<value>2</value>
+			<value>1</value>
 		</property>
 		<relationship name="folder">
 			<destination>{4fcd423e-5076-4a1c-ba04-4b799ee39c7f}</destination>
@@ -146,7 +146,6 @@
 	<object class="MixerBusEffectChain" id="{a6f4836e-c29f-488a-bf32-46c84cca5819}">
 		<relationship name="effects">
 			<destination>{cfdec1be-9401-4587-88b0-d0b00eb0e83f}</destination>
-			<destination>{874d9d23-210b-4021-a7f9-f4108473c30e}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{c123a260-0488-46d2-acf4-6ae50594f153}" />
@@ -158,6 +157,5 @@
 	</object>
 	<object class="MixerBusPanner" id="{d0d91d8d-6d3e-4994-95bd-9bb17d523176}" />
 	<object class="MixerBusFader" id="{cfdec1be-9401-4587-88b0-d0b00eb0e83f}" />
-	<object class="SpatialiserEffect" id="{874d9d23-210b-4021-a7f9-f4108473c30e}" />
 	<object class="MixerBusFader" id="{980fb414-f8cb-4528-8c19-4e45eb1e31cf}" />
 </objects>
