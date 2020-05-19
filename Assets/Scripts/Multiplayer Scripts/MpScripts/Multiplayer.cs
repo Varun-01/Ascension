@@ -1,7 +1,7 @@
 using UnityEngine;
-
-using UnityEngine.SceneManagement;
 using UnityEditor;
+using UnityEngine.SceneManagement;
+
 
 public class Multiplayer : MonoBehaviour {
 	
@@ -34,7 +34,7 @@ public class Multiplayer : MonoBehaviour {
 	
 	
 	public void Submit() {
-	EditorUtility.DisplayDialog ("Searching for online Player...", "Please wait...", "Ok");
+	//EditorUtility.DisplayDialog("Searching for online Player...", "Please wait...", "Ok");
 			cManager.send(requestMatchPlayer());  //requestLogin is the function in line 78. The function returns a request (type is RequestLogin). 
 	   //inside request, there is a packet(type GamePacket), which contains request_id, CLIENT_VERION,username, passowrd.
 	} //cManager.send() coverts the request into byte[] and send it to server. 

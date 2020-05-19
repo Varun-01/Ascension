@@ -8,7 +8,7 @@ using UnityEditor;
 
 public class MusicSelect : MonoBehaviour
 {
-    private int selectedMusicIndex;
+    private int selectedMusicIndex=0;
     //private int previousMusicIndex;
     private Color desiredColor;
 
@@ -66,21 +66,28 @@ public class MusicSelect : MonoBehaviour
     }
 
     public void Select()
-    {
+    {   selectionManager.setMusic(string.Format(trackList[selectedMusicIndex].trackName));
+            if (selectedMusicIndex == 3)
+        {
+            selectionManager.setMusicParam(6);
+        }
+        else {
+            selectionManager.setMusicParam(selectedMusicIndex + 1);
+        }
         //Debug.Log(string.Format("Track {0}:{1} has been selected", selectedMusicIndex, trackList[selectedMusicIndex].trackName));
         if(Constants.USER_ID < Constants.OPPONENT_ID){
         selectMusicNet.sendMusicSelectRequest(selectedMusicIndex);
-        selectionManager.setMusic(string.Format(trackList[selectedMusicIndex].trackName));
+        //selectionManager.setMusic(string.Format(trackList[selectedMusicIndex].trackName));
         string stage = selectionManager.getStage();
         //Debug.Log("Character now are "+ selectionManager.getCharacter1() + " and "+ selectionManager.getCharacter2());
         if(selectionManager.getCharacter2() != ""){
         SceneManager.LoadScene(stage); //load game scene here
         }else{
-            EditorUtility.DisplayDialog ("Please wait for your opponent to selct the Character ", "Waitting ....", "Ok");
+            EditorUtility.DisplayDialog ("Please wait for your opponent to selct the Character ", "try again ....", "Ok");
         }
         }
         else{
-            EditorUtility.DisplayDialog ("Please wait for your opponent to selct the Music ", "Waitting ....", "Ok");
+            EditorUtility.DisplayDialog ("Please wait for your opponent to selct the Music ", "try again ....", "Ok");
         }
     }
 

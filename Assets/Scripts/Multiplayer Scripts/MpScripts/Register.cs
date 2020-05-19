@@ -95,7 +95,7 @@ public class Register : MonoBehaviour {
 		if (args.status == 0) {
 			Constants.USER_ID = args.user_id;
 			Debug.Log ("Successful Register response : " + args.ToString());
-			EditorUtility.DisplayDialog ("Register Successful", "You have successfully Register.\nClick Ok to continue execution and see responses on console", "Ok");
+			//EditorUtility.DisplayDialog ("Register Successful", "You have successfully Register.\nClick Ok to continue execution and see responses on console", "Ok");
             SceneManager.LoadScene("Login");
 		} else {
 			Debug.Log("Register Failed");
