@@ -8000,7 +8000,7 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.5
+  m_Radius: 0.2
   m_Height: 1.5
   m_Direction: 1
   m_Center: {x: 0, y: 0.75, z: 0}
@@ -8019,7 +8019,7 @@ MonoBehaviour:
   animSpeed: 1.5
   lookSmoother: 3
   useCurves: 1
-  useCurvesHeight: 0.5
+  useCurvesHeight: 0.2
   walkingSpeed: 3
   runningSpeed: 5
   playerDirection: 0
@@ -8117,6 +8117,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   opponentManager: {fileID: 0}
+  thisPlayerManager: {fileID: 0}
   attackStat: 0
   defenseStat: 0
   characterName: 
