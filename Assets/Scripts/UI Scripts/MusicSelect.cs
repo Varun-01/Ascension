@@ -85,8 +85,16 @@ public class MusicSelect : MonoBehaviour
 
     public void selectForNetwork (int selectedMusicIndex)
     {   
-         selectionManager.setMusic(string.Format(trackList[selectedMusicIndex].trackName));
-         string stage = selectionManager.getStage();
+        selectionManager.setMusic(string.Format(trackList[selectedMusicIndex].trackName));
+        if (selectedMusicIndex == 3)
+        {
+            selectionManager.setMusicParam(6);
+        }
+        else {
+            selectionManager.setMusicParam(selectedMusicIndex + 1);
+        }
+        
+        string stage = selectionManager.getStage();
         SceneManager.LoadScene(stage); //load game scene here
     }
 
@@ -126,7 +134,7 @@ public class MusicSelect : MonoBehaviour
     {
 
         
-        Destroy(GameObject.FindGameObjectWithTag("DoNotDestroyMusic"));//added this from dev branch ? -BJN
+        //Destroy(GameObject.FindGameObjectWithTag("DoNotDestroyMusic"));//added this from dev branch ? -BJN
         UpdateMusicSelectionUI();
 
         //Debug.Log(selection != null? "selection in MusicSelect is not null" : "selection in MusicSelect is null");

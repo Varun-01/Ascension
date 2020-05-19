@@ -77,10 +77,12 @@ public class Game_Manager : MonoBehaviour
         //player2.GetComponent<Player_Movement>().enabled = false;
         GameObject selectionManagerObj = GameObject.Find("SelectionManager");
         Selection_Manager selectionManager = selectionManagerObj.GetComponent<Selection_Manager>();
-        MusicEvent = selectionManager.getMusic();
+        int MusicParams = selectionManager.getMusicParam();
 
-        MusicState = FMODUnity.RuntimeManager.CreateInstance(MusicEvent);
-        MusicState.start();
+        FMODUnity.RuntimeManager.StudioSystem.setParameterByName("Playlist", MusicParams);
+
+        //MusicState = FMODUnity.RuntimeManager.CreateInstance(MusicEvent);
+        //MusicState.start();
     }
 
 

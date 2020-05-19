@@ -8,6 +8,7 @@ public class Selection_Manager : MonoBehaviour
     public string character2 = "UnityChan Alt";
     public string stage;
     public string music;
+    public int musicParam;
 
     // Start is called before the first frame update
     void Start()
@@ -41,6 +42,11 @@ public class Selection_Manager : MonoBehaviour
         music = musicName;
     }
 
+    public void setMusicParam(int musicParamChosen)
+    {
+        musicParam = musicParamChosen;
+    }
+
     public string getCharacter1()
     {
         return character1;
@@ -61,4 +67,8 @@ public class Selection_Manager : MonoBehaviour
         return music;
     }
 
+    public int getMusicParam()
+    {
+        return musicParam;
+    }
 }

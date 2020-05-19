@@ -133,17 +133,13 @@ using System.Collections.Generic;
 
             checkJumpComplete();
 
-            checkMovementDelay();
-
             checkStun();
 
             checkIdle();
 
             checkRest();
-
-            movement = false;
-            anim.SetBool("Movement", movement);
         }
+            checkMovementDelay();
     }
 
         void resetCollider()
