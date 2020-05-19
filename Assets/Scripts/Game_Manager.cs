@@ -76,6 +76,7 @@ public class Game_Manager : MonoBehaviour
         int MusicParams = selectionManager.getMusicParam();
 
         FMODUnity.RuntimeManager.StudioSystem.setParameterByName("Playlist", MusicParams);
+        FMODUnity.RuntimeManager.StudioSystem.setParameterByName("Mute", 100);
 
         //MusicState = FMODUnity.RuntimeManager.CreateInstance(MusicEvent);
         //MusicState.start();

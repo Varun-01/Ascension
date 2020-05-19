@@ -36,6 +36,7 @@ public class MusicSelect : MonoBehaviour
     public void Awake(){
          selection = GameObject.Find("SelectionManager");
         selectionManager = selection.GetComponent<Selection_Manager>();
+        FMODUnity.RuntimeManager.StudioSystem.setParameterByName("Mute", 0);
     }
 
     public void LeftArrow()
