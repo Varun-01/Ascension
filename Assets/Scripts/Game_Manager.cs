@@ -27,9 +27,12 @@ public class Game_Manager : MonoBehaviour
     public int  ps2;
     bool reset;
     public string music;
+    GameObject player1;
+    GameObject player2;
+    Player_Manager player1Manager;
+    Player_Manager player2Manager;
 
 
-    
     [FMODUnity.EventRef]
     public string MusicEvent = "";
 
@@ -57,19 +60,12 @@ public class Game_Manager : MonoBehaviour
         UI();
         ps1 = 0;
         ps2 = 0;
-        GameObject player1 = GameObject.FindWithTag(p1);
-        GameObject player2 = GameObject.FindWithTag(p2);
-        Player_Manager player1Manager = player1.GetComponent<Player_Manager>();
-        Player_Manager player2Manager = player2.GetComponent<Player_Manager>();
+        player1 = GameObject.FindWithTag(p1);
+        player2 = GameObject.FindWithTag(p2);
+        player1Manager = player1.GetComponent<Player_Manager>();
+        player2Manager = player2.GetComponent<Player_Manager>();
 
-        if (Constants.USER_ID == 128)
-        {
-            player1Manager.setControllable();
-
-        } else if (Constants.USER_ID == 129)
-        {
-            player2Manager.setControllable();
-        }
+        setControllable();
 
         //player1.GetComponent<Player_Attack>().enabled = false;
         //player1.GetComponent<Player_Movement>().enabled = false;
@@ -90,11 +86,11 @@ public class Game_Manager : MonoBehaviour
     void Update()
     {
         
-        GameObject player1 = GameObject.FindWithTag(p1);
-        GameObject player2 = GameObject.FindWithTag(p2);
-        Player_Manager player1Manager = player1.GetComponent<Player_Manager>();
+        player1 = GameObject.FindWithTag(p1);
+        player2 = GameObject.FindWithTag(p2);
+        player1Manager = player1.GetComponent<Player_Manager>();
         
-        Player_Manager player2Manager = player2.GetComponent<Player_Manager>();
+        player2Manager = player2.GetComponent<Player_Manager>();
         
         if (ps1 < 2 && ps2 < 2)
         {  
@@ -162,12 +158,13 @@ public class Game_Manager : MonoBehaviour
             {
                 p1Win.GetComponent<TMPro.TextMeshProUGUI>().enabled = true;
                 Invoke("sceneChange", 5);
-
+                Invoke("setControllable", 6);
             }
             if (ps1 < ps2)
             {
                 p2Win.GetComponent<TMPro.TextMeshProUGUI>().enabled = true;
                 Invoke("sceneChange", 5);
+                Invoke("setControllable", 6);
             }
         }
 
@@ -190,9 +187,6 @@ public class Game_Manager : MonoBehaviour
             p1_1.GetComponent<Image>().enabled = true;
             p1_2.GetComponent<Image>().enabled = true;
         }
-
-
-
 
     }
     void fightOn()
@@ -221,8 +215,21 @@ public class Game_Manager : MonoBehaviour
     void sceneChange()
     {
         SceneManager.LoadScene("Character Select Multiplayer");
+
     }
 
+    void setControllable()
+    {
+        if (Constants.USER_ID == 128)
+        {
+            player1Manager.setControllable();
+
+        }
+        else if (Constants.USER_ID == 129)
+        {
+            player2Manager.setControllable();
+        }
+    }
 }
 
 
