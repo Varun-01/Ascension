@@ -83,5 +83,14 @@ public class Selections : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update() {
+		characterSelectionControllerObj = GameObject.Find("CharacterSelectionController1");
+		mainObject = GameObject.Find("MainObject");
+
+		characterSelect = characterSelectionControllerObj.GetComponent<CharacterSelect>();
+		//DontDestroyOnLoad(mainObject);
+		//Debug.Log(mainObject != null? "AddMONEYmainObject is not null" : "mainObject is null");
+		cManager = mainObject.GetComponent<ConnectionManager>();
+		msgQueue = mainObject.GetComponent<MessageQueue>();
+		msgQueue.AddCallback(Constants.SMSG_SELECTIONS, responseSelections);
 	}
 }
