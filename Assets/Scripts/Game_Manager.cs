@@ -86,7 +86,7 @@ public class Game_Manager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        setControllable();
         player1 = GameObject.FindWithTag(p1);
         player2 = GameObject.FindWithTag(p2);
         player1Manager = player1.GetComponent<Player_Manager>();
