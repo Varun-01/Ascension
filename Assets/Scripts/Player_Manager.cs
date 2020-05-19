@@ -54,6 +54,8 @@ public class Player_Manager : MonoBehaviour
         attackStat = playerStats.getPlayerAttack(characterName);
         //Debug.Log(attackStat);
         defenseStat = playerStats.getPlayerDefense(characterName);
+        attackStat = 10;
+        defenseStat = 5;
         //Debug.Log(defenseStat);
 
         rb = GetComponent<Rigidbody>();
