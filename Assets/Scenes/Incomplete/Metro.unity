@@ -4053,6 +4053,7 @@ MonoBehaviour:
   rNum: 0
   ps2: 0
   music: 
+  MusicEvent: event:/Music Control Bus
 --- !u!4 &1164860571
 Transform:
   m_ObjectHideFlags: 0
